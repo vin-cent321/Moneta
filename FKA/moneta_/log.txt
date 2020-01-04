@@ -1,0 +1,16 @@
+2020-01-04T16:39:22.022898+00:00 app[api]: Enable Logplex by user mckiyoshi@gmail.com
+2020-01-04T16:39:22.022898+00:00 app[api]: Release v2 created by user mckiyoshi@gmail.com
+2020-01-04T16:39:21.244961+00:00 app[api]: Initial release by user mckiyoshi@gmail.com
+2020-01-04T16:39:21.244961+00:00 app[api]: Release v1 created by user mckiyoshi@gmail.com
+2020-01-04T16:42:41.000000+00:00 app[api]: Build started by user mckiyoshi@gmail.com
+2020-01-04T16:42:42.000000+00:00 app[api]: Build failed -- check your build output: https://dashboard.heroku.com/apps/29d89a31-87e1-4517-9353-d0fc65b1ae8c/activity/builds/74fd3fbb-9f0e-4590-b14c-16abae3322dc
+2020-01-04T16:43:44.416351+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/" host=moneta-fka.herokuapp.com request_id=ad947f92-b913-423f-9a41-4c56357355e3 fwd="141.166.128.150" dyno= connect= service= status=502 bytes= protocol=https
+2020-01-04T16:43:44.755270+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/favicon.ico" host=moneta-fka.herokuapp.com request_id=b1ea6995-1ec5-4ae3-8b82-3e905affc322 fwd="141.166.128.150" dyno= connect= service= status=502 bytes= protocol=https
+2020-01-04T16:43:53.909677+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/" host=moneta-fka.herokuapp.com request_id=cea4d512-0d82-49ca-89bd-0403916f34f8 fwd="141.166.128.150" dyno= connect= service= status=502 bytes= protocol=https
+2020-01-04T16:43:54.288835+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/favicon.ico" host=moneta-fka.herokuapp.com request_id=81c86292-eb59-4e9b-854b-bcea8da89f87 fwd="141.166.128.150" dyno= connect= service= status=502 bytes= protocol=https
+2020-01-04T16:43:55.070017+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/" host=moneta-fka.herokuapp.com request_id=01e87194-da5a-4276-bf0e-765af26e96cb fwd="141.166.128.150" dyno= connect= service= status=502 bytes= protocol=https
+2020-01-04T16:43:55.163507+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/favicon.ico" host=moneta-fka.herokuapp.com request_id=5ab259d8-0dac-4a49-9fd3-d688a6694167 fwd="141.166.128.150" dyno= connect= service= status=502 bytes= protocol=https
+2020-01-04T16:44:20.519332+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/" host=moneta-fka.herokuapp.com request_id=82338410-f305-4a7e-a49f-17280c2de2f4 fwd="141.166.128.150" dyno= connect= service= status=502 bytes= protocol=https
+2020-01-04T16:44:20.731787+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/favicon.ico" host=moneta-fka.herokuapp.com request_id=78b82df6-a4b7-433f-84ab-3bd53a320e64 fwd="141.166.128.150" dyno= connect= service= status=502 bytes= protocol=https
+2020-01-04T17:42:31.387171+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/" host=moneta-fka.herokuapp.com request_id=a62771aa-bab0-4270-af52-c1a9c7ff13d0 fwd="141.166.128.150" dyno= connect= service= status=502 bytes= protocol=https
+2020-01-04T17:42:32.706443+00:00 heroku[router]: at=info code=H81 desc="Blank app" method=GET path="/favicon.ico" host=moneta-fka.herokuapp.com request_id=33366b99-ef9e-4bef-8561-3771626ff723 fwd="141.166.128.150" dyno= connect= service= status=502 bytes= protocol=https
