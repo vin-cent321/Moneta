@@ -1,0 +1,9 @@
+.dot {
+    height: 100vw;
+    width: 100vw;
+    background-color: #2091E8;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: -75%;
+    position: absolute;
+  }

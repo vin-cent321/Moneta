@@ -1,0 +1,16 @@
+.dot {
+    height: 100vw;
+    width: 100vw;
+    background-color: #2091E8;
+    border-radius: 50%;
+    display: inline-block;
+    margin-top: -85%;
+    position: absolute;
+    z-index: -1;
+
+  }
+.container {
+    text-align: center;
+    z-index: 1;
+
+}
