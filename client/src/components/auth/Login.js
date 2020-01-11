@@ -78,7 +78,7 @@ class Login extends Component {
                   onChange={this.onChange}
                   value={this.state.name}
                   error={errors.name}
-                  id="email"
+                  id="name"
                   type="email"
                   className={classnames("", {
                     invalid: errors.name || errors.namenotfound
