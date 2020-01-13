@@ -91,13 +91,13 @@
         // pushes 'array title' into RandQ from x[0]
         // slices 'array title' and pushes 1 image from x array
         function buildA(x){
-            randQ.push(x[0])
+            randQ.push(x[0]);
             x = x.slice(1,x.length);
             order.push(x[rand(x.length)]);
         }
         // dumps arrays for reuse
         // calls buildA(x) to form question options and centralize game imgs
-        // uses hasData to repalce presets with family data
+        // uses hasData(x) to replace presets with existing family data
         function buildOrder(){
             order = [];
             disorder = [];
@@ -144,58 +144,64 @@
         // randomly selects 1 index from RandQ to form the 'find the ___' question
         function buildQ(){
             query = randQ[rand(randQ.length)];
-            $('.question').text(`Find the ${query}`)
+            $('.question').text(`Find the ${query}`);
         };
-
+        
+        // checks each parent array for url of image clicked and returns its title/0 index
         function inArray(x) {
-                if (fam0.includes(x)) {return fam0[0]}
-                if (fam1.includes(x)) {return fam1[0]}
-                if (fam2.includes(x)) {return fam2[0]}
-                if (fam3.includes(x)) {return fam3[0]}
-                if (fam4.includes(x)) {return fam4[0]}
-                if (fam5.includes(x)) {return fam5[0]}
-                if (fam6.includes(x)) {return fam6[0]}
-                if (fam7.includes(x)) {return fam7[0]}
-                if (fam8.includes(x)) {return fam8[0]}
-                if (fam9.includes(x)) {return fam9[0]}
-                if (fam10.includes(x)) {return fam10[0]}
-                if (fam11.includes(x)) {return fam11[0]}
-                if (birds.includes(x)) {return birds[0]}
-                if (cats.includes(x)) {return cats[0]}
-                if (people.includes(x)) {return people[0]}
-                if (cars.includes(x)) {return cars[0]}
-                if (burgers.includes(x)) {return burgers[0]}
-                if (squirrels.includes(x)) {return squirrels[0]}
-                if (buildings.includes(x)) {return buildings[0]}
-                if (pies.includes(x)) {return pies[0]}
-                if (lamps.includes(x)) {return lamps[0]}
-                if (plants.includes(x)) {return plants[0]}
-                if (buckets.includes(x)) {return buckets[0]}
-                if (balls.includes(x)) {return balls[0]}
+                if (fam0.includes(x)) {return fam0[0]};
+                if (fam1.includes(x)) {return fam1[0]};
+                if (fam2.includes(x)) {return fam2[0]};
+                if (fam3.includes(x)) {return fam3[0]};
+                if (fam4.includes(x)) {return fam4[0]};
+                if (fam5.includes(x)) {return fam5[0]};
+                if (fam6.includes(x)) {return fam6[0]};
+                if (fam7.includes(x)) {return fam7[0]};
+                if (fam8.includes(x)) {return fam8[0]};
+                if (fam9.includes(x)) {return fam9[0]};
+                if (fam10.includes(x)) {return fam10[0]};
+                if (fam11.includes(x)) {return fam11[0]};
+                if (birds.includes(x)) {return birds[0]};
+                if (cats.includes(x)) {return cats[0]};
+                if (people.includes(x)) {return people[0]};
+                if (cars.includes(x)) {return cars[0]};
+                if (burgers.includes(x)) {return burgers[0]};
+                if (squirrels.includes(x)) {return squirrels[0]};
+                if (buildings.includes(x)) {return buildings[0]};
+                if (pies.includes(x)) {return pies[0]};
+                if (lamps.includes(x)) {return lamps[0]};
+                if (plants.includes(x)) {return plants[0]};
+                if (buckets.includes(x)) {return buckets[0]};
+                if (balls.includes(x)) {return balls[0]};
             }
+
+        // dumps .cont, .answer and unfades images
+        // rebuilds img order, reselect question, adds 0 to score (for initialzation) 
+        // init y to hold randomized array while preventing duplicate entries
+        // append .cont with new images
         function game() {
             $('.cont').html(' ');
             $('.answer').html('&nbsp;');
-            $('img').removeClass('fade')
+            $('img').removeClass('fade');
             buildOrder();
-            buildQ()
+            buildQ();
             score(0);
-            let x;
+            var y = '';
             while (disorder.length != order.length) {
-                x = order[rand(order.length)];
-                (disorder.includes(x) ? '' : disorder.push(x))
+                y = order[rand(order.length)];
+                (disorder.includes(y) ? '' : disorder.push(y));
             };
             for (var i=0;i<disorder.length;i++){
                 $('.cont').append(`<img src=${disorder[i]} class='image' alt=' '>`);
             };
         }
+
+        // when score(x) is called it will add x points to score and update display
         function score(x) {
-            points += x
+            points += x;
             $('.scorecard').text('Score: ' + points);
         }
-        function imgClick() {
-            console.log($(this)[0].src)
-        }
+// CLICK FUNCTIONS
         // dumps .cont to remove previous imgs
         // declares x 
         // while disorder and order are !=
@@ -216,7 +222,10 @@
         })
         
         // checks to see if img clicked == query and returns yes/no
-        // Unexpected behaviour only runs once 
+        // if correct score(1) and .answer update
+        // if incorrect .answer update
+        // call game() to rebuild guessmatching 
+            // Unexpected behaviour only runs once 
         $('.image').on('click',function(){
             console.log($(this)[0].src)
             $('img').addClass('fade')
