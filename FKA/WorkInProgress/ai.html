@@ -45,6 +45,7 @@
             status = 0;
             setTimeout(function(){ navi(); }, 3000);            
         }
+        // Expected y to increment after each message, got an infinite loop instead
         (y<100? (status? say() : ' ' ) : console.log('nada',y))
             
         
