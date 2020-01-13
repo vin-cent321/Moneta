@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://code.jquery.com/jquery-3.4.1.js" integrity="sha256-WpOohJOqMqqyKL9FccASB9O0KwACQJpFTUBLTYOVvVU=" crossorigin="anonymous"></script>
+    <title>AI Moneta</title>
+    <style>
+        .pop {
+            position: absolute;
+            display: block;
+            height: 10vw;
+            width: 10vw;
+            border: 2px solid black;
+            border-radius: 5px 5px 25px 5px;
+        }
+    </style>
+</head>
+<body>
+    <div id="pop"></div>    
+
+    <script>
+        var pop = ["Hey!","Listen!"]
+        var status = 1;
+        var y = 0;
+        function rand(x){
+            return Math.floor(Math.random() * x);
+        }
+        function navi() {
+            // TTD build audio controller for alert sound
+            $('#pop').addClass('pop');
+            x = pop[rand(pop.length)]
+            $('#pop').text(x);
+            console.log('pops:',x)
+            setTimeout(function(){
+                $('#pop').removeClass('pop');
+                $('#pop').text(' ');
+                status = 1
+            },5000)
+            
+        }
+        function say() {
+            y++
+            status = 0;
+            setTimeout(function(){ navi(); }, 3000);            
+        }
+        (y<100? (status? say() : ' ' ) : console.log('nada',y))
+            
+        
+            
+    </script>
+</body>
+</html>
