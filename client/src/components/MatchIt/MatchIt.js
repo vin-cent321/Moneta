@@ -1,5 +1,5 @@
 import React from "react";
-import '../styles/MatchIt.css';
+import './MatchIt.css';
 
 function matchit() {
     var order = [];             // array to contain images 
