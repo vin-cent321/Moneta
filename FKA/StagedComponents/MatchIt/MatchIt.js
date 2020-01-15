@@ -193,7 +193,7 @@ function matchit() {
 }
 
 function MatchIt() {
-    matchit()
+   $('document').ready(matchit())
     return (
         <>
     <div class="question" id="question">&nbsp;</div>
