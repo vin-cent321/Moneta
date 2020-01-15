@@ -1,6 +1,7 @@
 import React from "react";
 import '../styles/MatchIt.css';
-
+import jquery from 'jquery';
+var $ = jquery;
 function matchit() {
     var order = [];             // array to contain images 
         var disorder = [];          // array randomized for game display
@@ -146,7 +147,7 @@ function matchit() {
                 (disorder.includes(x) ? '' : disorder.push(x))
             };
             for (var i=0;i<disorder.length;i++){
-                $('.cont').append(`<img src=${disorder[i]} class='image' alt=' '>`);
+                $('.cont').append(`<img src={disorder[i]} class='image' alt=' '>`);
             };
         }
         function score(x) {
