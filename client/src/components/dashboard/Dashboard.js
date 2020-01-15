@@ -30,19 +30,19 @@ class Dashboard extends Component {
               </div>
              </div>
             </h4>
-            <button
+            <a href="/mood" role="button"
               style={{
                 width: "150px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
                 marginTop: "1rem"
               }}
-              //onClick={this.onLogoutClick}
+              onClick={"/mood"}
               id="gameswitch"
               className="btn btn-large waves-effect waves-light hoverable accent-3"
             >
               Lets play!
-            </button>
+            </a>
             <br></br>
             <button
               style={{
