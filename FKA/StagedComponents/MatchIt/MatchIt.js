@@ -177,7 +177,7 @@ function matchit() {
         
         // checks to see if img clicked == query and returns yes/no
         // Unexpected behaviour only runs once 
-        $('.image').on('click',function(){
+        $(document).on('click', '.image', function(){
             console.log($(this)[0].src)
             $('img').addClass('fade')
             $(this).removeClass('fade')
@@ -193,7 +193,7 @@ function matchit() {
 }
 
 function MatchIt() {
-   $('document').ready(matchit())
+    matchit()
     return (
         <>
     <div class="question" id="question">&nbsp;</div>

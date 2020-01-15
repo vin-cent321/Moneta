@@ -1,5 +1,5 @@
 import React from "react";
-import './MatchIt.css';
+import '../styles/MatchIt.css';
 
 function matchit() {
     var order = [];             // array to contain images 
@@ -177,7 +177,7 @@ function matchit() {
         
         // checks to see if img clicked == query and returns yes/no
         // Unexpected behaviour only runs once 
-        $('.image').on('click',function(){
+        $(document).on('click', '.image', function(){
             console.log($(this)[0].src)
             $('img').addClass('fade')
             $(this).removeClass('fade')
@@ -193,7 +193,7 @@ function matchit() {
 }
 
 function MatchIt() {
-    $('document').ready(matchit())
+    matchit()
     return (
         <>
     <div class="question" id="question">&nbsp;</div>
