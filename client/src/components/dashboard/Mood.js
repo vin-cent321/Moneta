@@ -17,11 +17,67 @@ class Mood extends Component {
         <div className="row">
           <div className="landing-copy col s12 center-align">
             <h4>
-              <b>Hey there,</b> {user.name.split(" ")[0]}
+              {user.name.split(" ")[0]}<b>, let's start by setting the mood.</b> 
+              </h4>
+               <div class="card">
+                <div class="card-body">
               <p className="flow-text grey-text text-darken-1">
-                What would you like to do today? 
+                How are you feeling today? 
               </p>
-            </h4>
+            
+            
+            <a href="/mood" role="button"
+              style={{
+                width: "150px",
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+                margin: "1rem",
+              }}
+              onClick={"/mood"}
+              id="gameswitch"
+              className="btn btn-large waves-effect waves-light hoverable accent-3"
+            >
+              Relaxed
+            </a> <a href="/mood" role="button"
+              style={{
+                width: "150px",
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+                margin: "1rem",
+              }}
+              onClick={"/mood"}
+              id="gameswitch"
+              className="btn btn-large waves-effect waves-light hoverable accent-3"
+            >
+              Excited
+            </a> <a href="/mood" role="button"
+              style={{
+                width: "150px",
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+                margin: "1rem",
+              }}
+              onClick={"/mood"}
+              id="gameswitch"
+              className="btn btn-large waves-effect waves-light hoverable accent-3"
+            >
+              Happy
+            </a> <a href="/mood" role="button"
+              style={{
+                width: "150px",
+                borderRadius: "3px",
+                letterSpacing: "1.5px",
+                margin: "1rem",
+              }}
+              onClick={"/mood"}
+              id="gameswitch"
+              className="btn btn-large waves-effect waves-light hoverable accent-3"
+            >
+              Focused
+            </a>
+            </div>
+            </div>
+            
             <button
               style={{
                 width: "150px",
