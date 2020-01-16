@@ -1,12 +1,15 @@
 import React from "react";
+import MusicPlayer from "../MusicPlayer/MusicPlayer";
+
+
 
 const Footer = () => (
-<div class="card-body">
-    <blockquote class="blockquote mb-0">
+
+<div className="card-body">
+      <MusicPlayer />
       <p>MUSIC PLAYER HERE</p>
-      <footer class="blockquote-footer">OR FRIGGIN' HERE!</footer>
-    </blockquote>
   </div>
 );
 
 export default Footer;
+
