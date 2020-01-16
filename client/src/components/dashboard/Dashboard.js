@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import MatchIt from "../MatchIt/MatchIt"
 
 
 class Dashboard extends Component {
@@ -16,6 +17,7 @@ class Dashboard extends Component {
     return (
       <div style={{ height: "75vh" }} className="container valign-wrapper">
         <div className="row">
+  <MatchIt />
           <div className="landing-copy col s12 center-align">
             <h4>
               <b>Hey there,</b> {user.name.split(" ")[0]}
