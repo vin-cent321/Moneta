@@ -4,7 +4,7 @@ import jquery from 'jquery';
 var JQ = jquery;
 
 function matchit() {
-    var order = [];             // array to contain images 
+        var order = [];             // array to contain images 
         var disorder = [];          // array randomized for game display
         var randQ = [];             // array of potential 'find a ____' elements
         var query, item;
