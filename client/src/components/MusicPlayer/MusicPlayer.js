@@ -135,6 +135,7 @@ class MusicPlayer extends React.Component {
             <audio ref={ref => (this.player = ref)} />
             </div>
             </div>
+            </div>
           </>
       );
   }
