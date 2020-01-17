@@ -1,7 +1,13 @@
 import React from "react";
 import ReactDOM from "react-dom";
 
-const song = "./files/7empest.mp3";
+const song =  new Audio("7empest.mp3");
+function Start() {
+    song.play();
+}
+function Stop() {
+    song.pause();
+}
 
 
 function getTime(time) {
@@ -34,6 +40,7 @@ class MusicPlayer extends React.Component {
     }
 
     componentDidUpdate(prevProps, prevState) {
+        console.log(song);
         if (this.state.selectedTrack !== prevState.selectedTrack) {
             let track;
             switch (this.state.selectedTrack) {
@@ -45,7 +52,8 @@ class MusicPlayer extends React.Component {
             }
             if (track) {
                 this.player.src = track;
-                this.player.play();
+                this.player.play(track);
+                console.log(this.player.play());
                 this.setState({
                  player: "playing",
                  duration: this.player.duration   
@@ -65,11 +73,12 @@ class MusicPlayer extends React.Component {
                      this.state.player === "playing" && prevState.player === "paused"
                  ) {
                      this.player.play();
+                     console.log(this.player.play(this));
                  }
     }
 
   render() {
-      const list = [{ id: 1, title: ""},{id: 2, title: ""}].map(item => {
+      const list = [{ id: 1, title: "7empest"},{id: 2, title: "N/A"}].map(item => {
           return (
               <li
                 key={item.id}
@@ -85,18 +94,13 @@ class MusicPlayer extends React.Component {
       return (
           <>
             <h1>Music Player</h1>
-            
-                  <button onClick={ () => this.setState({
-                      player: "playing"
-                  })}>Play</button>
+                  <button onClick={ () => Start()
+                  }>Play</button>
               
             <ul>{list}</ul>
             <div>
-
-              
-                  <button onClick={ () => this.setState({
-                      player: "paused"
-                  })}>Pause</button>
+                  <button onClick={ () => Stop()
+                  }>Pause</button>
               
               {this.state.player === "playing" || this.state.player === "paused" ? (
                   <button onClick={ () => this.setState({
