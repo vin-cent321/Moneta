@@ -3,19 +3,20 @@ import '../styles/MatchIt.css';
 import jquery from 'jquery';
 var $ = jquery;
 function matchit() {
-    var order = [];             // array to contain images 
+        var order = [];             // array to contain images 
         var disorder = [];          // array randomized for game display
         var randQ = [];             // array of potential 'find a ____' elements
+        var posQ = ['Click the picture of', 'Find the', 'Where is']
         var query, item;
         var points = 0;
         // arrays 0-11 awaiting DB name and image of relative
         var fam0 = [];
         var fam1 = [];
-        var fam2 = ['Vermin Supreme','https://tinyurl.com/r7nx2kv'];
+        var fam2 = ['Cousin Vermin Supreme','https://tinyurl.com/r7nx2kv'];
         var fam3 = [];
         var fam4 = [];
         var fam5 = [];
-        var fam6 = ['Rent is too damn high','https://tinyurl.com/tz9c5x5'];
+        var fam6 = [' Uncle Jimmy McMillan','https://tinyurl.com/tz9c5x5'];
         var fam7 = [];
         var fam8 = [];
         var fam9 = [];
@@ -105,7 +106,7 @@ function matchit() {
         // randomly selects 1 index from RandQ to form the 'find the ___' question
         function buildQ(){
             query = randQ[rand(randQ.length)];
-            $('.question').text(`Find the ${query}`)
+            $('.question').text(`${posQ[rand(posQ)]} ${query}`)
         };
 
         function inArray(x) {
