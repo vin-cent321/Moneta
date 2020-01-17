@@ -78,7 +78,7 @@ class MusicPlayer extends React.Component {
     }
 
   render() {
-      const list = [{ id: 1, title: "7empest"},{id: 2, title: "N/A"}].map(item => {
+      const list = [{ id: 1, title: "" },{id: 2, title: "N/A"}].map(item => {
           return (
               <li
                 key={item.id}
