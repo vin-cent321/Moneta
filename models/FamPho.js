@@ -48,4 +48,4 @@ const FamPhoSchema = new Schema({
   }
 });
 
-module.exports = FamPho = mongoose.model("fampho", FamPhoSchema);
+module.exports = FamPho = mongoose.model("famphos", FamPhoSchema);
