@@ -84,16 +84,17 @@ class MusicPlayer extends React.Component {
       
       return (
           <>
-            <h1>Music Player</h1>
+          <div className="row">
+          <div className="col s12">
+            <p>Music Player</p>
             
                   <button onClick={ () => this.setState({
                       player: "playing"
                   })}>Play</button>
               
             <ul>{list}</ul>
-            <div>
+            
 
-              
                   <button onClick={ () => this.setState({
                       player: "paused"
                   })}>Pause</button>
@@ -105,7 +106,7 @@ class MusicPlayer extends React.Component {
               ) : (
                 ""
                 )}
-            </div>
+            
             
             {this.state.player === "playing" || this.state.player === "paused" ? (
                 <div>
@@ -115,6 +116,8 @@ class MusicPlayer extends React.Component {
               ""  
             )}
             <audio ref={ref => (this.player = ref)} />
+            </div>
+            </div>
           </>
       );
   }
