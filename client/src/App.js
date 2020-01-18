@@ -14,7 +14,7 @@ import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
-import Mood from "./components/dashboard/Mood";
+import Mood from "./components/mood/mood";
 import Footer from "./components/layout/Footer";
 import "./App.css";
 
