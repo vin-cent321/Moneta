@@ -38,8 +38,8 @@ class Dashboard extends Component {
                 marginTop: "1rem"
               }}
               onClick={"/mood"}
-              id="gameswitch"
-              className="btn btn-large waves-effect waves-light hoverable accent-3"
+              //id=""
+              className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
             >
               Lets play!
             </a>
@@ -52,8 +52,8 @@ class Dashboard extends Component {
                 marginTop: "1rem"
               }}
               onClick={this.onLogoutClick}
-              id="logout"
-              className="btn btn-large waves-effect waves-light hoverable accent-3"
+             // id=""
+              className="logout btn btn-large waves-effect waves-light hoverable accent-3"
             >
               Logout
             </button>
