@@ -1,7 +1,8 @@
 body {background: white;}
-.card-body {
+/*.card-body {
     
-    box-shadow: 0 0 15px 10px white;}
+    box-shadow: 0 0 15px 10px white;
+}*/
 
 body.hoveredOne {
 background: linear-gradient(114deg, #c900ff, #737aff, #78dde3, #47b23b);
