@@ -3,6 +3,8 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import "./Dashboard.css";
+import MatchIt from "../MatchIt/MatchIt"
+
 
 
 class Dashboard extends Component {

@@ -7,3 +7,16 @@
     margin-top: -75%;
     position: absolute;
   }
+
+#logo {
+  position: relative;
+  bottom: 33%;
+  ;
+}
+
+.nav-wrapper {
+  background-color: #2091E8;
+  font-size: 40px;
+  text-align: center;
+  box-shadow: 10px 8px 8px #b6b5b5;
+}
