@@ -39,7 +39,7 @@ class Dashboard extends Component {
                 letterSpacing: "1.5px",
                 marginTop: "1rem"
               }}
-              onClick={"/mood"}
+              onClick={"./mood/mood"}
               //id=""
               className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
             >
