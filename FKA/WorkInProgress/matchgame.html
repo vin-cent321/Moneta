@@ -41,7 +41,6 @@
 </body>
     <script>
     $(document).ready(function(){
-
         var order = [];             // array to contain images 
         var disorder = [];          // array randomized for game display
         var randQ = [];             // array of potential 'find a ____' elements
@@ -226,7 +225,7 @@
         // if incorrect .answer update
         // call game() to rebuild guessmatching 
             // Unexpected behaviour only runs once 
-        $('.image').on('click',function(){
+        $(document).on('click', '.image', function(){
             console.log($(this)[0].src)
             $('img').addClass('fade')
             $(this).removeClass('fade')

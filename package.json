@@ -3,25 +3,36 @@
   "version": "1.0.0",
   "description": "Mern Auth Example",
   "main": "server.js",
+  "engines": {
+    "node": "10.x",
+    "npm": "6.x"
+  },
   "scripts": {
     "client-install": "npm install --prefix client",
     "start": "node server.js",
     "server": "nodemon server.js",
     "client": "npm start --prefix client",
-    "dev": "concurrently \"npm run server\" \"npm run client\""
+    "dev": "concurrently \"npm run server\" \"npm run client\"",
+    "build": "webpack"
   },
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "axios": "^0.19.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "cheerio": "^1.0.0-rc.3",
     "concurrently": "^4.0.1",
     "express": "^4.16.4",
     "is-empty": "^1.2.0",
+    "jquery": "^3.4.1",
     "jsonwebtoken": "^8.3.0",
+    "matter-js": "^0.14.2",
     "mongoose": "^5.3.11",
+    "nodemon": "^2.0.2",
     "passport": "^0.4.0",
     "passport-jwt": "^4.0.0",
+    "react-animated-css": "^1.2.1",
     "validator": "^10.9.0"
   }
 }
