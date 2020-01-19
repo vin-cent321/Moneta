@@ -152,11 +152,11 @@ function matchit() {
             };
         }
         function score(x) {
-            points += x
+            points += x;
             $('.scorecard').text('Score: ' + points);
         }
         function imgClick() {
-            console.log($(this)[0].src)
+            console.log($(this)[0].src);
         }
         // dumps .cont to remove previous imgs
         // declares x 
