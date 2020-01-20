@@ -2,8 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
-import "./mood.css";
-import { Link } from "react-router-dom";
+import "./gamepage.css";
 
 
 class Mood extends Component {
@@ -62,63 +61,65 @@ buttonFour.onmouseout = function() {
             <div class="card">
               <div class="card-body shadow lg">
                 <p className="flow-text grey-text text-darken-1">
-                  How are you feeling today?
+                    GAMEPAGE
               </p>
 
 
-                <Link to="/gamepage" role="button"
+                <a href="/mood" role="button"
                   style={{
                     width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
                     margin: "1rem",
                   }}
+                  onClick={"/mood"}
                   id="relaxedSwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >
                   Relaxed
-                </Link>
+                </a>
 
-                <Link to="/gamepage" role="button"
+                <a href="/mood" role="button"
                   style={{
                     width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
                     margin: "1rem",
                   }}
+                  onClick={"/mood"}
                   id="excitedSwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >
                   Excited
-            </Link>
+            </a>
 
-                <Link to="/gamepage" role="button"
+                <a href="/mood" role="button"
                   style={{
                     width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
                     margin: "1rem",
                   }}
+                  onClick={"/mood"}
                   id="happySwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >
                   Happy
-            </Link>
+            </a>
 
-                <Link to="/gamepage" role="button"
+                <a href="/mood" role="button"
                   style={{
                     width: "150px",
                     borderRadius: "3px",
                     letterSpacing: "1.5px",
                     margin: "1rem",
                   }}
-                 ///this feature is now obsolete keeping it on 
-                 //last link just in case it has a purpose later onClick={"/mood"}
+                  onClick={"/mood"}
                   id="focusedSwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >
                   Focused
-            </Link>
+            </a>
 
 
               </div>

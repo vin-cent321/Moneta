@@ -1,7 +1,8 @@
 body {background: white;}
-/*.card-body {
+/*.card {
     
     box-shadow: 0 0 15px 10px white;
+    border-color: gray;
 }*/
 
 body.hoveredOne {
@@ -35,7 +36,7 @@ body.hoveredThree {
     
 }
 body.hoveredFour {
-    background: linear-gradient(317deg, #720000, #ff0000, rgb(255, 119, 119), #ffb553,#ff6f00 );
+    background: linear-gradient(317deg, #720000, #ff0000, rgb(255, 119, 119), #ffb553,#ff6f00, rgb(208, 76, 0) );
     background-size: 200% 200%;
     
     -webkit-animation: AnimationName 45s ease infinite;
