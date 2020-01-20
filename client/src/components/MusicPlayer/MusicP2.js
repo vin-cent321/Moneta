@@ -1,5 +1,4 @@
 import React, { Component } from "react";
-
 // Music goes in PUBLIC folder
 var bgMusic = new Audio('7empest.mp3'); 
 bgMusic.volume = 1;

@@ -106,6 +106,7 @@ function matchit() {
         // randomly selects 1 index from RandQ to form the 'find the ___' question
         function buildQ(){
             query = randQ[rand(randQ.length)];
+            query = `${posQ[rand(posQ)]} ${query}`
             $('.question').text(`${posQ[rand(posQ)]} ${query}`)
         };
 
@@ -152,11 +153,11 @@ function matchit() {
             };
         }
         function score(x) {
-            points += x
+            points += x;
             $('.scorecard').text('Score: ' + points);
         }
         function imgClick() {
-            console.log($(this)[0].src)
+            console.log($(this)[0].src);
         }
         // dumps .cont to remove previous imgs
         // declares x 
@@ -194,16 +195,42 @@ function matchit() {
         })
 }
 
+// function MatchIt() {
+//     matchit()
+//     return (
+//         <>
+//     <div class="question" id="question">&nbsp;</div>
+//     <div class="answer" id="answer">&nbsp;</div>
+//     <div class="cont" id="cont"></div>
+//     <div class='scorecard'> &nbsp;</div>
+//         </>
+//     )
+// }
+
 function MatchIt() {
-    matchit()
-    return (
-        <>
-    <div class="question" id="question">&nbsp;</div>
-    <div class="answer" id="answer">&nbsp;</div>
-    <div class="cont" id="cont"></div>
-    <div class='scorecard'> &nbsp;</div>
-        </>
+    matchit() 
+    return(
+    <>
+        <div class="question" id="question">{query}</div>
+        <div class="answer" id="answer">'cookies'</div>
+        <div class="cont" id="cont">
+            <img src={disorder[0]} alt=' ' />
+            <img src={disorder[1]} alt=' ' />
+            <img src={disorder[2]} alt=' ' />
+            <img src={disorder[3]} alt=' ' />
+            <img src={disorder[4]} alt=' ' />
+            <img src={disorder[5]} alt=' ' />
+            <img src={disorder[6]} alt=' ' />
+            <img src={disorder[7]} alt=' ' />
+            <img src={disorder[8]} alt=' ' />
+            <img src={disorder[9]} alt=' ' />
+            <img src={disorder[10]} alt=' ' />
+            <img src={disorder[11]} alt=' ' />
+        </div>
+        <div class='scorecard'>{score} </div> 
+    </>
     )
 }
+
 
 export default MatchIt;
