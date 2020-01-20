@@ -109,7 +109,7 @@ function matchit() {
         // randomly selects 1 index from RandQ to form the 'find the ___' question
         function buildQ(){
             query = randQ[rand(randQ.length)];
-            query2 = posQ[rand(posQ)] + ' ' + query
+            query2 = posQ[rand(posQ.length)] + ' ' + query;
             $('.question').text(`${posQ[rand(posQ)]} ${query}`)
         };
 
@@ -144,6 +144,7 @@ function matchit() {
             points += x;
             $('.scorecard').text('Score: ' + points);
         }
+
         function imgClick() {
             console.log($(this)[0].src);
         }
