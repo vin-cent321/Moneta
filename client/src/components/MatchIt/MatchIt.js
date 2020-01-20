@@ -1,22 +1,24 @@
 import React from "react";
 import './MatchIt.css';
 import jquery from 'jquery';
-var JQ = jquery;
+var $ = jquery;
 
-function matchit() {
+
+
         var order = [];             // array to contain images 
         var disorder = [];          // array randomized for game display
         var randQ = [];             // array of potential 'find a ____' elements
-        var query, item;
+        var posQ = ['Click the picture of', 'Find the', 'Where is']
+        var query, query2, answer, item;
         var points = 0;
         // arrays 0-11 awaiting DB name and image of relative
         var fam0 = [];
         var fam1 = [];
-        var fam2 = ['Vermin Supreme','https://tinyurl.com/r7nx2kv'];
+        var fam2 = ['Cousin Vermin Supreme','https://tinyurl.com/r7nx2kv'];
         var fam3 = [];
         var fam4 = [];
         var fam5 = [];
-        var fam6 = ['Rent is too damn high','https://tinyurl.com/tz9c5x5'];
+        var fam6 = [' Uncle Jimmy McMillan','https://tinyurl.com/tz9c5x5'];
         var fam7 = [];
         var fam8 = [];
         var fam9 = [];
@@ -38,6 +40,7 @@ function matchit() {
         var buckets = ['bucket','https://tinyurl.com/unmhn8j','https://tinyurl.com/v9n7ukm'];
         var balls = ['ball','https://tinyurl.com/snecm65','https://tinyurl.com/rvkkmj3'];
 
+function matchit() {       
         // calls buildA which pushes 1 of each image url from presets
         // then checks fam0-fam11 to replace order with fam data if it exists
         //      buildOrder();
@@ -106,7 +109,8 @@ function matchit() {
         // randomly selects 1 index from RandQ to form the 'find the ___' question
         function buildQ(){
             query = randQ[rand(randQ.length)];
-            JQ('.question').text(`Find the JQ{query}`)
+            query2 = posQ[rand(posQ)] + ' ' + query
+            $('.question').text(`${posQ[rand(posQ)]} ${query}`)
         };
 
         function inArray(x) {
@@ -135,25 +139,35 @@ function matchit() {
                 if (buckets.includes(x)) {return buckets[0]}
                 if (balls.includes(x)) {return balls[0]}
             }
+
+        function score(x) {
+            points += x;
+            $('.scorecard').text('Score: ' + points);
+        }
+        function imgClick() {
+            console.log($(this)[0].src);
+        }
+
         function game() {
-            JQ('.cont').html(' ');
-            JQ('.answer').html('&nbsp;');
-            JQ('img').removeClass('fade')
+            $('.cont').html(' ');
+            $('.answer').html('&nbsp;');
+            $('img').removeClass('fade')
             buildOrder();
             buildQ()
             score(0);
             let x;
-            while (disorder.length !== order.length) {
+            while (disorder.length != order.length) {
                 x = order[rand(order.length)];
-                if (!disorder.includes(x)) disorder.push(x);
+                if (disorder.includes(x)){
+
+                }else{
+                    disorder.push(x)
+                }
+                //(disorder.includes(x) ? ' ' : disorder.push(x))
             };
             for (var i=0;i<disorder.length;i++){
-                JQ('.cont').append(`<img src=JQ(disorder[i]) className='image' alt=' '>`);
+                $('.cont').append(`<img className='image' src={disorder[i]} className='image' alt=' '>`);
             };
-        }
-        function score(x) {
-            points += x
-            JQ('.scorecard').text('Score: ' + points);
         }
         // dumps .cont to remove previous imgs
         // declares x 
@@ -161,49 +175,87 @@ function matchit() {
         // adds random index from order to disorder if not already in disorder
         // appends all indexes from disorder into .cont with <img> tags
         // calls buildOrder to create a new list for next game 
-        JQ('.btn').on('click',function(){ 
-            JQ('.cont').html(' ');
+        $('.btn').on('click',function(){ 
+            $('.cont').html(' ');
             let x;
-            while (disorder.length !== order.length) {
+            while (disorder.length != order.length) {
                 x = order[rand(order.length)];
-                 if (!disorder.includes(x)) disorder.push(x);
+                if (disorder.includes(x)){
+
+                }else{
+                    disorder.push(x)
+                }
+                //(disorder.includes(x) ? ' ' : disorder.push(x))
             };
             for (var i=0;i<disorder.length;i++){
-                JQ('.cont').append(<img src={disorder[i]} className='image' alt='' />)
+                $('.cont').append(`<img src=${disorder[i]} className='image' alt=' '>`)
             };
             buildOrder();
         })
         
         // checks to see if img clicked == query and returns yes/no
         // Unexpected behaviour only runs once 
-        JQ(document).on('click', '.image', function(){
-            console.log(JQ(this)[0].src)
-            JQ('img').addClass('fade')
-            JQ(this).removeClass('fade')
-            item = JQ(this)[0].src
-            if (inArray(item) === query) {
-                JQ('.answer').text(`Yes, that is a JQ{query}.`)
+        $(document).on('click', '.image', function(){
+            console.log($(this)[0].src)
+            $('img').addClass('fade')
+            $(this).removeClass('fade')
+            item = $(this)[0].src
+            if (inArray(item) == query) {
+                answer = 'Yes, that is a '+ query
+                $('.answer').text(`Yes, that is a ${query}.`)
                 score(1)
             }else {
-                JQ('.answer').text(`No, that is not a JQ{query}. It is a JQ{inArray(item)} `)
+                answer = 'No that is not a' + query + '. It is a ' + inArray(item)
+                $('.answer').text(`No, that is not a ${query}. It is a ${inArray(item)} `)
                 }
             setTimeout(function(){ game(); }, 3000);
         })
 }
 
+// function MatchIt() {
+//     matchit()
+//     return (
+//         <>
+//     <div className="question" id="question">&nbsp;</div>
+//     <div className="answer" id="answer">&nbsp;</div>
+//     <div className="cont" id="cont"></div>
+//     <div className='scorecard'> &nbsp;</div>
+//         </>
+//     )
+// }
+
 function MatchIt() {
-    matchit()
-    setTimeout(function(){ 
-        return (
-            <>
-        <div className="question" id="question">&nbsp;</div>
-        <div className="answer" id="answer">&nbsp;</div>
-        <div className="cont" id="cont"></div>
-        <div className='scorecard'> &nbsp;</div>
-            </>
-        );
-    },5000)
-    
+    matchit() 
+    return(
+    <>
+        <div className="question" id="question">{query2}</div>
+        <div className="answer" id="answer">{answer}</div>
+        <div className="cont" id="cont">
+            <div className='row'>
+            <img className='image' src={disorder[0]} alt=' ' />
+            <img className='image' src={disorder[1]} alt=' ' />
+            <img className='image' src={disorder[2]} alt=' ' />
+            </div>
+            <div className='row'>
+            <img className='image' src={disorder[3]} alt=' ' />
+            <img className='image' src={disorder[4]} alt=' ' />
+            <img className='image' src={disorder[5]} alt=' ' />
+            </div>
+            <div className='row'>
+            <img className='image' src={disorder[6]} alt=' ' />
+            <img className='image' src={disorder[7]} alt=' ' />
+            <img className='image' src={disorder[8]} alt=' ' />
+            </div>
+            <div className='row'>
+            <img className='image' src={disorder[9]} alt=' ' />
+            <img className='image' src={disorder[10]} alt=' ' />
+            <img className='image' src={disorder[11]} alt=' ' />
+            </div>
+        </div>
+        <div className='scorecard'>{points} </div> 
+    </>
+    )
 }
+
 
 export default MatchIt;

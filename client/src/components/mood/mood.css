@@ -1,0 +1,65 @@
+body {background: white;}
+/*.card {
+    
+    box-shadow: 0 0 15px 10px white;
+    border-color: gray;
+}*/
+
+body.hoveredOne {
+background: linear-gradient(114deg, #c900ff, #737aff, #78dde3, #47b23b);
+background-size: 800% 800%;
+
+-webkit-animation: AnimationName 40s ease infinite;
+-moz-animation: AnimationName 40s ease infinite;
+animation: AnimationName 40s ease infinite;
+}
+
+
+
+body.hoveredTwo {
+background: linear-gradient(45deg, #ff0000, #ffd87c, #fcfea8, #a7ffaa, #7cf2ff, #433cff, #cb78ff, #fca2ff, #b60000);
+background-size: 800% 100%;
+
+-webkit-animation: AnimationName 60s ease infinite;
+-moz-animation: AnimationName 60s ease infinite;
+animation: AnimationName 60s ease infinite;
+
+}
+
+body.hoveredThree {
+    background: linear-gradient(80deg, #ffbe00, #fff9b7, #fcf173, #ffa9f3, rgba(128, 0, 128, 0.707));
+    background-size: 300% 300%;
+    
+    -webkit-animation: AnimationName 20s ease infinite;
+    -moz-animation: AnimationName 20s ease infinite;
+    animation: AnimationName 20s ease infinite;
+    
+}
+body.hoveredFour {
+    background: linear-gradient(317deg, #720000, #ff0000, rgb(255, 119, 119), #ffb553,#ff6f00, rgb(208, 76, 0) );
+    background-size: 200% 200%;
+    
+    -webkit-animation: AnimationName 45s ease infinite;
+    -moz-animation: AnimationName 45s ease infinite;
+    animation: AnimationName 45s ease infinite;
+    
+  };
+    
+  @-webkit-keyframes AnimationName {
+    0%{background-position:0% 28%}
+    50%{background-position:100% 73%}
+    100%{background-position:0% 28%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 28%}
+    50%{background-position:100% 73%}
+    100%{background-position:0% 28%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 28%}
+    50%{background-position:100% 73%}
+    100%{background-position:0% 28%}
+}
+/*.App {
+    background-color: blue;
+}*/
