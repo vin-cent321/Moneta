@@ -109,8 +109,8 @@ function matchit() {
         // randomly selects 1 index from RandQ to form the 'find the ___' question
         function buildQ(){
             query = randQ[rand(randQ.length)];
-            query2 = posQ[rand(posQ)] + ' ' + query
-            $('.question').text(`${posQ[rand(posQ)]} ${query}`)
+            query2 = posQ[rand(posQ.length)] + ' ' + query
+            $('.question').text(`${posQ[rand(posQ.length)]} ${query}`)
         };
 
         function inArray(x) {
@@ -149,8 +149,8 @@ function matchit() {
         }
 
         function game() {
-            $('.cont').html(' ');
-            $('.answer').html('&nbsp;');
+            //$('.cont').html(' ');
+            //$('.answer').html('&nbsp;');
             $('img').removeClass('fade')
             buildOrder();
             buildQ()
@@ -165,9 +165,9 @@ function matchit() {
                 }
                 //(disorder.includes(x) ? ' ' : disorder.push(x))
             };
-            for (var i=0;i<disorder.length;i++){
-                $('.cont').append(`<img className='image' src={disorder[i]} className='image' alt=' '>`);
-            };
+            //for (var i=0;i<disorder.length;i++){
+              //  $('.cont').append(`<img className='image' src={disorder[i]} className='image' alt=' '>`);
+            //};
         }
         // dumps .cont to remove previous imgs
         // declares x 
@@ -178,7 +178,7 @@ function matchit() {
         $('.btn').on('click',function(){ 
             $('.cont').html(' ');
             let x;
-            while (disorder.length != order.length) {
+            while (disorder.length !== order.length) {
                 x = order[rand(order.length)];
                 if (disorder.includes(x)){
 

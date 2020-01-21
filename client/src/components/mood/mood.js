@@ -66,7 +66,7 @@ buttonFour.onmouseout = function() {
               </p>
 
 
-                <Link to="/gamepage" role="button"
+                <Link to="/Matchit" role="button"
                   style={{
                     width: "150px",
                     borderRadius: "3px",
