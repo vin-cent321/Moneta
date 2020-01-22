@@ -34,7 +34,7 @@ if (localStorage.jwtToken) {
   if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
-
+    //todo: document.body.style.backgroundColor = 'white';
     // Redirect to login
     window.location.href = "./login";
   }
