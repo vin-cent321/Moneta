@@ -7,21 +7,7 @@ import pause from "../MusicPlayer/images/pause.png"
 var audio = new Audio('7empest.mp3'); 
 
 var butn = document.getElementById("demo");
-/*butn.style.background = `url(${play}) no-repeat`;
-function Play() {
-    if(audio.paused) {
-        audio.play();
-        butn.style.background = `url(${play}) no-repeat`;
-    }
-    else {
-        audio.pause();
-        butn.style.background = `url(${pause}) no-repeat`;
-    }}
 
-
-
-
-*/
 var bgMusic = new Audio('7empest.mp3'); 
 bgMusic.volume = 1;
 bgMusic.loop = true;
