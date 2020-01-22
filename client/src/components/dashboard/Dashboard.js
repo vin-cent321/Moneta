@@ -4,7 +4,8 @@ import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import "./Dashboard.css";
 import MatchIt from "../MatchIt/MatchIt"
-
+import Moment from 'react-moment';
+ 
 
 
 class Dashboard extends Component {
@@ -15,6 +16,8 @@ class Dashboard extends Component {
 
   render() {
     const { user } = this.props.auth;
+  
+
 
     return (
       <div style={{ height: "75vh" }} className="container valign-wrapper">
@@ -28,6 +31,7 @@ class Dashboard extends Component {
                 What would you like to do today? 
               </p>
               <p className="flow-text grey-text text-darken-1">Today is today</p>
+            <Moment local></Moment>
               <p className="flow-text grey-text text-darken-1">The weather for today is whatever it looks and feels like outside</p>
               </div>
              </div>
@@ -76,6 +80,7 @@ Dashboard.propTypes = {
 const mapStateToProps = state => ({
   auth: state.auth
 });
+
 
 export default connect(
   mapStateToProps,
