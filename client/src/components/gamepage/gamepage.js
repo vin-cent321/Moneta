@@ -10,7 +10,7 @@ class GamePage extends Component {
     
     return (
   
-      <div style={{ height: "75vh" }} id="background" className="container valign-wrapper">
+      <div style={{ height: "75vh" }} id="background" className="container">
         <div className="row">
           <MatchIt />
         </div>

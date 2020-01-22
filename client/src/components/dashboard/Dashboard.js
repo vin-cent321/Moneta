@@ -20,7 +20,7 @@ class Dashboard extends Component {
 
 
     return (
-      <div style={{ height: "75vh" }} className="container valign-wrapper">
+      <div style={{ height: "75vh" }} className="container">
         <div className="row">
           <div className="landing-copy col s12 center-align">
             <h4>
