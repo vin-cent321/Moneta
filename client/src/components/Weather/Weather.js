@@ -37,7 +37,6 @@ function weather() {
         console.log("Humidity: " + response.main.humidity);
         console.log("Temperature (F): " + response.main.temp);
       });
-    
 }
 
 function Weather() {
