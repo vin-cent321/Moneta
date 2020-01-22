@@ -72,8 +72,8 @@ render() {
     return (
         <div>
             <Container>
-                <span style={{color: 'white'}}>Pick {this.state.hiddenAnswer.name}!!!!</span>
-                <p style={{color: 'white'}}>Score: {this.state.score}</p>
+                <span class="grey-text">Pick {this.state.hiddenAnswer.name}!!!!</span>
+                <p class="grey-text">Score: {this.state.score}</p>
                 {this.state.data.map(item => (
                     <Click
                     key={item.id}
