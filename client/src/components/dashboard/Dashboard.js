@@ -31,7 +31,7 @@ class Dashboard extends Component {
                 What would you like to do today? 
               </p>
               <p className="flow-text grey-text text-darken-1">Today is today</p>
-            <Moment local></Moment>
+            <Moment local />
               <p className="flow-text grey-text text-darken-1">The weather for today is whatever it looks and feels like outside</p>
             <Weather />
               </div>
