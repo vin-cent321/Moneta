@@ -3,7 +3,7 @@ import data from "../../data.json"
 import Container from "../Container/Container"
 import Click from "../Click/Click";
 
-class MatchIt extends Component {
+class MatchIt2 extends Component {
     state = {
         data,
         score: 0,
@@ -88,4 +88,4 @@ render() {
     )
 }
 }
-export default MatchIt;
+export default MatchIt2;

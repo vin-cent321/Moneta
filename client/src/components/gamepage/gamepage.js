@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
 import "./gamepage.css";
-
+import MatchIt2 from '../../components/MatchIt2/MatchIt2';
 
 
 class Mood extends Component {
@@ -55,6 +55,7 @@ buttonFour.onmouseout = function() {
   
       <div style={{ height: "75vh" }} id="background" className="container valign-wrapper">
         <div className="row">
+          <MatchIt2 />
           <div className="landing-copy col s12 center-align">
             <h4>
               {user.name.split(" ")[0]}<b>, let's start by setting the mood.</b>
