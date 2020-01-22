@@ -6,7 +6,7 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
-// import Scene from "./components/Scene/Scene"
+import Scene from "./components/Scene/Scene"
 
 import Navbar from "./components/layout/Navbar";
 // import Landing from "./components/layout/Landing";
@@ -48,7 +48,7 @@ class App extends Component {
         <Router>
           <div className="App">
             <Navbar />
-            {/* <Scene /> */}
+            <Scene />
             <Route exact path="/" component={Login} />
             <Route exact path="/register" component={Register} />
             <Route exact path="/login" component={Login} />

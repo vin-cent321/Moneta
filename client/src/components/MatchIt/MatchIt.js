@@ -3,6 +3,9 @@ import './MatchIt.css';
 import jquery from 'jquery';
 var $ = jquery;
 
+// use fs to create user image folders on registration ~multer
+
+
 var order = [];             // array to contain images 
 var disorder = [];          // array randomized for game display
 var randQ = [];             // array of potential 'find a ____' elements
@@ -227,6 +230,7 @@ function MatchIt() {
     matchit()
     return(
     <>
+    <input type="file"></input>
         <div className="question" id="question">{query2}</div>
         <div className="answer" id="answer">{answer}</div>
         <div className="cont" id="cont">
@@ -255,5 +259,4 @@ function MatchIt() {
     </>
     )
 }
-
 export default MatchIt;
