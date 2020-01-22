@@ -64,6 +64,7 @@ class MusicP2 extends Component {
     
 
     toggleButton = () => {
+        play_pause()
         let {buttonImg, buttonType} = this.state;
         buttonImg === play ? buttonImg = pause : buttonImg = play;
         buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
@@ -75,7 +76,7 @@ class MusicP2 extends Component {
             <section>
             <h1>The Good Music Player</h1>
             <button onClick={()=>vol('1')}>^</button>
-            <button onClick={this.toggleButton, ()=>play_pause()} id="demo">
+            <button onClick={this.toggleButton} id="demo">
                 <img
                     src={this.state.buttonImg} 
                     alt={this.state.buttonType}/>
