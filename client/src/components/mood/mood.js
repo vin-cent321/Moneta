@@ -5,10 +5,12 @@ import { logoutUser } from "../../actions/authActions";
 import "./mood.css";
 import { Link } from "react-router-dom";
 
+var body = document.body;
 
 class Mood extends Component {
   onLogoutClick = e => {
     e.preventDefault();
+    body.style('background: white;')
     this.props.logoutUser();
   };
 
@@ -20,7 +22,7 @@ var buttonOne = document.getElementById('relaxedSwitch');
 var buttonTwo = document.getElementById('excitedSwitch');
 var buttonThree = document.getElementById('happySwitch');
 var buttonFour = document.getElementById('focusedSwitch');
-var body = document.body;
+
 
 buttonOne.onmouseover = function() {
   body.className = 'hoveredOne';
@@ -50,6 +52,7 @@ buttonFour.onmouseout = function() {
   body.className = '';
 }
 };
+
 
     return (
   

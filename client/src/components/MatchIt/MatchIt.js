@@ -80,14 +80,7 @@ function matchit() {
         buildA(plants);
         buildA(buckets);
         buildA(balls);
-        
-<<<<<<< HEAD
-        // randomly selects 1 index from RandQ to form the 'find the ___' question
-        function buildQ(){
-            query = randQ[rand(randQ.length)];
-            query2 = posQ[rand(posQ.length)] + ' ' + query
-            $('.question').text(`${posQ[rand(posQ.length)]} ${query}`)
-=======
+
         hasData(fam0,0);
         hasData(fam1,1);
         hasData(fam2,2);
@@ -107,7 +100,6 @@ function matchit() {
         if(x.length>0){
             order[y] = x[1];
             randQ[y] = x[0];
->>>>>>> 9d65edf01a87c8eca81b7ba5595bc47eed0853db
         };
     };
     
@@ -145,46 +137,10 @@ function matchit() {
             if (balls.includes(x)) {return balls[0]}
         }
 
-<<<<<<< HEAD
-        function game() {
-            //$('.cont').html(' ');
-            //$('.answer').html('&nbsp;');
-            $('img').removeClass('fade')
-            buildOrder();
-            buildQ()
-            score(0);
-            let x;
-            while (disorder.length != order.length) {
-                x = order[rand(order.length)];
-                if (disorder.includes(x)){
-
-                }else{
-                    disorder.push(x)
-                }
-                //(disorder.includes(x) ? ' ' : disorder.push(x))
-            };
-            //for (var i=0;i<disorder.length;i++){
-              //  $('.cont').append(`<img className='image' src={disorder[i]} className='image' alt=' '>`);
-            //};
-        }
-        // dumps .cont to remove previous imgs
-        // declares x 
-        // while disorder and order are !=
-        // adds random index from order to disorder if not already in disorder
-        // appends all indexes from disorder into .cont with <img> tags
-        // calls buildOrder to create a new list for next game 
-        $('.btn').on('click',function(){ 
-            $('.cont').html(' ');
-            let x;
-            while (disorder.length !== order.length) {
-                x = order[rand(order.length)];
-                if (disorder.includes(x)){
-=======
     function score(x) {
         points += x;
         $('.scorecard').text('Score: ' + points);
     }
->>>>>>> 9d65edf01a87c8eca81b7ba5595bc47eed0853db
 
     function game() {
         //$('.cont').html(' ');
