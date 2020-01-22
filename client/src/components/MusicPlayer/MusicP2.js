@@ -80,8 +80,7 @@ class MusicP2 extends Component {
             </button>
             <h1>The Good Music Player</h1>
             <button onClick={()=>vol('1')}>^</button>
-            <button onClick={()=>startMusic()}>play</button>
-            <button onClick={()=>stopMusic()}>stop</button>
+           
             <button onClick={()=>vol('0')}>v</button>
             </section>
         )

@@ -10,7 +10,6 @@ var body = document.body;
 class Mood extends Component {
   onLogoutClick = e => {
     e.preventDefault();
-    body.style('background: white;')
     this.props.logoutUser();
   };
 
