@@ -33,8 +33,8 @@ function weather() {
         $(".temp").text("Temperature (F) " + response.main.temp);
 
         // Log the data in the console as well
-        console.log("Wind Speed: " + response.wind.speed);
-        console.log("Humidity: " + response.main.humidity);
+        console.log("Wind Speed: " + response.wind.speed+"mph");
+        console.log("Humidity: " + response.main.humidity+"%");
         console.log("Temperature (F): " + response.main.temp);
       });
 }
