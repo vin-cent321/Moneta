@@ -198,13 +198,33 @@ function matchit() {
 }
 
 function MatchIt() {
+    // {()=> disorder.map(image, <img src={image} alt=' ' />)}
     matchit() 
     return(
     <>
         <div class="question" id="question">{query}</div>
         <div class="answer" id="answer">'cookies'</div>
         <div class="cont" id="cont">
-            {()=> disorder.map(image, <img src={image} alt=' ' />)}
+        <div className='row'>
+            <img className='image' src={disorder[0]} alt=' ' />
+            <img className='image' src={disorder[1]} alt=' ' />
+            <img className='image' src={disorder[2]} alt=' ' />
+            </div>
+            <div className='row'>
+            <img className='image' src={disorder[3]} alt=' ' />
+            <img className='image' src={disorder[4]} alt=' ' />
+            <img className='image' src={disorder[5]} alt=' ' />
+            </div>
+            <div className='row'>
+            <img className='image' src={disorder[6]} alt=' ' />
+            <img className='image' src={disorder[7]} alt=' ' />
+            <img className='image' src={disorder[8]} alt=' ' />
+            </div>
+            <div className='row'>
+            <img className='image' src={disorder[9]} alt=' ' />
+            <img className='image' src={disorder[10]} alt=' ' />
+            <img className='image' src={disorder[11]} alt=' ' />
+            </div>
         </div>
         <div class='scorecard'>{score} </div> 
     </>

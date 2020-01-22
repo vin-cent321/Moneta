@@ -146,6 +146,8 @@ function matchit() {
         //$('.cont').html(' ');
         //$('.answer').html('&nbsp;');
         $('img').removeClass('fade')
+        $('img').removeClass('redBorder')
+        $('img').removeClass('greenBorder')
         buildOrder();
         buildQ()
         score(0)
@@ -198,10 +200,12 @@ function matchit() {
         if (inArray(item) === query) {
             answer = 'Yes, that is a '+ query
             $('.answer').text(`Yes, that is a ${query}.`)
+            $(this).addClass('greenBorder')
             score(1)
         }else {
             answer = 'No that is not a' + query + '. It is a ' + inArray(item)
             $('.answer').text(`No, that is not a ${query}. It is a ${inArray(item)} `)
+            $(this).addClass('redBorder')
             }
         setTimeout(function(){ game(); }, 3000);
     })
