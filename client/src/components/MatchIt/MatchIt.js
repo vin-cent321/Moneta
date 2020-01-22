@@ -3,6 +3,9 @@ import './MatchIt.css';
 import jquery from 'jquery';
 var $ = jquery;
 
+// use fs to create user image folders on registration ~multer
+
+
 var order = [];             // array to contain images 
 var disorder = [];          // array randomized for game display
 var randQ = [];             // array of potential 'find a ____' elements
