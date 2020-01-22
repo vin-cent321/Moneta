@@ -5,10 +5,12 @@ import { logoutUser } from "../../actions/authActions";
 import "./mood.css";
 import { Link } from "react-router-dom";
 
+var body = document.body;
 
 class Mood extends Component {
   onLogoutClick = e => {
     e.preventDefault();
+    body.style('background: white;')
     this.props.logoutUser();
   };
 
@@ -20,7 +22,7 @@ var buttonOne = document.getElementById('relaxedSwitch');
 var buttonTwo = document.getElementById('excitedSwitch');
 var buttonThree = document.getElementById('happySwitch');
 var buttonFour = document.getElementById('focusedSwitch');
-var body = document.body;
+
 
 buttonOne.onmouseover = function() {
   body.className = 'hoveredOne';
@@ -51,6 +53,7 @@ buttonFour.onmouseout = function() {
 }
 };
 
+
     return (
   
       <div style={{ height: "75vh" }} id="background" className="container valign-wrapper">
@@ -66,7 +69,7 @@ buttonFour.onmouseout = function() {
               </p>
 
 
-                <Link to="/gamepage" role="button"
+                <Link to="/Matchit" role="button"
                   style={{
                     width: "150px",
                     borderRadius: "3px",
