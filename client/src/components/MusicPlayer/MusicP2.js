@@ -3,15 +3,23 @@ import React, { Component } from "react";
 var bgMusic = new Audio('7empest.mp3'); 
 bgMusic.volume = 1;
 bgMusic.loop = true;
-function startMusic() {
-    bgMusic.play();
+
+var n = 'PLAY';
+var x;
+
+function play_pause(){
+    if (n==='PAUSE'){
+        bgMusic.pause()
+        n ="PLAY"
+    }
+    else if (n==='PLAY'){
+        bgMusic.play()
+        n = 'PAUSE'
+    }
 }
-function stopMusic() {
-    bgMusic.pause();
-    //bgMusic.currentTime = 0;
-}
+
 function vol(chg) {
-    if ( (chg ==='1') & (bgMusic.volume < .9) ) {
+    if ( (chg ==='1') & (bgMusic.volume < .95) ) {
         bgMusic.volume = bgMusic.volume + .05
         console.log(bgMusic.volume)
     }
@@ -21,16 +29,16 @@ function vol(chg) {
     }
 }
 function status() {
-    var x = bgMusic.currentTime
+    x = bgMusic.currentTime
     return x
 }
+
 function MusicP2() {    
     return (
         <>
         <h1>The Good Music Player</h1>
         <button onClick={()=>vol('1')}>^</button>
-        <button onClick={()=>startMusic()}>play</button>
-        <button onClick={()=>stopMusic()}>stop</button>
+        <button onClick={()=> play_pause()}>{n}</button>
         <button onClick={()=>vol('0')}>v</button>
         </>
     )
