@@ -52,8 +52,7 @@ function vol(chg) {
     }
 }
 function status() {
-    x = bgMusic.currentTime
-    return x
+    bgMusic.currentTime += 5
 }
 
 class MusicP2 extends Component {  
@@ -82,7 +81,9 @@ class MusicP2 extends Component {
                     alt={this.state.buttonType}/>
             </button>
             <button onClick={()=>vol('0')}>v</button>
+            <button onClick={()=>status()}>  +  </button>
             </section>
+            
         )
     }
    
