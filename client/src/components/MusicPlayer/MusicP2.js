@@ -3,7 +3,6 @@ import play from "../MusicPlayer/images/play.png"
 import pause from "../MusicPlayer/images/pause.png"
 // Music goes in PUBLIC folder
 
-
 //var bgmusic = document.getElementsByName("Audio");
 var audio = new Audio('7empest.mp3'); 
 
