@@ -14,6 +14,11 @@
   ;
 }
 
+.page-footer {
+  position: relative;
+  background-color: #2091E8;
+}
+
 .nav-wrapper {
   background-color: #2091E8;
   font-size: 40px;
