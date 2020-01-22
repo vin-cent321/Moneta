@@ -7,7 +7,9 @@ import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
 import Scene from "./components/Scene/Scene"
-
+import Moment from 'react-moment';
+import 'moment-timezone';
+ 
 import Navbar from "./components/layout/Navbar";
 // import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
