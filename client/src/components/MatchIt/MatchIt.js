@@ -227,6 +227,7 @@ function MatchIt() {
     matchit()
     return(
     <>
+    <input type="file"></input>
         <div className="question" id="question">{query2}</div>
         <div className="answer" id="answer">{answer}</div>
         <div className="cont" id="cont">
