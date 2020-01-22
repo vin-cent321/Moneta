@@ -1,145 +1,79 @@
-import React from "react";
-import ReactDOM from "react-dom";
-
-const song =  new Audio("7empest.mp3");
-function Start() {
-    song.play();
-}
-function Stop() {
-    song.pause();
-}
+import React, { Component } from "react";
+import play from "../MusicPlayer/images/play.png"
+import pause from "../MusicPlayer/images/pause.png"
+// Music goes in PUBLIC folder
 
 
-function getTime(time) {
-    if (!isNaN(time)) {
-        return (
-            Math.floor(time / 60) + ":" + ("0" + Math.floor(time % 60)).slice(-2)
-        );
+//var bgmusic = document.getElementsByName("Audio");
+// var audio = new Audio('7empest.mp3'); 
+
+var bgMusic = new Audio('7empest.mp3'); 
+bgMusic.volume = 1;
+bgMusic.loop = true;
+
+var n = 'PLAY';
+var x;
+
+function play_pause(){
+    if (n==='PAUSE'){
+        bgMusic.pause()
+        n ="PLAY"
+    }
+    else if (n==='PLAY'){
+        bgMusic.play()
+        n = 'PAUSE'
     }
 }
 
-class MusicPlayer extends React.Component {
+function vol(chg) {
+    if ( (chg ==='1') & (bgMusic.volume < .95) ) {
+        bgMusic.volume = bgMusic.volume + .05
+        console.log(bgMusic.volume)
+    }
+    if (chg === '0') {
+        bgMusic.volume = bgMusic.volume - .05
+        console.log(bgMusic.volume)
+    }
+}
+function status() {
+    bgMusic.currentTime += 5
+    console.log(bgMusic.currentTime)
+}
+
+class MusicP2 extends Component {  
     state = {
-        selectedTrack: null,
-        player: "playing",
-        currentTime: null,
-        duration: null
-    };
-
-    componentDidMount() {
-        this.player.addEventListener("timeupdate", e => {
-            this.setState({
-                currentTime: e.target.currentTime,
-                duration: e.target.duration
-            });
-        });
+        buttonType: 'play',
+        buttonImg: play,
+        time: bgMusic.currentTime
+    }   
+    
+    updateTime = () => {
+        let x = bgMusic.currentTime
+        this.setState.time({x})
     }
 
-    componentWillUnmount() {
-        this.player.removeEventListener("timeupdate", () => {});
+    toggleButton = () => {
+        play_pause()
+        let {buttonImg, buttonType} = this.state;
+        buttonImg === play ? buttonImg = pause : buttonImg = play;
+        buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
+
+        this.setState({buttonImg, buttonType});
     }
+    render() {
+         return (
+            <section>
+            <button onClick={()=>vol('1')}>^</button>
+                <img onClick={this.toggleButton} id="demo"
+                    src={this.state.buttonImg} 
+                    alt={this.state.buttonType}/>
+            <button onClick={()=>vol('0')}>v</button>
+            <button onClick={()=>status()}>  +  </button>
+            <p onProgress={this.updateTime} >{this.state.time}</p>
+            </section>
 
-    componentDidUpdate(prevProps, prevState) {
-        console.log(song);
-        if (this.state.selectedTrack !== prevState.selectedTrack) {
-            let track;
-            switch (this.state.selectedTrack) {
-                case "7empest":
-                    track = song;
-                    break;
-                    default:
-                        break;
-            }
-            if (track) {
-                this.player.src = track;
-                this.player.play(track);
-                console.log(this.player.play());
-                this.setState({
-                 player: "playing",
-                 duration: this.player.duration   
-                });
-            }
-        }
-            if (this.state.player !== prevState.player) {
-                if (this.state.player === "paused") {
-                    this.player.pause();
-                } else if (this.state.player === "stopped")
-                    this.player.pause();
-                    this.player.currentTime = 0;
-                    this.setState({
-                        selectedTrack: null
-                    });
-                 } else if (
-                     this.state.player === "playing" && prevState.player === "paused"
-                 ) {
-                     this.player.play();
-                     console.log(this.player.play(this));
-                 }
+        )
     }
-
-  render() {
-      const list = [{ id: 1, title: "" },{id: 2, title: "N/A"}].map(item => {
-          return (
-              <li
-                key={item.id}
-              >
-              {item.title}
-              </li>
-          );
-      });
-
-      const currentTime = getTime(this.state.currentTime);
-      const duration = getTime(this.state.duration);
-      
-      return (
-          <>
-          <div className="row">
-          <div className="col s12">
-            <p>Music Player</p>
-            
-                  <button onClick={ () => this.setState({
-                      player: "playing"
-                  })}>Play</button>
-              
-            <ul>{list}</ul>
-            
-
-                  <button onClick={ () => this.setState({
-                      player: "paused"
-                  })}>Pause</button>
-            <h1>Music Player</h1>
-                  <button onClick={ () => Start()
-                  }>Play</button>
-              
-            <ul>{list}</ul>
-            <div>
-                  <button onClick={ () => Stop()
-                  }>Pause</button>
-              
-              {this.state.player === "playing" || this.state.player === "paused" ? (
-                  <button onClick={ () => this.setState({
-                      player: "stopped"
-                  })}>Stop</button>
-              ) : (
-                ""
-                )}
-            
-            
-            {this.state.player === "playing" || this.state.player === "paused" ? (
-                <div>
-                    {currentTime} / {duration}
-                </div>
-            ) : (
-              ""  
-            )}
-            <audio ref={ref => (this.player = ref)} />
-            </div>
-            </div>
-            </div>
-          </>
-      );
-  }
+   
 }
-const rootElement = document.getElementById("root");
-ReactDOM.render(<MusicPlayer />, rootElement);
-export default MusicPlayer;
+export default MusicP2;
