@@ -53,14 +53,20 @@ function vol(chg) {
 }
 function status() {
     bgMusic.currentTime += 5
+    console.log(bgMusic.currentTime)
 }
 
 class MusicP2 extends Component {  
     state = {
         buttonType: 'play',
-        buttonImg: play
-    } 
+        buttonImg: play,
+        time: bgMusic.currentTime
+    }   
     
+    updateTime = () => {
+        let x = bgMusic.currentTime
+        this.setState.time({x})
+    }
 
     toggleButton = () => {
         play_pause()
@@ -82,8 +88,9 @@ class MusicP2 extends Component {
             </button>
             <button onClick={()=>vol('0')}>v</button>
             <button onClick={()=>status()}>  +  </button>
+            <p onProgress={this.updateTime} >{this.state.time}</p>
             </section>
-            
+
         )
     }
    
