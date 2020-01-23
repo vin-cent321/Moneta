@@ -15,7 +15,7 @@
     "dev": "concurrently \"npm run server\" \"npm run client\"",
     "build": "cd client && npm run build",
     "heroku-postbuild": "npm run build",
-    "install": "npm install && cd client && npm install"
+    "install": "cd client && npm install"
   },
   
   "author": "",
