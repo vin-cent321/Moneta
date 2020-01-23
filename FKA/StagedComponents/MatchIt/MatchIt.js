@@ -2,7 +2,10 @@ import React from "react";
 import '../styles/MatchIt.css';
 import jquery from 'jquery';
 var $ = jquery;
+
+
 function matchit() {
+
         var order = [];             // array to contain images 
         var disorder = [];          // array randomized for game display
         var randQ = [];             // array of potential 'find a ____' elements
@@ -64,7 +67,6 @@ function matchit() {
             order = [];
             disorder = [];
             randQ = [];
-            
             buildA(birds);
             buildA(cats);
             buildA(people);
@@ -106,6 +108,7 @@ function matchit() {
         // randomly selects 1 index from RandQ to form the 'find the ___' question
         function buildQ(){
             query = randQ[rand(randQ.length)];
+            query = `${posQ[rand(posQ)]} ${query}`
             $('.question').text(`${posQ[rand(posQ)]} ${query}`)
         };
 
@@ -152,11 +155,11 @@ function matchit() {
             };
         }
         function score(x) {
-            points += x
+            points += x;
             $('.scorecard').text('Score: ' + points);
         }
         function imgClick() {
-            console.log($(this)[0].src)
+            console.log($(this)[0].src);
         }
         // dumps .cont to remove previous imgs
         // declares x 
@@ -195,14 +198,36 @@ function matchit() {
 }
 
 function MatchIt() {
-    matchit()
-    return (
-        <>
-    <div class="question" id="question">&nbsp;</div>
-    <div class="answer" id="answer">&nbsp;</div>
-    <div class="cont" id="cont"></div>
-    <div class='scorecard'> &nbsp;</div>
-        </>
+    // {()=> disorder.map(image, <img src={image} alt=' ' />)}
+    matchit() 
+    return(
+    <>
+        <div class="question" id="question">{query}</div>
+        <div class="answer" id="answer">'cookies'</div>
+        <div class="cont" id="cont">
+        <div className='row'>
+            <img className='image' src={disorder[0]} alt=' ' />
+            <img className='image' src={disorder[1]} alt=' ' />
+            <img className='image' src={disorder[2]} alt=' ' />
+            </div>
+            <div className='row'>
+            <img className='image' src={disorder[3]} alt=' ' />
+            <img className='image' src={disorder[4]} alt=' ' />
+            <img className='image' src={disorder[5]} alt=' ' />
+            </div>
+            <div className='row'>
+            <img className='image' src={disorder[6]} alt=' ' />
+            <img className='image' src={disorder[7]} alt=' ' />
+            <img className='image' src={disorder[8]} alt=' ' />
+            </div>
+            <div className='row'>
+            <img className='image' src={disorder[9]} alt=' ' />
+            <img className='image' src={disorder[10]} alt=' ' />
+            <img className='image' src={disorder[11]} alt=' ' />
+            </div>
+        </div>
+        <div class='scorecard'>{score} </div> 
+    </>
     )
 }
 

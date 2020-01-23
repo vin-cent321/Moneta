@@ -1,19 +1,19 @@
 import React from "react";
-import MusicPlayer from "../MusicPlayer/MusicPlayer";
 import "./layout.css"
-
+import MusicPlayer from "../MusicPlayer/MusicPlayer"
 
 
 const Footer = () => (
 
-<>
-<div className="row">
-<div className="col s12"></div>
-  <div className="card-body">
-      <MusicPlayer />
-  </div>
-  </div>
-</>
+<footer class="page-footer col-12 font-small">
+
+<div class="footer-copyright text-center py-3">      <MusicPlayer />
+© 2020 Copyright:
+  <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
+</div>
+
+</footer>
+
 );
 
 export default Footer;

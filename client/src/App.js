@@ -6,16 +6,21 @@ import setAuthToken from "./utils/setAuthToken";
 import { setCurrentUser, logoutUser } from "./actions/authActions";
 import { Provider } from "react-redux";
 import store from "./store";
-// import Scene from "./components/Scene/Scene"
-
+import Scene from "./components/Scene/Scene"
+import Moment from 'react-moment';
+import 'moment-timezone';
+ 
 import Navbar from "./components/layout/Navbar";
 // import Landing from "./components/layout/Landing";
 import Register from "./components/auth/Register";
 import Login from "./components/auth/Login";
 import PrivateRoute from "./components/private-route/PrivateRoute";
 import Dashboard from "./components/dashboard/Dashboard";
+import Mood from "./components/mood/mood";
+import Gamepage from "./components/gamepage/gamepage";
 import Footer from "./components/layout/Footer";
 import "./App.css";
+
 
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
@@ -31,12 +36,14 @@ if (localStorage.jwtToken) {
   if (decoded.exp < currentTime) {
     // Logout user
     store.dispatch(logoutUser());
-
+    //todo: document.body.style.backgroundColor = 'white';
     // Redirect to login
     window.location.href = "./login";
   }
 }
+
 class App extends Component {
+
   render() {
     return (
       <Provider store={store}>
@@ -49,6 +56,10 @@ class App extends Component {
             <Route exact path="/login" component={Login} />
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
+              <PrivateRoute exact path="/mood"
+              component={(props) => <Mood {...props} setColor={this.setColor} />}
+                />
+              <PrivateRoute exact path="/gamepage" component={Gamepage} />
             </Switch>
             <Footer />
           </div>
