@@ -1,3 +1,7 @@
+h4 {
+    font-size: 20px;
+}
+
 .gameswitch {
     background-color: #00BA76
 }
@@ -8,6 +12,9 @@
 
 .card {
     background-color: #EDF0F5;
+    padding: 10px;
+    font-size: 20px;
 }
+
 
 

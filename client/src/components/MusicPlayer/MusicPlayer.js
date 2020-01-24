@@ -69,9 +69,7 @@ class MusicP2 extends Component {
                     alt={this.state.buttonType}/>
             <button onClick={()=>vol('0')}>v</button>
             <button onClick={()=>status()}>  +  </button>
-            <p onProgress={this.updateTime} >{this.state.time}</p>
             </section>
-
         )
     }
    
