@@ -2,9 +2,8 @@ import React, { Component } from "react";
 import "./gamepage.css";
 import MatchIt from '../MatchIt/MatchIt';
 
-
 class GamePage extends Component {
-
+ 
 
   render() {
     

@@ -1,18 +1,16 @@
 import React, { Component } from "react";
 import play from "../MusicPlayer/images/play.png"
 import pause from "../MusicPlayer/images/pause.png"
+import vol1 from "../MusicPlayer/images/vol1.png"
+import vol2 from "../MusicPlayer/images/vol2.png"
+
 // Music goes in PUBLIC folder
-
-
-//var bgmusic = document.getElementsByName("Audio");
-// var audio = new Audio('7empest.mp3'); 
 
 var bgMusic = new Audio('7empest.mp3'); 
 bgMusic.volume = 1;
 bgMusic.loop = true;
 
 var n = 'PLAY';
-var x;
 
 function play_pause(){
     if (n==='PAUSE'){
@@ -34,10 +32,6 @@ function vol(chg) {
         bgMusic.volume = bgMusic.volume - .05
         console.log(bgMusic.volume)
     }
-}
-function status() {
-    bgMusic.currentTime += 5
-    console.log(bgMusic.currentTime)
 }
 
 class MusicP2 extends Component {  
@@ -63,12 +57,9 @@ class MusicP2 extends Component {
     render() {
          return (
             <section>
-            <button onClick={()=>vol('1')}>^</button>
-                <img onClick={this.toggleButton} id="demo"
-                    src={this.state.buttonImg} 
-                    alt={this.state.buttonType}/>
-            <button onClick={()=>vol('0')}>v</button>
-            <button onClick={()=>status()}>  +  </button>
+            <img onClick={()=>vol('1')} src={vol2} alt='vol-down' />
+            <img onClick={this.toggleButton} src={this.state.buttonImg} alt={this.state.buttonType}/>
+            <img onClick={()=>vol('0')} src={vol1} alt='vol-up' />
             </section>
         )
     }

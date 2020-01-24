@@ -5,6 +5,7 @@ import MusicPlayer from "../MusicPlayer/MusicPlayer"
 
 const Footer = () => (
 
+<>
 <footer class="footer">
     <div class="container">
         <div class="player">
@@ -13,7 +14,7 @@ const Footer = () => (
         <span class="text-muted">@ Copyright.</span>
     </div>
 </footer>
-
+</>
 );
 
 export default Footer;

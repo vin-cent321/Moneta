@@ -19,8 +19,14 @@ const UserSchema = new Schema({
     type: Date,
     default: Date.now
   },
-  photo1: {
-    
+  imageName: {
+    type: String,
+    default: "none",
+    required: false
+  },
+  imageData: {
+    type: String, 
+    required: false
   }
 });
 
