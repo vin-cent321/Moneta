@@ -25,32 +25,30 @@ class Dashboard extends Component {
         <div className="row">
           <div className="landing-copy col s12 center-align">
             <h4>
-              <b>Hey there,</b> {user.name.split(" ")[0]}
+            <b>Hello,</b> {user.name.split(" ")[0]}
+            <Upload />
+            </h4>
               <div class="card">
                 <div class="card-body">
-              <p className="flow-text grey-text text-darken-1">
-                What would you like to do today? 
-              </p>
-              <p className="flow-text grey-text text-darken-1">Today is today</p>
-            <Moment local></Moment>
-              <p className="flow-text grey-text text-darken-1">The weather for today is whatever it looks and feels like outside</p>
-            <Weather />
+              <p className="flow-text grey-text text-darken-2">Today is</p> <Moment local></Moment>
+              <p className="flow-text grey-text text-darken-2">Here's details about the weather</p><Weather />
               </div>
              </div>
-            </h4>
-            <a href="/mood" role="button"
+            
+            <Link to="/mood" role="button"
+            //<a href="/mood" role="button"
               style={{
                 width: "150px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
                 marginTop: "1rem"
               }}
-              onClick={"./mood/mood"}
+              //onClick={"./mood/mood"}
               //id=""
               className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
             >
               Lets play!
-            </a>
+            </Link>
             <br></br>
             <button
               style={{

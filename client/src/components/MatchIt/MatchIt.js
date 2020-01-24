@@ -31,10 +31,8 @@ correctGuess = newData => {
 };
 
 incorrectGuess = data => {
-    this.setState({
-        data: this.resetData(data),
-        score: 0
-    });
+    const { score } = this.state;
+    this.setState({ score: score + 0 });
 };
 
 resetData = data => {
@@ -57,8 +55,10 @@ shuffleData = data => {
 clickHandler = id => {
     if (this.state.hiddenAnswer.id === id) {
         this.correctGuess()
+
     } else {
         this.incorrectGuess();
+
     }
     this.setState({ disabled: true})
     setTimeout(() => {
@@ -70,15 +70,19 @@ clickHandler = id => {
 
 render() {
     return (
-        <div>
+        <div><br></br>
             <Container>
-                <span style={{color: 'white'}}>Pick {this.state.hiddenAnswer.name}!!!!</span>
-                <p style={{color: 'white'}}>Score: {this.state.score}</p>
+                <div class="black-text">Click The Picture of {this.state.hiddenAnswer.name}!</div>
+            </Container>
+            <Container>    
+                <div class="black-text">Score: {this.state.score}</div>
+            </Container>
+            <Container>
                 {this.state.data.map(item => (
                     <Click
                     key={item.id}
                     id={item.id}
-                    shake={!this.state.score}
+                    fade={!this.state.score}
                     handleClick={this.state.disabled ? () => {} : this.clickHandler}
                     image={item.image}
                     />
