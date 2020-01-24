@@ -85,7 +85,6 @@ render() {
                     fade={!this.state.score}
                     handleClick={this.state.disabled ? () => {} : this.clickHandler}
                     image={item.image}
-                    
                     />
                 ))}
             </Container>
