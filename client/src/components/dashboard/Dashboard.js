@@ -5,6 +5,7 @@ import { logoutUser } from "../../actions/authActions";
 import "./Dashboard.css";
 import Weather from "../Weather/Weather";
 import Moment from "react-moment";
+import { Link } from "react-router-dom";
 import Upload from "../Uploader/Upload"
  
 
@@ -35,7 +36,8 @@ class Dashboard extends Component {
               </div>
              </div>
             
-            <a href="/mood" role="button"
+            <Link to="/mood" role="button"
+            //<a href="/mood" role="button"
               style={{
                 width: "150px",
                 borderRadius: "3px",
@@ -47,7 +49,7 @@ class Dashboard extends Component {
               className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
             >
               Lets play!
-            </a>
+            </Link>
             <br></br>
             <button
               style={{
