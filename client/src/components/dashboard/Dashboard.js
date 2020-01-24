@@ -6,7 +6,7 @@ import "./Dashboard.css";
 import Weather from "../Weather/Weather";
 import Moment from "react-moment";
 import Upload from "../Uploader/Upload";
- 
+import { Link } from "react-router-dom";
 
 
 class Dashboard extends Component {
