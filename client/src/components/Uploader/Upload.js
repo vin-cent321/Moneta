@@ -1,8 +1,6 @@
 import React, { Component } from "react";
-import multer from "multer";
 import axios from "axios";
 const DefaultImg = "bird.jpg"
-const cors = require("cors");
 
 
 // import '.App.css';

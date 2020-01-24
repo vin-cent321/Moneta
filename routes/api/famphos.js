@@ -39,7 +39,7 @@ const upload = multer({
 });
 
 ImageRouter.router('uploadmulter')
-.post(upload.single('imageData'), cors(), (req, res, next) => {
+.post(upload.single('imageData'), (req, res, next) => {
   console.log(req.body);
   const newImage = new Image({
     imageName: req.body.imageName,

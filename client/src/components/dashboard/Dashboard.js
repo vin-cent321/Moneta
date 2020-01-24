@@ -6,7 +6,7 @@ import "./Dashboard.css";
 import Weather from "../Weather/Weather";
 import Moment from "react-moment";
 import Upload from "../Uploader/Upload";
- 
+import { Link } from "react-router-dom" ;
 
 
 class Dashboard extends Component {
@@ -26,7 +26,6 @@ class Dashboard extends Component {
           <div className="landing-copy col s12 center-align">
             <h4>
             <b>Hello,</b> {user.name.split(" ")[0]}
-            <Upload />
             </h4>
               <div class="card">
                 <div class="card-body">
