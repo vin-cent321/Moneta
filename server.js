@@ -5,6 +5,7 @@ const passport = require("passport");
 const fs = require("file-system");
 const multer = require("multer");
 const users = require("./routes/api/users");
+const cors = require("cors");
 
 const app = express();
 
@@ -14,8 +15,10 @@ app.use(
     extended: false
   })
 );
-app.use(bodyParser.json());
 
+app.use('/uploads', express.static('uploads'));
+app.use(bodyParser.json());
+app.use(cors());
 // DB Config
 const db = require("./config/keys").mongoURI;
 

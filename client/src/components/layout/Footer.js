@@ -9,6 +9,7 @@ const Footer = () => (
 <div className="row">
 <div className="col s12"></div>
   <div className="card-body">
+      
       <MusicPlayer />
   </div>
   </div>

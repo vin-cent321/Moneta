@@ -5,6 +5,7 @@ import { logoutUser } from "../../actions/authActions";
 import "./Dashboard.css";
 import Weather from "../Weather/Weather";
 import Moment from "react-moment";
+import Upload from "../Uploader/Upload";
  
 
 
@@ -67,6 +68,7 @@ class Dashboard extends Component {
           </div>
         </div>
         <div className='row'>
+          <Upload />
         </div>
       </div>
     );
