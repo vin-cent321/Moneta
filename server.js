@@ -19,6 +19,7 @@ app.use(
 app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.json());
 app.use(cors());
+
 // DB Config
 const db = require("./config/keys").mongoURI;
 
