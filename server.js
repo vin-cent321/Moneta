@@ -6,9 +6,9 @@ const fs = require("file-system");
 const multer = require("multer");
 const users = require("./routes/api/users");
 const cors = require("cors");
-
+const path = require("path");
 const app = express();
-
+axios.use(cors())
 // Bodyparser middleware
 app.use(
   bodyParser.urlencoded({

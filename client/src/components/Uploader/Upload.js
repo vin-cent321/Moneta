@@ -1,10 +1,7 @@
 import React, { Component } from "react";
-import multer from "multer";
 import axios from "axios";
 const DefaultImg = "bird.jpg"
-const cors = require("cors");
-
-
+const cors = require('cors')
 // import '.App.css';
 
 
@@ -20,7 +17,8 @@ class Upload extends Component {
     setDefaultImage(uploadType) {
         if (uploadType === "multer") {
             this.setState({
-                multerImage: DefaultImg
+                multerImage: DefaultImg,
+                multerdata: null
             })
         }
     }
@@ -34,7 +32,8 @@ class Upload extends Component {
             this.setState({
                 multerImage: URL.createObjectURL(e.target.files[0])
             });
-            axios.post(`${process.env.MONGODB_URI||"mongodb://localhost/beef"}/image/uploadmulter`, imageFormObj)
+            //https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/wiki/
+            axios.post("https://cors-anywhere.herokuapp.com/"+`${process.env.MONGODB_URI||"mongodb://localhost/beef"}/image/uploadmulter`, imageFormObj)
                 .then((data) => {
                     if(data.data.success) {
                         alert("Image beep beep!");
@@ -54,7 +53,7 @@ class Upload extends Component {
                 <h4 className="process-heading">Mummies say beep beep</h4>
                 <p className="process-details">Upload images here</p>
             <input type="file" className="process_upload-btn" onChange={(e) => this.uploadImage(e, "multer")} />
-            <img className="process-name" src={this.state.multerImage} alt="upload-image" />
+            <img className="process-name" src={this.state.multerImage} alt="uploaded" />
             </div>
         </div>
         )

@@ -12,7 +12,6 @@ bgMusic.volume = 1;
 bgMusic.loop = true;
 
 var n = 'PLAY';
-var x;
 
 function play_pause(){
     if (n==='PAUSE'){
@@ -34,10 +33,6 @@ function vol(chg) {
         bgMusic.volume = bgMusic.volume - .05
         console.log(bgMusic.volume)
     }
-}
-function status() {
-    bgMusic.currentTime += 5
-    console.log(bgMusic.currentTime)
 }
 
 class MusicP2 extends Component {  
@@ -68,7 +63,6 @@ class MusicP2 extends Component {
                     src={this.state.buttonImg} 
                     alt={this.state.buttonType}/>
             <button onClick={()=>vol('0')}>v</button>
-            <button onClick={()=>status()}>  +  </button>
             </section>
         )
     }
