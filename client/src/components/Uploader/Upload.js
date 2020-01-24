@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
 const DefaultImg = "bird.jpg"
-const cors = require('cors')
 // import '.App.css';
 
 
@@ -23,7 +22,7 @@ class Upload extends Component {
         }
     }
     uploadImage(e, method) {
-        let imageObj = {};
+        //let imageObj = {};
         if (method === "multer") {
             let imageFormObj = new FormData();
             imageFormObj.append("imageName", "multer-image-" + Date.now());
@@ -33,7 +32,7 @@ class Upload extends Component {
                 multerImage: URL.createObjectURL(e.target.files[0])
             });
             //https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/wiki/
-            axios.post("https://cors-anywhere.herokuapp.com/"+`${process.env.MONGODB_URI||"mongodb://localhost/beef"}/image/uploadmulter`, imageFormObj)
+            axios.post(`${process.env.MONGODB_URI||"https://cors-anywhere.herokuapp.com//mongodb://localhost/beef"}/image/uploadmulter`, imageFormObj)
                 .then((data) => {
                     if(data.data.success) {
                         alert("Image beep beep!");
