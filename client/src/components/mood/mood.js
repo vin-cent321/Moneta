@@ -16,12 +16,12 @@ class Mood extends Component {
   render() {
     const { user } = this.props.auth;
 
-window.onload = function() {
+window.addEventListener("DOMContentLoaded", function(event){
 var buttonOne = document.getElementById('relaxedSwitch');
 var buttonTwo = document.getElementById('excitedSwitch');
 var buttonThree = document.getElementById('happySwitch');
 var buttonFour = document.getElementById('focusedSwitch');
-
+console.log(event, "DOM fully loaded and parsed");
 
 buttonOne.onmouseover = function() {
   body.className = 'hoveredOne';
@@ -50,7 +50,7 @@ buttonFour.onmouseover = function() {
 buttonFour.onmouseout = function() {
   body.className = '';
 }
-};
+});
 
 
     return (
