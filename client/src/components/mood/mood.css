@@ -18,7 +18,7 @@ animation: AnimationName 40s ease infinite;
 
 body.hoveredTwo {
 background: linear-gradient(45deg, #ff0000, #ffd87c, #fcfea8, #a7ffaa, #7cf2ff, #433cff, #cb78ff, #fca2ff, #b60000);
-background-size: 800% 100%;
+background-size: 800% 250%;
 
 -webkit-animation: AnimationName 60s ease infinite;
 -moz-animation: AnimationName 60s ease infinite;
