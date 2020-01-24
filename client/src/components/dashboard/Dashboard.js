@@ -7,7 +7,7 @@ import Weather from "../Weather/Weather";
 import Moment from "react-moment";
 import Upload from "../Uploader/Upload";
 import { Link } from "react-router-dom";
-
+import Up2 from "../Uploader/Up2"
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -30,7 +30,7 @@ class Dashboard extends Component {
             </h4>
               <div class="card">
                 <div class="card-body">
-              <p className="flow-text grey-text text-darken-2">Today is</p> <Moment local></Moment>
+              <p className="flow-text grey-text text-darken-2">Today is</p> <Moment format="LLLL" local></Moment>
               <p className="flow-text grey-text text-darken-2">Here's details about the weather</p><Weather />
               </div>
              </div>
@@ -66,7 +66,7 @@ class Dashboard extends Component {
           </div>
         </div>
         <div className='row'>
-          <Upload />
+          <Up2 />
         </div>
       </div>
     );
