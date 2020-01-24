@@ -5,8 +5,6 @@ import { logoutUser } from "../../actions/authActions";
 import "./Dashboard.css";
 import Weather from "../Weather/Weather";
 import Moment from "react-moment";
-import { Link } from "react-router-dom";
-
  
 
 
@@ -30,7 +28,7 @@ class Dashboard extends Component {
               <div class="card">
                 <div class="card-body">
               <p className="flow-text grey-text text-darken-1">
-                Ready to play? 
+                What would you like to do today? 
               </p>
               <p className="flow-text grey-text text-darken-1">Today is today</p>
             <Moment local></Moment>
@@ -39,7 +37,7 @@ class Dashboard extends Component {
               </div>
              </div>
             </h4>
-            <Link to="/mood" role="button"
+            <a href="/mood" role="button"
               style={{
                 width: "150px",
                 borderRadius: "3px",
@@ -51,7 +49,7 @@ class Dashboard extends Component {
               className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
             >
               Lets play!
-            </Link>
+            </a>
             <br></br>
             <button
               style={{
