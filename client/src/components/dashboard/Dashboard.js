@@ -30,7 +30,7 @@ class Dashboard extends Component {
               <div class="card">
                 <div class="card-body">
               <p className="flow-text grey-text text-darken-1">
-                What would you like to do today? 
+                Ready to play? 
               </p>
               <p className="flow-text grey-text text-darken-1">Today is today</p>
             <Moment local></Moment>
