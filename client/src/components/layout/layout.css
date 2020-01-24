@@ -14,10 +14,6 @@
   ;
 }
 
-.footer {
-  background-color: #2091E8;
-}
-
 .nav-wrapper {
   background-color: #2091E8;
   font-size: 40px;
@@ -37,4 +33,5 @@
   background-color: #2091E8;
   color: white;
   text-align: center;
+  height: 10%;
 }

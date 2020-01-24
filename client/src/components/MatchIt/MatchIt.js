@@ -5,9 +5,9 @@ import Click from "../Click/Click";
 
 class MatchIt extends Component {
     state = {
-        data,
+        data: data,
         score: 0,
-        hiddenAnswer: [],
+        hiddenAnswer: Math.floor(Math.random() * 12 ),
         disabled: false,
         message:'',
         name:'',
@@ -19,10 +19,11 @@ componentDidMount() {
 }
 
 selectHiddenAnswer() {
-    let randomId = Math.ceil(Math.random() * this.state.data.length)
+    let randomId = Math.floor(Math.random() * this.state.data.length)
     this.setState({
         hiddenAnswer: this.state.data.find(e => e.id === randomId)
     })
+    console.log('hidden',this.state.hiddenAnswer)
 }
 
 correctGuess = newData => {
@@ -35,7 +36,6 @@ correctGuess = newData => {
 
 incorrectGuess = data => {
     const { score } = this.state;
-    let e = this // What defines the image just clicked? this?
     this.setState({ 
         score: score + 0, 
         message: `No this is ${this.state.name}`});
@@ -47,31 +47,50 @@ resetData = data => {
 };
 
 shuffleData = data => {
-    let i = data.length -1;
-    while (i > 0) {
-        const j = Math.floor(Math.random() * (i + 1));
-        const temporary = data[i];
+    /*  === === === === === === === === === === === === === === === === === === === ===
+            MAY INTEGRATE THIS CODE TO PREVENT DUPLICATE INDEXES ASSIGNED VALUES 
+            AS DATA DOES NOT SEEM TO BE AN ARRAY BUT CAPABLE OF STORING VALUES AT 
+            DUP-INDEXS TO BE AUTO SORTED SOMEHOW. 
+        === === === === === === === === === === === === === === === === === === === ===
+    function rand(x){
+        return Math.floor(Math.random() * x);
+    }
+
+    let x;
+    
+    while (disorder.length != order.length) {
+        x = order[rand(order.length)];
+        (disorder.includes(x) ? '' : disorder.push(x))
+    };
+    */
+
+
+    let i = data.length - 1;
+    //console.log("initial i",i,'\n',"initial data.length", data.length)
+    while (i > -1) {
+        let j = Math.floor(Math.random() * i);
+        let temporary = data[i];
         data[i] = data[j];
         data[j] = temporary;
         this.setState({
             name: data[i].name
         })
+        console.log("i",i,"j",j,this.state.name, data[i].name)
         i--;
     }
+    console.log(data)
     return data;
 };
 
 clickHandler = id => {
-    
     if (this.state.hiddenAnswer.id === id) {
-        
+        console.log("right",id, this.state.hiddenAnswer.id, this.state.name)
         this.correctGuess()
-
     } else {
+        console.log('wrong',id, this.state.hiddenAnswer.id, this.state.name)
         this.incorrectGuess();
-
     }
-    console.log(this.state.name)
+    //console.log(this.state.name)
     this.setState({ disabled: true})
     setTimeout(() => {
         this.shuffleData(this.state.data);
