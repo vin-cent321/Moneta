@@ -14,8 +14,7 @@
   ;
 }
 
-.page-footer {
-  position: relative;
+.footer {
   background-color: #2091E8;
 }
 
@@ -23,5 +22,19 @@
   background-color: #2091E8;
   font-size: 40px;
   text-align: center;
-  box-shadow: 10px 8px 8px rgba(24, 124, 201, 0.557)
+  
+}
+
+.player {
+  text-align: left;
+}
+
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #2091E8;
+  color: white;
+  text-align: center;
 }

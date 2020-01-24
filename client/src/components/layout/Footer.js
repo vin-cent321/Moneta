@@ -5,13 +5,13 @@ import MusicPlayer from "../MusicPlayer/MusicPlayer"
 
 const Footer = () => (
 
-<footer class="page-footer col-12 font-small">
-
-<div class="footer-copyright text-center py-3">      <MusicPlayer />
-© 2020 Copyright:
-  <a href="https://mdbootstrap.com/education/bootstrap/"> MDBootstrap.com</a>
-</div>
-
+<footer class="footer">
+    <div class="container">
+        <div class="player">
+        <MusicPlayer />
+        </div>
+        <span class="text-muted">@ Copyright.</span>
+    </div>
 </footer>
 
 );
