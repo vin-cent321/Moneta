@@ -6,13 +6,14 @@ import MusicPlayer from "../MusicPlayer/MusicPlayer"
 const Footer = () => (
 
 <>
-<div className="row">
-<div className="col s12"></div>
-  <div className="card-body">
-      
-      <MusicPlayer />
-  </div>
-  </div>
+<footer class="footer">
+    <div class="container">
+        <div class="player">
+        <MusicPlayer />
+        </div>
+        <span class="text-muted">@ Copyright.</span>
+    </div>
+</footer>
 </>
 );
 
