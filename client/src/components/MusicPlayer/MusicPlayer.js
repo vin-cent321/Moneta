@@ -4,9 +4,30 @@ import pause from "../MusicPlayer/images/pause.png"
 import vol1 from "../MusicPlayer/images/vol1.png"
 import vol2 from "../MusicPlayer/images/vol2.png"
 
-// Music goes in PUBLIC folder
 
-var bgMusic = new Audio('7empest.mp3'); 
+// Music goes in PUBLIC folder
+var bgMusic = new Audio('relaxed.mp3'); 
+   /* switch(Mood) {
+        case ""
+    }
+ Audio = (e) => {
+        switch(e.target.id) {
+            case 'relaxedSwitch': Audio  = '/relaxed.mp3';
+              break;
+            case 'excitedSwitch':  Audio = 'excited.mp3';
+            break;
+            case 'happySwitch':  Audio = 'happy.mp3';
+            break;
+            case 'focusedSwitch':  Audio = 'focused.mp3';
+            break;
+            default: Audio = '';
+          }    
+        }
+*/
+
+
+
+
 bgMusic.volume = 1;
 bgMusic.loop = true;
 
