@@ -20,7 +20,6 @@ import Footer from "./components/layout/Footer";
 import "./App.css";
 
 
-
 // Check for token to keep user logged in
 if (localStorage.jwtToken) {
   // Set auth token header auth

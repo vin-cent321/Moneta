@@ -24,6 +24,7 @@
     "axios": "^0.19.1",
     "bcryptjs": "^2.4.3",
     "body-parser": "^1.18.3",
+    "bootstrap": "^4.4.1",
     "cheerio": "^1.0.0-rc.3",
     "concurrently": "^4.0.1",
     "cors": "^2.8.5",
@@ -42,6 +43,7 @@
     "passport-jwt": "^4.0.0",
     "path": "^0.12.7",
     "react-animated-css": "^1.2.1",
+    "react-bootstrap": "^1.0.0-beta.16",
     "react-moment": "^0.9.7",
     "validator": "^10.9.0"
   }
