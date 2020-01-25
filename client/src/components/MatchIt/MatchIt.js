@@ -99,7 +99,7 @@ clickHandler = id => {
         this.selectHiddenAnswer();
         this.setState({ disabled: false,
         message:'' })
-    }, 1000);
+    }, 3000);
 };
 
 render() {

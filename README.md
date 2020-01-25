@@ -1,42 +1,58 @@
-# mern-auth
+# Moneta 
+![](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/logofinal_2.jpg)
+<img src='https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Moneta-qr.png' 
+height='200' width='200px' />
+* [MonetaPDF](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Montea_pdf.pdf)
+# Authors:
+## Frederick Articuno
+![FA](https://avatars1.githubusercontent.com/u/44718784?s=100&v=4)
+* [GitHub](https://github.com/fkarticuno)
+* [Portfolio](https://fkarticuno.github.io/CodingPortfolio/)
+* [Resume](https://fkarticuno.github.io/CodingPortfolio/Resume_DEC2019_std.pdf)
+## Vincent Caraciollo
+![VC](https://avatars3.githubusercontent.com/u/52013834?s=100&v=4)
+* [GitHub](https://github.com/vin-cent321)
+* [Portfolio](https://vin-cent321.github.io/Bootstrap-Portfolio/)
+* [Resume](https://reactjs.org)
+## Matthew Clary
+<img src='https://avatars2.githubusercontent.com/u/52682135?s=100&v=4 height='100' width='100px' />
+* [GitHub](https://github.com/clarymt)
+* [Portfolio](https://clarymt.github.io/Bootstrap-Portfolio/)
+* [Resume](https://reactjs.org)
+## Jonathan Roth
+<img src='https://avatars0.githubusercontent.com/u/32680255?s=100&v=4' height='100' width='100px' />
+* [GitHub](https://github.com/brucegenerator)
+* [Portfolio](https://brucegenerator.github.io/Responsive-Portfolio/)
+* [Resume](https://reactjs.org)
 
-![Final App](https://i.postimg.cc/tybZb8dL/final-MERNAuth.gif)
-Minimal full-stack MERN app with authentication using passport and JWTs.
-
-This project uses the following technologies:
-
-- [React](https://reactjs.org) and [React Router](https://reacttraining.com/react-router/) for frontend
-- [Express](http://expressjs.com/) and [Node](https://nodejs.org/en/) for the backend
-- [MongoDB](https://www.mongodb.com/) for the database
-- [Redux](https://redux.js.org/basics/usagewithreact) for state management between React components
-
-## Medium Series
-
-- [Build a Login/Auth App with the MERN Stack — Part 1 (Backend)](https://blog.bitsrc.io/build-a-login-auth-app-with-mern-stack-part-1-c405048e3669)
-- [Build a Login/Auth App with the MERN Stack — Part 2 (Frontend & Redux Setup)](https://blog.bitsrc.io/build-a-login-auth-app-with-mern-stack-part-2-frontend-6eac4e38ee82)
-- [Build a Login/Auth App with the MERN Stack — Part 3 (Linking Redux with React Components)](https://blog.bitsrc.io/build-a-login-auth-app-with-the-mern-stack-part-3-react-components-88190f8db718)
-
-## Configuration
-
-Make sure to add your own `MONGOURI` from your [mLab](http://mlab.com) database in `config/keys.js`.
-
-```javascript
-module.exports = {
-  mongoURI: "YOUR_MONGO_URI_HERE",
-  secretOrKey: "secret"
-};
-```
-
-## Quick Start
-
-```javascript
-// Install dependencies for server & client
-npm install && npm run client-install
-
-// Run client & server with concurrently
-npm run dev
-
-// Server runs on http://localhost:5000 and client on http://localhost:3000
-```
-
-For deploying to Heroku, please refer to [this](https://www.youtube.com/watch?v=71wSzpLyW9k) helpful video by TraversyMedia.
+# Dependencies Used
+    * ajax: 0.0.4,
+     Weather API Call
+    *axios: ^0.18.0,
+     
+    * classnames: ^2.2.6,
+    
+    * jquery: ^3.4.1,
+    
+    * jwt-decode: ^2.2.0,
+    
+    * moment: ^2.24.0,
+    
+    * moment-timezone: ^0.5.27,
+    
+    * react: ^16.6.3,
+    
+    * react-dom: ^16.6.3,
+    
+    * react-moment: ^0.9.7,
+    
+    * react-redux: ^5.1.1,
+    
+    * react-router-dom: ^4.3.1,
+    
+    * react-scripts: ^3.3.0,
+    
+    * redux: ^4.0.1, 
+    
+    * redux-thunk: ^2.3.0
+    

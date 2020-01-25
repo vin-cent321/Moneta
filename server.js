@@ -8,7 +8,6 @@ const users = require("./routes/api/users");
 const famphos = require("./routes/api/famphos");
 const cors = require("cors");
 const path = require("path");
-
 const app = express();
 
 // Bodyparser middleware

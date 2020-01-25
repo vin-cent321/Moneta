@@ -13,44 +13,28 @@ class Mood extends Component {
     this.props.logoutUser();
   };
 
+  activateButtonMood = (e) => {
+    console.log('What button', e.target.id)
+    switch(e.target.id) {
+      case 'relaxedSwitch': body.className = 'hoveredOne';
+        break;
+      case 'excitedSwitch': body.className = 'hoveredTwo';
+      break;
+      case 'happySwitch': body.className = 'hoveredThree';
+      break;
+      case 'focusedSwitch': body.className = 'hoveredFour';
+      break;
+      default: body.className = '';
+    }
+  }
+
+  deactivateButtonMood = (e) => {
+    body.className = '';
+  }
+
   render() {
     const { user } = this.props.auth;
 
-window.addEventListener("DOMContentLoaded", function(event){
-var buttonOne = document.getElementById('relaxedSwitch');
-var buttonTwo = document.getElementById('excitedSwitch');
-var buttonThree = document.getElementById('happySwitch');
-var buttonFour = document.getElementById('focusedSwitch');
-console.log(event, "DOM fully loaded and parsed");
-
-buttonOne.onmouseover = function() {
-  body.className = 'hoveredOne';
-}
-buttonOne.onmouseout = function() {
-  body.className = '';
-}
-
-buttonTwo.onmouseover = function() {
-  body.className = 'hoveredTwo';
-}
-buttonTwo.onmouseout = function() {
-  body.className = '';
-}
-
-buttonThree.onmouseover = function() {
-  body.className = 'hoveredThree';
-}
-buttonThree.onmouseout = function() {
-  body.className = '';
-}
-
-buttonFour.onmouseover = function() {
-  body.className = 'hoveredFour';
-}
-buttonFour.onmouseout = function() {
-  body.className = '';
-}
-});
 
 
     return (
@@ -75,6 +59,8 @@ buttonFour.onmouseout = function() {
                     letterSpacing: "1.5px",
                     margin: "1rem",
                   }}
+                  onMouseOver={(e) => this.activateButtonMood(e)}
+                  onMouseOut={(e) => this.deactivateButtonMood(e)}
                   id="relaxedSwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >
@@ -88,6 +74,8 @@ buttonFour.onmouseout = function() {
                     letterSpacing: "1.5px",
                     margin: "1rem",
                   }}
+                  onMouseOver={(e) => this.activateButtonMood(e)}
+                  onMouseOut={(e) => this.deactivateButtonMood(e)}
                   id="excitedSwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >
@@ -101,6 +89,8 @@ buttonFour.onmouseout = function() {
                     letterSpacing: "1.5px",
                     margin: "1rem",
                   }}
+                  onMouseOver={(e) => this.activateButtonMood(e)}
+                  onMouseOut={(e) => this.deactivateButtonMood(e)}
                   id="happySwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >
@@ -116,6 +106,8 @@ buttonFour.onmouseout = function() {
                   }}
                  ///this feature is now obsolete keeping it on 
                  //last link just in case it has a purpose later onClick={"/mood"}
+                  onMouseOver={(e) => this.activateButtonMood(e)}
+                  onMouseOut={(e) => this.deactivateButtonMood(e)}
                   id="focusedSwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >
