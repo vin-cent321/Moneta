@@ -5,6 +5,7 @@ const passport = require("passport");
 const fs = require("file-system");
 const multer = require("multer");
 const users = require("./routes/api/users");
+const famphos = require("./routes/api/famphos");
 const cors = require("cors");
 const path = require("path");
 const app = express();
@@ -16,9 +17,10 @@ app.use(
   })
 );
 
-app.use('/uploads', express.static('uploads'));
+// app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.json());
-app.use(cors());
+
+
 
 // DB Config
 const db = require("./config/keys").mongoURI;
@@ -26,8 +28,9 @@ const db = require("./config/keys").mongoURI;
 // Connect to MongoDB
 mongoose
   .connect(
-    db,
-    { useNewUrlParser: true }
+    db, {
+      useNewUrlParser: true
+    }
   )
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
@@ -40,54 +43,23 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+app.use(express.static("public"))
+
 // Passport config
 require("./config/passport")(passport);
 
+app.use(cors());
+
 // Routes
 app.use("/api/users", users);
+app.use("/api/uploads", famphos);
+
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
-
-// UP2 TEST =======================================================================
-// UP2 TEST =======================================================================
-// UP2 TEST =======================================================================
-// UP2 TEST =======================================================================
- 
-      //pulled from https://www.genuitec.com/react-image-upload/ and it doesn't work
-
-// const express = require('express'); 
-// const multer = require('multer');
-// const cors = require('cors');
-// const app = express();
-// app.use(express.static('public'))
-var storage = multer.diskStorage({
-destination: (req, file, cb) => {
-cb(null, 'public/images/uploads')
-},
-filename: (req, file, cb) => {
-cb(null, Date.now() + '-' + file.originalname)
-}
-});
-const upload = multer({ storage })
-app.use(cors());
-app.post('/upload', upload.single('image'), (req, res) => {
-if (req.file)
-res.json({
-imageUrl: `images/uploads/${req.file.filename}`
-});
-else 
-res.status("409").json("No Files to Upload.");
-});
-
-// UP2 TEST =======================================================================
-// UP2 TEST =======================================================================
-// UP2 TEST =======================================================================
-// UP2 TEST =======================================================================
+// app.get("*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 const port = process.env.PORT || 5000;
 
