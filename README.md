@@ -3,7 +3,9 @@
  <img src='https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Moneta-qr.png' height='200px' width='200px' />
 * [MonetaPDF](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Montea_pdf.pdf)
 # Authors:
+
 <table> <tr> <td>
+
 ## Frederick Articuno
 ![FA](https://avatars1.githubusercontent.com/u/44718784?s=100&v=4)
 
@@ -20,7 +22,7 @@
 * [Portfolio](https://vin-cent321.github.io/Bootstrap-Portfolio/)
 * [Resume](https://reactjs.org)
 
-</td></tr><tr><td>
+</td></tr> <tr><td>
 
 ## Matthew Clary
 <img src='https://avatars2.githubusercontent.com/u/52682135?s=100&v=4' height='100px' width='100px' />
@@ -28,6 +30,9 @@
 * [GitHub](https://github.com/clarymt)
 * [Portfolio](https://clarymt.github.io/portfolioUpdate1/)
 * ~[Resume]~(https://reactjs.org)
+
+</td><td>
+
 ## Jonathan Roth
 <img src='https://avatars0.githubusercontent.com/u/32680255?s=100&v=4' height='100px' width='100px' />
 
@@ -35,7 +40,7 @@
 * [Portfolio](https://brucegenerator.github.io/Responsive-Portfolio/)
 * ~[Resume]~(https://reactjs.org)
 
-</td><td></tr></table>
+</td><td> </tr></table>
 
 # Dependencies Used
     * ajax: 0.0.4,
