@@ -11,36 +11,40 @@
 
 * [GitHub](https://github.com/fkarticuno)
 * [Portfolio](https://fkarticuno.github.io/CodingPortfolio/)
+* [LinkedIn](https://www.linkedin.com/in/frederick-articuno/)
 * [Resume](https://fkarticuno.github.io/CodingPortfolio/Resume_DEC2019_std.pdf)
 
-</td><td>
+</td> <td>
 
 ## Vincent Caraciollo
 ![VC](https://avatars3.githubusercontent.com/u/52013834?s=100&v=4)
 
 * [GitHub](https://github.com/vin-cent321)
 * [Portfolio](https://vin-cent321.github.io/Bootstrap-Portfolio/)
+* [LinkedIn](https://www.linkedin.com/in/)
 * [Resume](https://reactjs.org)
 
-</td></tr> <tr><td>
+</td> </tr> <tr> <td>
 
 ## Matthew Clary
 <img src='https://avatars2.githubusercontent.com/u/52682135?s=100&v=4' height='100px' width='100px' />
 
 * [GitHub](https://github.com/clarymt)
 * [Portfolio](https://clarymt.github.io/portfolioUpdate1/)
-* ~[Resume]~(https://reactjs.org)
+* [LinkedIn](https://www.linkedin.com/in/matthew-clary-062571a7/)
+* ~[Resume]~ (https://clarymt.github.io/portfolioUpdate1/)
 
-</td><td>
+</td> <td>
 
 ## Jonathan Roth
 <img src='https://avatars0.githubusercontent.com/u/32680255?s=100&v=4' height='100px' width='100px' />
 
 * [GitHub](https://github.com/brucegenerator)
 * [Portfolio](https://brucegenerator.github.io/Responsive-Portfolio/)
-* ~[Resume]~(https://reactjs.org)
+* [LinkedIn](https://www.linkedin.com/in/frederick-articuno/)
+* ~[Resume]~ (https://brucegenerator.github.io/Responsive-Portfolio/)
 
-</td><td> </tr></table>
+</td> </tr> </table>
 
 # Dependencies Used
     * ajax: 0.0.4,
