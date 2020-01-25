@@ -2,22 +2,22 @@
 
 # Authors:
 ## Frederick Articuno
-![FA](https://avatars1.githubusercontent.com/u/44718784?s=460&v=4)
+![FA](https://avatars1.githubusercontent.com/u/44718784?s=460&v=4) = 100x100
 *[GitHub](https://github.com/fkarticuno)
 *[Portfolio](https://fkarticuno.github.io/CodingPortfolio/)
 *[Resume](https://fkarticuno.github.io/CodingPortfolio/Resume_DEC2019_std.pdf)
 ## Vincent Caraciollo
-![VC](https://avatars3.githubusercontent.com/u/52013834?s=460&v=4) 
+![VC](https://avatars3.githubusercontent.com/u/52013834?s=460&v=4) = 100x100
 *[GitHub](https://github.com/vin-cent321)
 *[Portfolio](https://vin-cent321.github.io/Bootstrap-Portfolio/)
 *[Resume](https://reactjs.org)
 ## Matthew Clary
-![MC](https://avatars2.githubusercontent.com/u/52682135?s=460&v=4)
+![MC](https://avatars2.githubusercontent.com/u/52682135?s=460&v=4) = 100x100
 *[GitHub](https://github.com/clarymt)
 *[Portfolio](https://clarymt.github.io/Bootstrap-Portfolio/)
 *[Resume](https://reactjs.org)
 ## Jonathan Roth
-![JR](https://avatars0.githubusercontent.com/u/32680255?s=460&v=4)
+![JR](https://avatars0.githubusercontent.com/u/32680255?s=460&v=4) = 100x100
 *[GitHub](https://github.com/brucegenerator)
 *[Portfolio](https://brucegenerator.github.io/Responsive-Portfolio/)
 *[Resume](https://reactjs.org)
