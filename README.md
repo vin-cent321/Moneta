@@ -51,7 +51,7 @@ height='200' width='200px' />
     
     * react-scripts: ^3.3.0,
     
-    * redux: ^4.0.1,
+    * redux: ^4.0.1, 
     
     * redux-thunk: ^2.3.0
     
