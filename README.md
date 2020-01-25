@@ -41,8 +41,8 @@
 
 * [GitHub](https://github.com/brucegenerator)
 * [Portfolio](https://brucegenerator.github.io/Responsive-Portfolio/)
-* [LinkedIn](https://www.linkedin.com/in/frederick-articuno/)
-* ~[Resume]~ (https://brucegenerator.github.io/Responsive-Portfolio/)
+* [LinkedIn](https://www.linkedin.com/in/jonathan-roth-38575047/)
+* [Resume] (https://brucegenerator.github.io/Responsive-Portfolio/)
 
 </td> </tr> </table>
 
