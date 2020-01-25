@@ -1,4 +1,5 @@
-# Moneta
+# Moneta 
+![](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/logofinal_2.jpg)
 
 # Authors:
 ## Frederick Articuno
