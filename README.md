@@ -1,6 +1,6 @@
 # Moneta 
 ![](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/logofinal_2.jpg)
-![](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Moneta-qr.png)
+![](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Moneta-qr.png){:height="100px" width="100px"}
 # Authors:
 ## Frederick Articuno
 ![FA](https://avatars1.githubusercontent.com/u/44718784?s=100&v=4)
@@ -25,32 +25,32 @@
 
 # Dependencies Used
     * ajax: 0.0.4,
-    ** Weather API Call
+     Weather API Call
     *axios: ^0.18.0,
-    ** 
+     
     * classnames: ^2.2.6,
-    **
+    
     * jquery: ^3.4.1,
-    **
+    
     * jwt-decode: ^2.2.0,
-    **
+    
     * moment: ^2.24.0,
-    **
+    
     * moment-timezone: ^0.5.27,
-    **
+    
     * react: ^16.6.3,
-    **
+    
     * react-dom: ^16.6.3,
-    **
+    
     * react-moment: ^0.9.7,
-    **
+    
     * react-redux: ^5.1.1,
-    **
+    
     * react-router-dom: ^4.3.1,
-    **
+    
     * react-scripts: ^3.3.0,
-    **
+    
     * redux: ^4.0.1,
-    **
+    
     * redux-thunk: ^2.3.0
-    **
+    
