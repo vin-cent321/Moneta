@@ -6,7 +6,7 @@ import vol2 from "../MusicPlayer/images/vol2.png"
 
 
 // Music goes in PUBLIC folder
-var bgMusic = new Audio('focused.mp3'); 
+var bgMusic = new Audio('relaxed.mp3'); 
    /* switch(Mood) {
         case ""
     }
