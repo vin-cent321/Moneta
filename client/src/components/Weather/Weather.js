@@ -1,5 +1,4 @@
 import React from "react";
-import ajax from 'ajax';
 import jquery from 'jquery';
 import './Weather.css'
 var $ = jquery;

@@ -23,13 +23,14 @@ class Dashboard extends Component {
     return (
       <div style={{ height: "75vh" }} className="container">
         <div className="row">
+        <Upload />
           <div className="landing-copy col s12 center-align">
             <h4>
             <b>Hello,</b> {user.name.split(" ")[0]}
             </h4>
               <div class="card">
                 <div class="card-body">
-              <p className="flow-text grey-text text-darken-2">Today is</p> <Moment local></Moment>
+              <p className="flow-text grey-text text-darken-2">Today is</p> <Moment format="LLLL" local></Moment>
               <p className="flow-text grey-text text-darken-2">Here's details about the weather</p><Weather />
               </div>
              </div>
@@ -65,7 +66,7 @@ class Dashboard extends Component {
           </div>
         </div>
         <div className='row'>
-          <Upload />
+         
         </div>
       </div>
     );

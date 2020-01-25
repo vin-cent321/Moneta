@@ -5,6 +5,7 @@ const passport = require("passport");
 const fs = require("file-system");
 const multer = require("multer");
 const users = require("./routes/api/users");
+const famphos = require("./routes/api/famphos");
 const cors = require("cors");
 const path = require("path");
 
@@ -17,17 +18,20 @@ app.use(
   })
 );
 
-app.use('/uploads', express.static('uploads'));
+// app.use('/uploads', express.static('uploads'));
 app.use(bodyParser.json());
-app.use(cors());
+
+
+
 // DB Config
 const db = require("./config/keys").mongoURI;
 
 // Connect to MongoDB
 mongoose
   .connect(
-    db,
-    { useNewUrlParser: true }
+    db, {
+      useNewUrlParser: true
+    }
   )
   .then(() => console.log("MongoDB successfully connected"))
   .catch(err => console.log(err));
@@ -40,19 +44,23 @@ if (process.env.NODE_ENV === "production") {
   app.use(express.static("client/build"));
 }
 
+app.use(express.static("public"))
+
 // Passport config
 require("./config/passport")(passport);
 
+app.use(cors());
+
 // Routes
 app.use("/api/users", users);
+app.use("/api/uploads", famphos);
+
 
 // Send every request to the React app
 // Define any API routes before this runs
-app.get("*", function(req, res) {
-  res.sendFile(path.join(__dirname, "./client/build/index.html"));
-});
-
-//app.use("api/famphos",famphos);
+// app.get("*", function (req, res) {
+//   res.sendFile(path.join(__dirname, "./client/build/index.html"));
+// });
 
 const port = process.env.PORT || 5000;
 
