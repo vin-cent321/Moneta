@@ -15,9 +15,9 @@ height='200' width='200px' />
 * [Portfolio](https://vin-cent321.github.io/Bootstrap-Portfolio/)
 * [Resume](https://reactjs.org)
 ## Matthew Clary
-<img src='https://avatars2.githubusercontent.com/u/52682135?s=100&v=4 height='100' width='100px' />
+<img src='https://avatars2.githubusercontent.com/u/52682135?s=100&v=4' height='100' width='100px' />
 * [GitHub](https://github.com/clarymt)
-* [Portfolio](https://clarymt.github.io/Bootstrap-Portfolio/)
+* [Portfolio](https://clarymt.github.io/portfolioUpdate1/)
 * [Resume](https://reactjs.org)
 ## Jonathan Roth
 <img src='https://avatars0.githubusercontent.com/u/32680255?s=100&v=4' height='100' width='100px' />
