@@ -1,7 +1,7 @@
 # Moneta 
 ![](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/logofinal_2.jpg)
 <img src='https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Moneta-qr.png' 
-height='100' width='100px' />
+height='200' width='200px' />
 # Authors:
 ## Frederick Articuno
 ![FA](https://avatars1.githubusercontent.com/u/44718784?s=100&v=4)
@@ -14,12 +14,12 @@ height='100' width='100px' />
 * [Portfolio](https://vin-cent321.github.io/Bootstrap-Portfolio/)
 * [Resume](https://reactjs.org)
 ## Matthew Clary
-![MC](https://avatars2.githubusercontent.com/u/52682135?s=100&v=4)
+<img src='https://avatars2.githubusercontent.com/u/52682135?s=100&v=4 height='100' width='100px' />
 * [GitHub](https://github.com/clarymt)
 * [Portfolio](https://clarymt.github.io/Bootstrap-Portfolio/)
 * [Resume](https://reactjs.org)
 ## Jonathan Roth
-![JR](https://avatars0.githubusercontent.com/u/32680255?s=100&v=4)
+<img src='https://avatars0.githubusercontent.com/u/32680255?s=100&v=4' height='100' width='100px' />
 * [GitHub](https://github.com/brucegenerator)
 * [Portfolio](https://brucegenerator.github.io/Responsive-Portfolio/)
 * [Resume](https://reactjs.org)
@@ -51,7 +51,7 @@ height='100' width='100px' />
     
     * react-scripts: ^3.3.0,
     
-    * redux: ^4.0.1,
+    * redux: ^4.0.1, 
     
     * redux-thunk: ^2.3.0
     
