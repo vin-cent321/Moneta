@@ -1,24 +1,20 @@
-.dot {
-    height: 100vw;
-    width: 100vw;
-    background-color: #2091E8;
-    border-radius: 50%;
-    display: inline-block;
-    margin-top: -75%;
-    position: absolute;
-  }
-
-#logo {
-  position: relative;
-  bottom: 33%;
-  ;
-}
-
 .nav-wrapper {
   background-color: #2091E8;
+  font-family: 'Lucida Sans Typewriter';
   font-size: 40px;
   text-align: center;
-  
+}
+
+.logo {
+  width: 100px;
+  height: 100px;
+  vertical-align:middle;
+}
+
+.tagline {
+  font-size: 15px;
+  text-align: right;
+  vertical-align: middle;
 }
 
 .player {

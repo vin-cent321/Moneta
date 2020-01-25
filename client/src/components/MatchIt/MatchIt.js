@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import data from "../../data2.json"
+import data from "../../data.json"
 import Container from "../Container/Container"
 import Click from "../Click/Click";
 
@@ -19,14 +19,15 @@ componentDidMount() {
 }
 
 selectHiddenAnswer() {
-    let randomId = Math.floor(Math.random() * this.state.data.length)
+    const randomId = Math.floor(Math.random() * this.state.data.length) + 1
+    console.log('randomId', randomId)
     this.setState({
         hiddenAnswer: this.state.data.find(e => e.id === randomId)
     })
     console.log('hidden',this.state.hiddenAnswer)
 }
 
-correctGuess = newData => {
+correctGuess = () => {
     const { score } = this.state;
     this.setState({ 
         score: score + 1,
@@ -34,11 +35,11 @@ correctGuess = newData => {
     // update score, message
 };
 
-incorrectGuess = data => {
+incorrectGuess = clickedId => {
     const { score } = this.state;
     this.setState({ 
         score: score + 0, 
-        message: `No this is ${this.state.name}`});
+        message: `No this is ${this.state.data.find(e => e.id === clickedId).name}`});
         // update score, message
 };
 resetData = data => {
@@ -83,12 +84,13 @@ shuffleData = data => {
 };
 
 clickHandler = id => {
+    console.log('id', id)
     if (this.state.hiddenAnswer.id === id) {
         console.log("right",id, this.state.hiddenAnswer.id, this.state.name)
         this.correctGuess()
     } else {
         console.log('wrong',id, this.state.hiddenAnswer.id, this.state.name)
-        this.incorrectGuess();
+        this.incorrectGuess(id);
     }
     //console.log(this.state.name)
     this.setState({ disabled: true})

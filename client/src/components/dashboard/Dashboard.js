@@ -6,8 +6,8 @@ import "./Dashboard.css";
 import Weather from "../Weather/Weather";
 import Moment from "react-moment";
 import Upload from "../Uploader/Upload";
-import { Link } from "react-router-dom";
-import Up2 from "../Uploader/Up2"
+import { Link } from "react-router-dom" ;
+
 
 class Dashboard extends Component {
   onLogoutClick = e => {
@@ -23,10 +23,10 @@ class Dashboard extends Component {
     return (
       <div style={{ height: "75vh" }} className="container">
         <div className="row">
+        <Upload />
           <div className="landing-copy col s12 center-align">
             <h4>
             <b>Hello,</b> {user.name.split(" ")[0]}
-            <Upload />
             </h4>
               <div class="card">
                 <div class="card-body">
@@ -66,7 +66,7 @@ class Dashboard extends Component {
           </div>
         </div>
         <div className='row'>
-          <Up2 />
+         
         </div>
       </div>
     );
