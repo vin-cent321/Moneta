@@ -18,12 +18,12 @@ height='200' width='200px' />
 <img src='https://avatars2.githubusercontent.com/u/52682135?s=100&v=4' height='100' width='100px' />
 * [GitHub](https://github.com/clarymt)
 * [Portfolio](https://clarymt.github.io/portfolioUpdate1/)
-* [Resume](https://reactjs.org)
+* ~[Resume]~(https://reactjs.org)
 ## Jonathan Roth
 <img src='https://avatars0.githubusercontent.com/u/32680255?s=100&v=4' height='100' width='100px' />
 * [GitHub](https://github.com/brucegenerator)
 * [Portfolio](https://brucegenerator.github.io/Responsive-Portfolio/)
-* [Resume](https://reactjs.org)
+* ~[Resume]~(https://reactjs.org)
 
 # Dependencies Used
     * ajax: 0.0.4,
