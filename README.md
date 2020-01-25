@@ -1,7 +1,6 @@
 # Moneta 
 ![](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/logofinal_2.jpg)
-<img src='https://github.com/vin-cent321/Moneta/master/client/src/components/layout/Moneta-qr.png' 
-height='200' width='200px' />
+ <img src='https://github.com/vin-cent321/Moneta/master/client/src/components/layout/Moneta-qr.png' height='200px' width='200px' />
 * [MonetaPDF](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Montea_pdf.pdf)
 # Authors:
 ## Frederick Articuno
