@@ -21,8 +21,8 @@
 
 * [GitHub](https://github.com/vin-cent321)
 * [Portfolio](https://vin-cent321.github.io/Bootstrap-Portfolio/)
-* [LinkedIn](https://www.linkedin.com/in/)
-* [Resume](https://reactjs.org)
+* [LinkedIn](https://github.com/vin-cent321)
+* [Resume](https://github.com/vin-cent321)
 
 </td> </tr> <tr> <td>
 
@@ -32,7 +32,7 @@
 * [GitHub](https://github.com/clarymt)
 * [Portfolio](https://clarymt.github.io/portfolioUpdate1/)
 * [LinkedIn](https://www.linkedin.com/in/matthew-clary-062571a7/)
-* ~[Resume]~ (https://clarymt.github.io/portfolioUpdate1/)
+* [Resume](https://clarymt.github.io/portfolioUpdate1/)
 
 </td> <td>
 
