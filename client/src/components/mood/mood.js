@@ -17,6 +17,7 @@ class Mood extends Component {
     console.log('What button', e.target.id)
     switch(e.target.id) {
       case 'relaxedSwitch': body.className = 'hoveredOne';
+        this.props.hanldeMusicChange('relaxed.mp3')
         break;
       case 'excitedSwitch': body.className = 'hoveredTwo';
       break;
@@ -27,7 +28,8 @@ class Mood extends Component {
       default: body.className = '';
     }
   }
-
+//established main function in app to communicate buttons to footer
+//
   deactivateButtonMood = (e) => {
     body.className = '';
   }

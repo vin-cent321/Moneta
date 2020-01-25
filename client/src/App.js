@@ -41,6 +41,17 @@ if (localStorage.jwtToken) {
 }
 
 class App extends Component {
+  state = {
+    file: 'relaxed.mp3'
+  }
+
+  hanldeMusicChange = (type) => {
+    switch(type) {
+      case 'relaxed': //setState => correct type to be read in footer;
+        break;
+      default: this.setState({file: 'relaxed.mp3'});
+    }
+  }
 
   render() {
     return (
@@ -55,11 +66,11 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/mood"
-              component={(props) => <Mood {...props} setColor={this.setColor} />}
+              component={(props) => <Mood {...props} hanldeMusicChange={this.hanldeMusicChange} setColor={this.setColor} />}
                 />
               <PrivateRoute exact path="/gamepage" component={Gamepage} />
             </Switch>
-            <Footer />
+            <Footer file={this.state.file} />
           </div>
         </Router>
       </Provider>

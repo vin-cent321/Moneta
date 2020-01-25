@@ -6,7 +6,8 @@ import vol2 from "../MusicPlayer/images/vol2.png"
 
 
 // Music goes in PUBLIC folder
-var bgMusic = new Audio('relaxed.mp3'); 
+var fileResource = 'relaxed.mp3';
+var bgMusic = new Audio(fileResource); 
    /* switch(Mood) {
         case ""
     }
@@ -56,11 +57,24 @@ function vol(chg) {
 }
 
 class MusicP2 extends Component {  
-    state = {
-        buttonType: 'play',
-        buttonImg: play,
-        time: bgMusic.currentTime
-    }   
+    constructor({file}) {
+        super({file})
+        this.state = {
+            buttonType: 'play',
+            buttonImg: play,
+            time: bgMusic.currentTime
+        }  
+    }
+
+    componentDidUpdate(prevProps, prevState) {
+        // Research how to use this!!!!
+
+        if(prevProps !== props) {
+// then => reassign file to correct string
+            fileResource = this.file;
+        }
+    }
+    
     
     updateTime = () => {
         let x = bgMusic.currentTime
