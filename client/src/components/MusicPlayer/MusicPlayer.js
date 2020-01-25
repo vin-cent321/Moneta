@@ -4,7 +4,6 @@ import pause from "../MusicPlayer/images/pause.png"
 import vol1 from "../MusicPlayer/images/vol1.png"
 import vol2 from "../MusicPlayer/images/vol2.png"
 
-
 // Music goes in PUBLIC folder
 var bgMusic = new Audio('relaxed.mp3'); 
    /* switch(Mood) {
