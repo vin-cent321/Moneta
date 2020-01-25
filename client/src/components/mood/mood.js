@@ -114,10 +114,16 @@ class Mood extends Component {
                   Focused
             </Link>
 
-
+            
               </div>
             </div>
-     
+            <h4>
+             <b> When selecting a mood, a corresponding playlist will begin.</b> 
+            </h4>
+   
+            <h4>
+             <b> Feel free to pause music or adjust volume from controls on bottom.</b>
+            </h4>
             <button
               style={{
                 width: "150px",
