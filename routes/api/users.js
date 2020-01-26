@@ -106,4 +106,27 @@ router.post("/login", (req, res) => {
   });
 });
 
+router.put("/images/:userId", (req, res) => {
+  User
+    .findOneAndUpdate({ _id: req.params.userId }, { $push: { images: req.body }})
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
+
+router.get("/images/:userId", (req, res) => {
+  User
+    .findById(req.params.userId)
+    .then(dbModel => res.json(dbModel.images))
+    .catch(err => res.status(422).json(err));
+});
+
+router.delete("/images/:userId/:url", (req, res) => {
+  User
+    .findOneAndUpdate(
+      { _id: req.params.userId },
+      { $pull: { images: { url: req.params.url } } }
+    )
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+})
 module.exports = router;

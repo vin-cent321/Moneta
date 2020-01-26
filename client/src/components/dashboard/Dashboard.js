@@ -18,12 +18,12 @@ class Dashboard extends Component {
   render() {
     const { user } = this.props.auth;
   
-
+    console.log("user", user);
 
     return (
       <div style={{ height: "75vh" }} className="container">
         <div className="row">
-        <Upload />
+        <Upload userId={user.id} />
           <div className="landing-copy col s12 center-align">
             <h4>
             <b>Hello,</b> {user.name.split(" ")[0]}

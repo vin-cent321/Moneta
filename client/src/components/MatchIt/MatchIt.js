@@ -14,6 +14,12 @@ class MatchIt extends Component {
     }
 
 componentDidMount() {
+    // API to find all images
+
+    // loop through, somehow determine if the url doesn't exist, then API to delete
+
+    // mix images in w/ data from JSON file
+
     this.shuffleData(this.state.data);
     this.selectHiddenAnswer();
 }
