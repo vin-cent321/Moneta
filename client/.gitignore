@@ -23,4 +23,5 @@ yarn-debug.log*
 yarn-error.log*
 
 # imgs
-/public/images/uploads
+*.jpg
+!blank.txt
