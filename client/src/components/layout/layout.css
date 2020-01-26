@@ -1,18 +1,30 @@
 .nav-wrapper {
   background-color: #2091E8;
-  font-family: 'Lucida Sans Typewriter';
   font-size: 40px;
+  width: 100%;
   text-align: center;
 }
 
+
+#brandName{
+  margin-bottom: 10px;
+}
+
 .logo {
-  width: 100px;
-  height: 100px;
+  width: 60px;
+  height: 60px;
   vertical-align:middle;
+  margin-bottom: 10px;
+}
+
+.tag {
+  font-family: 'Lucida Sans Typewriter';
 }
 
 .tagline {
-  font-size: 15px;
+  font-size: 12px;
+  font-style: italic;
+  font-weight: lighter;
   text-align: right;
   vertical-align: middle;
 }
@@ -26,8 +38,15 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgba(32, 145, 232, 0);
-  color: white;
+  background-color: rgba(32, 145, 232, 0.449);
+  color: black;
   text-align: center;
   height: 10%;
+}
+
+.home {
+position: absolute;
+bottom: 5px;
+width: 50px;
+margin-left: 40%;
 }
