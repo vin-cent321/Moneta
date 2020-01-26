@@ -33,20 +33,7 @@ var bgMusic = new Audio(fileResource);
 bgMusic.volume = 1;
 bgMusic.loop = true;
 
-var n = 'PLAY';
 
-
-
-function vol(chg) {
-    if ( (chg ==='1') & (bgMusic.volume < .95) ) {
-        bgMusic.volume = bgMusic.volume + .05
-        console.log(bgMusic.volume)
-    }
-    if ((chg === '0') & (bgMusic.volume > .05)){
-        bgMusic.volume = bgMusic.volume - .05
-        console.log(bgMusic.volume)
-    }
-}
 //EVERYTHING IN STATE W/FUNCTION SHOULD BE IN APP.JS READ 
 //REDUX FOR GLOBAL VARIABLESMOVE 
 //EVERYTHING IN STATE AND FUNCTIONS TO APP.JS
@@ -59,7 +46,8 @@ class MusicP2 extends Component {
             time: bgMusic.currentTime,
             bgMusic: new Audio("relaxed.mp3"),
             n: "PLAY",
-            file: this.props.file
+            file: this.props.file,
+            volume: 1
         }  
     //}
 
@@ -83,6 +71,21 @@ class MusicP2 extends Component {
         }
     }
 
+    volu = ()=> {
+        if ((this.state.volume < .95) ) {
+            this.setState({volume: this.state.volume + .05})
+            this.state.bgMusic.volume=this.state.volume 
+            console.log(this.state.volume)
+        }
+    }
+    vold = ()=> {
+        if ((this.state.volume > .05)){
+            this.setState({volume: this.state.volume - .05})
+            this.state.bgMusic.volume=this.state.volume
+            console.log(this.state.volume)
+        }
+    }
+
     changeSong = (song) => {
         //this.bgMusic.src= 'happy.mp3'
         let bgMusic= new Audio('happy.mp3')
@@ -98,22 +101,21 @@ class MusicP2 extends Component {
 
     toggleButton = () => {
         this.play_pause();
-        //let {buttonImg, buttonType} = this.state;
-        //buttonImg === play ? buttonImg = pause : buttonImg = play;
-        //buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
-
-        //this.setState({buttonImg, buttonType});
+        let {buttonImg, buttonType} = this.state;
+        buttonImg === play ? buttonImg = pause : buttonImg = play;
+        buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
+        this.setState({buttonImg, buttonType});
     }
     render() {
          return (
             <section>
-            <img onClick={()=>vol('0')} src={vol2} alt='vol-down' />
+            <img onClick={this.vold} src={vol2} alt='vol-down' />
             <img onClick={this.toggleButton} src={this.state.buttonImg} alt={this.state.buttonType}/>
-            <img onClick={()=>vol('1')} src={vol1} alt='vol-up' />
+            <img onClick={this.volu} src={vol1} alt='vol-up' />
             <button onClick={this.changeSong}>change song</button>
             </section> 
         )
-    }
+    }   
    
 }
 export default MusicP2;
