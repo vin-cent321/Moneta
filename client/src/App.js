@@ -45,13 +45,13 @@ class App extends Component {
     file: 'relaxed.mp3'
   }
 
-  hanldeMusicChange = (type) => {
+ /* hanldeMusicChange = (type) => {
     switch(type) {
       case 'relaxed': //setState => correct type to be read in footer;
         break;
       default: this.setState({file: 'relaxed.mp3'});
     }
-  }
+  }*/
 //PUT THIS UNDER MOOD ROUTE AFTER HEROKU DEPLY -MATT hanldeMusicChange={this.hanldeMusicChange} 
   render() {
     return (
