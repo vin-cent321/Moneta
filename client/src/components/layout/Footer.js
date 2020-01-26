@@ -2,6 +2,7 @@ import React from "react";
 import "./layout.css"
 import MusicPlayer from "../MusicPlayer/MusicPlayer"
 
+
 const Footer = ({file}) => (
 
 <>

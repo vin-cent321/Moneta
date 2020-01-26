@@ -111,7 +111,7 @@ class MusicP2 extends Component {
             <img onClick={this.toggleButton} src={this.state.buttonImg} alt={this.state.buttonType}/>
             <img onClick={()=>vol('0')} src={vol1} alt='vol-up' />
             <button onClick={this.changeSong}>change song</button>
-            </section>
+            </section> 
         )
     }
    

@@ -42,7 +42,7 @@
 * [GitHub](https://github.com/brucegenerator)
 * [Portfolio](https://brucegenerator.github.io/Responsive-Portfolio/)
 * [LinkedIn](https://www.linkedin.com/in/jonathan-roth-38575047/)
-* [Resume] (https://brucegenerator.github.io/Responsive-Portfolio/)
+* [Resume](https://brucegenerator.github.io/Responsive-Portfolio/)
 
 </td> </tr> </table>
 
@@ -71,8 +71,8 @@
     * react-dom: ^16.6.3,
     * react-moment: ^0.9.7,
     * react-redux: ^5.1.1,
-</td> <td> </tr> <tr>
 
+</td> <td> </tr> <tr>
 
     * react-router-dom: ^4.3.1,
     * react-scripts: ^3.3.0,

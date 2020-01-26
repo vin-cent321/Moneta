@@ -15,12 +15,6 @@ img {
     border: 2px solid blue;
     border-radius: 25px;
 }
-.redBorder {
-    border: 5px solid red;
-}
-.greenBorder {
-    border: 5px solid lightgreen;
-}
 .scorecard {
     height: 10vh;
 }
