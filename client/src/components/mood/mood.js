@@ -17,7 +17,7 @@ class Mood extends Component {
     console.log('What button', e.target.id)
     switch(e.target.id) {
       case 'relaxedSwitch': body.className = 'hoveredOne';
-        this.props.hanldeMusicChange('relaxed.mp3')
+       // this.props.hanldeMusicChange('relaxed.mp3')
         break;
       case 'excitedSwitch': body.className = 'hoveredTwo';
       break;

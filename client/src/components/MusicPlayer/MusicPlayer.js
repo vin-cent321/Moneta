@@ -65,7 +65,7 @@ class MusicP2 extends Component {
         }  
     }
 
-    componentDidUpdate(prevProps, prevState) {
+    /*componentDidUpdate(prevProps, prevState) {
         // Research how to use this!!!!
 
         if(prevProps !== props) {
@@ -74,7 +74,7 @@ class MusicP2 extends Component {
         }
     }
     
-    
+    */
     updateTime = () => {
         let x = bgMusic.currentTime
         this.setState.time({x})

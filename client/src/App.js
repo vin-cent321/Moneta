@@ -52,7 +52,7 @@ class App extends Component {
       default: this.setState({file: 'relaxed.mp3'});
     }
   }
-
+//PUT THIS UNDER MOOD ROUTE AFTER HEROKU DEPLY -MATT hanldeMusicChange={this.hanldeMusicChange} 
   render() {
     return (
       <Provider store={store}>
@@ -66,7 +66,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/mood"
-              component={(props) => <Mood {...props} hanldeMusicChange={this.hanldeMusicChange} setColor={this.setColor} />}
+              component={(props) => <Mood {...props} setColor={this.setColor} />}
                 />
               <PrivateRoute exact path="/gamepage" component={Gamepage} />
             </Switch>
