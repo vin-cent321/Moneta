@@ -71,7 +71,7 @@
     * react-dom: ^16.6.3,
     * react-moment: ^0.9.7,
     * react-redux: ^5.1.1,
-</td> <td>
+</td> <td> </tr> <tr>
 
 
     * react-router-dom: ^4.3.1,
