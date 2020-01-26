@@ -1,29 +1,50 @@
 # Moneta 
 ![](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/logofinal_2.jpg)
-<img src='https://github.com/vin-cent321/Moneta/master/client/src/components/layout/Moneta-qr.png' 
-height='200' width='200px' />
+ <img src='https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Moneta-qr.png' height='200px' width='200px' />
 * [MonetaPDF](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Montea_pdf.pdf)
 # Authors:
+
+<table> <tr> <td>
+
 ## Frederick Articuno
 ![FA](https://avatars1.githubusercontent.com/u/44718784?s=100&v=4)
+
 * [GitHub](https://github.com/fkarticuno)
 * [Portfolio](https://fkarticuno.github.io/CodingPortfolio/)
+* [LinkedIn](https://www.linkedin.com/in/frederick-articuno/)
 * [Resume](https://fkarticuno.github.io/CodingPortfolio/Resume_DEC2019_std.pdf)
+
+</td> <td>
+
 ## Vincent Caraciollo
 ![VC](https://avatars3.githubusercontent.com/u/52013834?s=100&v=4)
+
 * [GitHub](https://github.com/vin-cent321)
 * [Portfolio](https://vin-cent321.github.io/Bootstrap-Portfolio/)
-* [Resume](https://reactjs.org)
+* [LinkedIn](https://github.com/vin-cent321)
+* [Resume](https://github.com/vin-cent321)
+
+</td> </tr> <tr> <td>
+
 ## Matthew Clary
-<img src='https://avatars2.githubusercontent.com/u/52682135?s=100&v=4' height='100' width='100px' />
+<img src='https://avatars2.githubusercontent.com/u/52682135?s=100&v=4' height='100px' width='100px' />
+
 * [GitHub](https://github.com/clarymt)
 * [Portfolio](https://clarymt.github.io/portfolioUpdate1/)
-* ~[Resume]~(https://reactjs.org)
+* [LinkedIn](https://www.linkedin.com/in/matthew-clary-062571a7/)
+* [Resume](https://clarymt.github.io/portfolioUpdate1/)
+
+</td> <td>
+
 ## Jonathan Roth
-<img src='https://avatars0.githubusercontent.com/u/32680255?s=100&v=4' height='100' width='100px' />
+<img src='https://avatars0.githubusercontent.com/u/32680255?s=100&v=4' height='100px' width='100px' />
+
 * [GitHub](https://github.com/brucegenerator)
 * [Portfolio](https://brucegenerator.github.io/Responsive-Portfolio/)
-* ~[Resume]~(https://reactjs.org)
+* [LinkedIn](https://www.linkedin.com/in/jonathan-roth-38575047/)
+* [Resume] (https://brucegenerator.github.io/Responsive-Portfolio/)
+
+</td> </tr> </table>
 
 # Dependencies Used
     * ajax: 0.0.4,
