@@ -48,6 +48,5 @@ router.post("/", upload.single('image'), (req, res, next) => {
   }
   else res.status("409").json("No files to upload");
 });
-// Load User model
 
 module.exports = router;
