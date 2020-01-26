@@ -42,7 +42,7 @@ function vol(chg) {
         bgMusic.volume = bgMusic.volume + .05
         console.log(bgMusic.volume)
     }
-    if (chg === '0') {
+    if ((chg === '0') & (bgMusic.volume > .05)){
         bgMusic.volume = bgMusic.volume - .05
         console.log(bgMusic.volume)
     }
@@ -107,11 +107,11 @@ class MusicP2 extends Component {
     render() {
          return (
             <section>
-            <img onClick={()=>vol('1')} src={vol2} alt='vol-down' />
+            <img onClick={()=>vol('0')} src={vol2} alt='vol-down' />
             <img onClick={this.toggleButton} src={this.state.buttonImg} alt={this.state.buttonType}/>
-            <img onClick={()=>vol('0')} src={vol1} alt='vol-up' />
+            <img onClick={()=>vol('1')} src={vol1} alt='vol-up' />
             <button onClick={this.changeSong}>change song</button>
-            </section>
+            </section> 
         )
     }
    
