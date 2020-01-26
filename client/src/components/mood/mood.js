@@ -17,6 +17,7 @@ class Mood extends Component {
     console.log('What button', e.target.id)
     switch(e.target.id) {
       case 'relaxedSwitch': body.className = 'hoveredOne';
+       // this.props.hanldeMusicChange('relaxed.mp3')
         break;
       case 'excitedSwitch': body.className = 'hoveredTwo';
       break;
@@ -27,7 +28,8 @@ class Mood extends Component {
       default: body.className = '';
     }
   }
-
+//established main function in app to communicate buttons to footer
+//
   deactivateButtonMood = (e) => {
     body.className = '';
   }
@@ -114,10 +116,16 @@ class Mood extends Component {
                   Focused
             </Link>
 
-
+            
               </div>
             </div>
-     
+            <h4>
+             <b> When selecting a mood, a corresponding playlist will begin.</b> 
+            </h4>
+   
+            <h4>
+             <b> Feel free to pause music or adjust volume from controls on bottom.</b>
+            </h4>
             <button
               style={{
                 width: "150px",

@@ -41,7 +41,18 @@ if (localStorage.jwtToken) {
 }
 
 class App extends Component {
+  state = {
+    file: 'relaxed.mp3'
+  }
 
+ /* hanldeMusicChange = (type) => {
+    switch(type) {
+      case 'relaxed': //setState => correct type to be read in footer;
+        break;
+      default: this.setState({file: 'relaxed.mp3'});
+    }
+  }*/
+//PUT THIS UNDER MOOD ROUTE AFTER HEROKU DEPLY -MATT hanldeMusicChange={this.hanldeMusicChange} 
   render() {
     return (
       <Provider store={store}>
@@ -59,7 +70,7 @@ class App extends Component {
                 />
               <PrivateRoute exact path="/gamepage" component={Gamepage} />
             </Switch>
-            <Footer />
+            <Footer file={this.state.file} />
           </div>
         </Router>
       </Provider>
