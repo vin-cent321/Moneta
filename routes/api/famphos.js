@@ -6,6 +6,7 @@ const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 const passport = require("passport");
 const multer = require("multer");
+const fs = require("file-system");
 
 // Load input validation
 // const validateRegisterInput = require("../../validation/register");
@@ -14,7 +15,7 @@ const multer = require("multer");
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
     console.log('destination', req.body)
-    cb(null, 'images/uploads');
+    cb(null, 'client/public/images/uploads');
   },
   filename: function(req, file, cb) {
     console.log('filename', req.file, file.originalname)
@@ -47,6 +48,5 @@ router.post("/", upload.single('image'), (req, res, next) => {
   }
   else res.status("409").json("No files to upload");
 });
-// Load User model
 
 module.exports = router;

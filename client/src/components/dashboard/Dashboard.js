@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import PropTypes from "prop-types";
 import { connect } from "react-redux";
 import { logoutUser } from "../../actions/authActions";
+import API from "../../utils/API";
 import "./Dashboard.css";
 import Weather from "../Weather/Weather";
 import Moment from "react-moment";
@@ -10,20 +11,36 @@ import { Link } from "react-router-dom" ;
 
 
 class Dashboard extends Component {
+  state = {
+    images: []
+  }
+
   onLogoutClick = e => {
     e.preventDefault();
     this.props.logoutUser();
   };
 
-  render() {
-    const { user } = this.props.auth;
+  componentDidMount() {
+    // this.loadImages();
+  }
+
   
 
+  render() {
+    const { user } = this.props.auth;
 
     return (
       <div style={{ height: "75vh" }} className="container">
         <div className="row">
-        <Upload />
+        <Upload userId={user.id} />
+        <div style={{ maxWidth: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
+          {this.state.images.map(img => (
+            <div>
+              <p>{img.name}</p>
+              <img src={img.url} style={{ width: '150px' }}/>
+            </div>
+          ))}
+        </div>
           <div className="landing-copy col s12 center-align">
             <h4>
             <b>Hello,</b> {user.name.split(" ")[0]}

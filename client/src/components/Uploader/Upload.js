@@ -1,6 +1,8 @@
 import React, { Component } from "react";
 import axios from "axios";
-const DefaultImg = "bird.jpg"
+// const DefaultImg = "bird.jpg";
+// const BASE_URL = `${process.env.MONGODB_URI||"mongodb://localhost/beef"}`;
+
 
 
 // import '.App.css';
@@ -11,6 +13,11 @@ class Upload extends Component {
         images: [],
         imageUrl: "",
         message: ''
+    }
+
+    handleInputChange = (event) => {
+        const { name, value } = event.target;
+        this.setState({ [name]: value });
     }
 
     selectImages = (event) => {
@@ -33,45 +40,28 @@ class Upload extends Component {
     // }
     // USING THIS ONE
     uploadImages = () => {
+        console.log("imgname",this.state.imageName)
         const uploaders = this.state.images.map(image => {
             const data = new FormData();
             data.append("image", image, image.name);
             
             // Make an AJAX upload request using Axios
-            return axios.post('api/uploads', data)
+            return axios.post("/api/uploads", data)
             .then(response => {
                 this.setState({
                     imageUrl: response.data.imageUrl
                 });
+                axios.put("/api/users/images/" + this.props.userId, {
+                    url: response.data.imageUrl,
+                    name: this.state.imageName
+                })
+                .then(r => console.log(r))
+                .catch(err => console.log(err));
             })
+            .catch((err) => {
+                console.log("fuck", err);
+            });
         });
-    }
-    
-    uploadImage(e, method) {
-        //let imageObj = {};
-        if (method === "multer") {
-            let imageFormObj = new FormData();
-            imageFormObj.append("imageName", "multer-image-");
-            imageFormObj.append("imageData", e.target.files[0]);
-
-            // this.setState({
-            //     multerImage: URL.createObjectURL(e.target.files[0])
-            // });
-
-            //https://cors-anywhere.herokuapp.com/https://en.wikipedia.org/wiki/
-            axios.post("/api/uploads", imageFormObj)
-                .then((data) => {
-                    console.log(data)
-                    if(data.data.success) {
-                        alert("Image beep beep!");
-                        this.setDefaultImage('multer');
-                    }
-                })
-                .catch((err) => {
-                    alert("Uh oh boop boop");
-                    this.setDefaultImage('multer');
-                })
-        }
     }
 
     render() {
@@ -80,12 +70,19 @@ class Upload extends Component {
             <div className ="process">
                 <h4 className="process-heading" >Mummies say beep beep</h4>
                 <p className="process-details" >Upload images here</p>
-
                 <input
                     className="form-control"
                     type="file" 
                     onChange={this.selectImages}
                     multiple
+                />
+                <p className="process-details">Name?</p>
+                <input
+                    className="form-control"
+                    type="text" 
+                    name="imageName"
+                    value={this.state.imageName}
+                    onChange={this.handleInputChange}
                 />
             </div>
             <p className="text-info">{this.state.message}</p>

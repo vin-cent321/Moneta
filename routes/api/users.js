@@ -4,6 +4,7 @@ const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const keys = require("../../config/keys");
 const passport = require("passport");
+const fs = require('file-system');
 
 // Load input validation
 const validateRegisterInput = require("../../validation/register");
@@ -18,16 +19,23 @@ const User = require("../../models/User");
 router.post("/register", (req, res) => {
   // Form validation
 
-  const { errors, isValid } = validateRegisterInput(req.body);
+  const {
+    errors,
+    isValid
+  } = validateRegisterInput(req.body);
 
   // Check validation
   if (!isValid) {
     return res.status(400).json(errors);
   }
 
-  User.findOne({ email: req.body.email }).then(user => {
+  User.findOne({
+    email: req.body.email
+  }).then(user => {
     if (user) {
-      return res.status(400).json({ email: "Email already exists" });
+      return res.status(400).json({
+        email: "Email already exists"
+      });
     } else {
       const newUser = new User({
         name: req.body.name,
@@ -56,7 +64,10 @@ router.post("/register", (req, res) => {
 router.post("/login", (req, res) => {
   // Form validation
 
-  const { errors, isValid } = validateLoginInput(req.body);
+  const {
+    errors,
+    isValid
+  } = validateLoginInput(req.body);
 
   // Check validation
   if (!isValid) {
@@ -67,10 +78,14 @@ router.post("/login", (req, res) => {
   const password = req.body.password;
 
   // Find user by email
-  User.findOne({ email }).then(user => {
+  User.findOne({
+    email
+  }).then(user => {
     // Check if user exists
     if (!user) {
-      return res.status(404).json({ emailnotfound: "Email not found" });
+      return res.status(404).json({
+        emailnotfound: "Email not found"
+      });
     }
 
     // Check password
@@ -86,8 +101,7 @@ router.post("/login", (req, res) => {
         // Sign token
         jwt.sign(
           payload,
-          keys.secretOrKey,
-          {
+          keys.secretOrKey, {
             expiresIn: 31556926 // 1 year in seconds
           },
           (err, token) => {
@@ -100,10 +114,65 @@ router.post("/login", (req, res) => {
       } else {
         return res
           .status(400)
-          .json({ passwordincorrect: "Password incorrect" });
+          .json({
+            passwordincorrect: "Password incorrect"
+          });
       }
     });
   });
 });
 
+router.put("/images/:userId", (req, res) => {
+  User
+    .findOneAndUpdate({
+      _id: req.params.userId
+    }, {
+      $push: {
+        images: req.body
+      }
+    })
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+});
+
+router.get("/images/:userId", (req, res) => {
+  User
+    .findById(req.params.userId)
+    .then(dbModel => {
+      console.log(dbModel.images.length)
+
+      const images = dbModel.images.filter(img => {
+        console.log(img.url);
+        let exists = false;
+        try {
+          if (fs.existsSync("client/public" + img.url)) {
+            exists = true;
+          }
+        } catch (err) {
+          console.error(err)
+        }
+        return exists;
+      })
+
+      console.log(images.length)
+      
+      res.json(images);
+    })
+    .catch(err => res.status(422).json(err));
+});
+
+router.delete("/images/:userId/:url", (req, res) => {
+  User
+    .findOneAndUpdate({
+      _id: req.params.userId
+    }, {
+      $pull: {
+        images: {
+          url: req.params.url
+        }
+      }
+    })
+    .then(dbModel => res.json(dbModel))
+    .catch(err => res.status(422).json(err));
+})
 module.exports = router;

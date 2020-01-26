@@ -4,7 +4,6 @@ import pause from "../MusicPlayer/images/pause.png"
 import vol1 from "../MusicPlayer/images/vol1.png"
 import vol2 from "../MusicPlayer/images/vol2.png"
 
-
 // Music goes in PUBLIC folder
 var fileResource = 'relaxed.mp3';
 var bgMusic = new Audio(fileResource); 
