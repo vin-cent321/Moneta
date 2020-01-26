@@ -5,6 +5,8 @@ import Click from "../Click/Click";
 import API from '../../utils/API';
 import { connect } from "react-redux";
 
+
+  
 class MatchIt extends Component {
     state = {
         data: data,
@@ -14,9 +16,36 @@ class MatchIt extends Component {
         message: '',
         name: '',
     }
+    // Expected behavior is to trigger border change on correct guess or incorrect guess
+    // as green or red but only triggers the first borderUpdateXX() called in component did mount.
+    // So I decided to only use purple which is named .greenBorder in Click.css 
+    borderUpdateRed() {
+        const bordersR = document.querySelectorAll('.click-item')       
+        bordersR.forEach(img1 => {
+            img1.addEventListener('click', () => Border(img1))
+          })
+        function Border(img1) {
+            img1.classList.add('redBorder')
+            setTimeout(()=> img1.classList.remove('redBorder'), 3000)
 
+        }
+    }
+    borderUpdateGreen() {
+        const bordersG = document.querySelectorAll('.click-item')       
+        bordersG.forEach(img => {
+            img.addEventListener('click', () => Border(img))
+          })
+        function Border(img) {
+            img.classList.add('greenBorder')
+            setTimeout(()=> img.classList.remove('greenBorder'), 3000)
+
+        }
+    }
+    
     componentDidMount() {
         this.loadImages();
+        this.borderUpdateGreen();
+        this.borderUpdateRed();
     }
 
     loadImages = () => {
@@ -36,6 +65,7 @@ class MatchIt extends Component {
             ...images
         ];
         mergedImages = mergedImages.map((img, i) => ({ ...img, id: i+1 }));
+        mergedImages.length = 12
         this.setState({ data: mergedImages }, () => {
             this.shuffleData(this.state.data);
             this.selectHiddenAnswer();
@@ -50,6 +80,7 @@ class MatchIt extends Component {
     }
 
     correctGuess = () => {
+        this.borderUpdateGreen()
         const { score } = this.state;
         this.setState({ 
             score: score + 1,
@@ -57,6 +88,7 @@ class MatchIt extends Component {
     };
 
     incorrectGuess = clickedName => {
+       // this.borderUpdateRed()        
         const { score } = this.state;
         this.setState({ 
             score: score + 0,
