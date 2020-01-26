@@ -7,10 +7,12 @@ import vol2 from "../MusicPlayer/images/vol2.png"
 // Music goes in PUBLIC folder
 var fileResource = 'relaxed.mp3';
 var bgMusic = new Audio(fileResource); 
-   /* switch(Mood) {
+/* switch(Mood) {
         case ""
     }
- Audio = (e) => {
+*/
+
+ /*Audio = (e) => {
         switch(e.target.id) {
             case 'relaxedSwitch': Audio  = '/relaxed.mp3';
               break;
@@ -33,16 +35,7 @@ bgMusic.loop = true;
 
 var n = 'PLAY';
 
-function play_pause(){
-    if (n==='PAUSE'){
-        bgMusic.pause()
-        n ="PLAY"
-    }
-    else if (n==='PLAY'){
-        bgMusic.play()
-        n = 'PAUSE'
-    }
-}
+
 
 function vol(chg) {
     if ( (chg ==='1') & (bgMusic.volume < .95) ) {
@@ -54,39 +47,62 @@ function vol(chg) {
         console.log(bgMusic.volume)
     }
 }
-
+//EVERYTHING IN STATE W/FUNCTION SHOULD BE IN APP.JS READ 
+//REDUX FOR GLOBAL VARIABLESMOVE 
+//EVERYTHING IN STATE AND FUNCTIONS TO APP.JS
 class MusicP2 extends Component {  
-    constructor({file}) {
-        super({file})
-        this.state = {
+    //constructor({file}) {
+      //  super({file})
+        state = {
             buttonType: 'play',
             buttonImg: play,
-            time: bgMusic.currentTime
+            time: bgMusic.currentTime,
+            bgMusic: new Audio("relaxed.mp3"),
+            n: "PLAY",
+            file: this.props.file
         }  
-    }
+    //}
 
-    /*componentDidUpdate(prevProps, prevState) {
-        // Research how to use this!!!!
+    componentDidUpdate(prevProps, prevState) {
+        // might be useful
 
-        if(prevProps !== props) {
+       /* if(prevProps !== props) {
 // then => reassign file to correct string
             fileResource = this.file;
         }
+    }*/
+}
+    play_pause = () => {
+        if (this.state.n ==='PAUSE'){
+            this.state.bgMusic.pause()
+            this.setState({n: "PLAY"})
+        }
+        else if (this.state.n ==='PLAY'){
+            this.state.bgMusic.play()
+            this.setState({n: "PAUSE"})
+        }
     }
-    
-    */
+
+    changeSong = (song) => {
+        //this.bgMusic.src= 'happy.mp3'
+        let bgMusic= new Audio('happy.mp3')
+        this.state.bgMusic.pause()
+        this.setState({bgMusic, n:'PLAY'})
+    }
+    //call change song with an actual song instead of using string happy.mp3 use song variable
+    //use state in app.js
     updateTime = () => {
         let x = bgMusic.currentTime
         this.setState.time({x})
     }
 
     toggleButton = () => {
-        play_pause()
-        let {buttonImg, buttonType} = this.state;
-        buttonImg === play ? buttonImg = pause : buttonImg = play;
-        buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
+        this.play_pause();
+        //let {buttonImg, buttonType} = this.state;
+        //buttonImg === play ? buttonImg = pause : buttonImg = play;
+        //buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
 
-        this.setState({buttonImg, buttonType});
+        //this.setState({buttonImg, buttonType});
     }
     render() {
          return (
@@ -94,6 +110,7 @@ class MusicP2 extends Component {
             <img onClick={()=>vol('1')} src={vol2} alt='vol-down' />
             <img onClick={this.toggleButton} src={this.state.buttonImg} alt={this.state.buttonType}/>
             <img onClick={()=>vol('0')} src={vol1} alt='vol-up' />
+            <button onClick={this.changeSong}>change song</button>
             </section>
         )
     }
