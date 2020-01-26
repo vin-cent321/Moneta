@@ -47,33 +47,36 @@
 </td> </tr> </table>
 
 # Dependencies Used
+
+<table> <tr> <td>
+
     * ajax: 0.0.4,
-     Weather API Call
-    *axios: ^0.18.0,
-     
+    * axios: ^0.18.0,
+    * bootstrap: ^4.4.1,
     * classnames: ^2.2.6,
-    
+    * cors: ^2.8.5
+
+</td> <td>
+
     * jquery: ^3.4.1,
-    
     * jwt-decode: ^2.2.0,
-    
     * moment: ^2.24.0,
-    
     * moment-timezone: ^0.5.27,
-    
+    * multer: ^1.4.2,
+
+</td> <td>
+
     * react: ^16.6.3,
-    
+    * react-bootstrap: ^1.0.0-beta.16,
     * react-dom: ^16.6.3,
-    
     * react-moment: ^0.9.7,
-    
     * react-redux: ^5.1.1,
-    
+</td> <td>
+
+
     * react-router-dom: ^4.3.1,
-    
     * react-scripts: ^3.3.0,
-    
-    * redux: ^4.0.1, 
-    
+    * redux: ^4.0.1,
     * redux-thunk: ^2.3.0
-    
+
+<td> </tr> </table>
