@@ -45,14 +45,17 @@ class App extends Component {
     file: 'relaxed.mp3'
   }
 
- /* hanldeMusicChange = (type) => {
+  handleMusicChange = (type) => {
     switch(type) {
       case 'relaxed': //setState => correct type to be read in footer;
         break;
       default: this.setState({file: 'relaxed.mp3'});
     }
-  }*/
-//PUT THIS UNDER MOOD ROUTE AFTER HEROKU DEPLY -MATT hanldeMusicChange={this.hanldeMusicChange} 
+  }
+  //explore redux
+  //need to execute change song, cant do with current build only available on musicplayer
+  //pass down this.state.file to musicplayer
+//PUT THIS UNDER MOOD ROUTE AFTER HEROKU DEPLY -MATT 
   render() {
     return (
       <Provider store={store}>
@@ -66,7 +69,7 @@ class App extends Component {
             <Switch>
               <PrivateRoute exact path="/dashboard" component={Dashboard} />
               <PrivateRoute exact path="/mood"
-              component={(props) => <Mood {...props} setColor={this.setColor} />}
+              component={(props) => <Mood {...props} handleMusicChange={this.handleMusicChange}  setColor={this.setColor} />}
                 />
               <PrivateRoute exact path="/gamepage" component={Gamepage} />
             </Switch>
