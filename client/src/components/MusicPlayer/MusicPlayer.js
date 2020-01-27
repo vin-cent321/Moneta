@@ -75,6 +75,7 @@ class MusicP2 extends Component {
     }*/
 }
     play_pause = () => {
+        this.state.bgMusic.loop = true;
         if (this.state.n ==='PAUSE'){
             this.state.bgMusic.pause()
             this.setState({n: "PLAY"})
