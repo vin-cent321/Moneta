@@ -36,7 +36,7 @@ class Dashboard extends Component {
           {this.state.images.map(img => (
             <div>
               <p>{img.name}</p>
-              <img src={img.url} style={{ width: '150px' }}/>
+              <img src={img.url} style={{ width: '150px' }} alt=" " />
             </div>
           ))}
         </div>
@@ -46,12 +46,11 @@ class Dashboard extends Component {
             </h4>
               <div class="card">
                 <div class="card-body">
-              <p className="flow-text grey-text text-darken-2">Today is</p> <Moment format="LLLL" local></Moment>
-              <p className="flow-text grey-text text-darken-2">Here's details about the weather</p><Weather />
+              <p className="flow-text grey-text text-darken-2">Today is <Moment format="LLLL" local /></p>
+              <Weather />
               <Upload userId={user.id} />
               </div>
              </div>
-            
             <Link to="/mood" role="button"
             //<a href="/mood" role="button"
               style={{
@@ -66,13 +65,13 @@ class Dashboard extends Component {
             >
               Lets play!
             </Link>
-            <br></br>
             <button
               style={{
                 width: "150px",
                 borderRadius: "3px",
                 letterSpacing: "1.5px",
-                marginTop: "1rem"
+                marginTop: "1rem",
+                margin: "1rem 0 0 50px"
               }}
               onClick={this.onLogoutClick}
              // id=""
