@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import play from "../MusicPlayer/images/play.png"
-import pause from "../MusicPlayer/images/pause.png"
-import vol1 from "../MusicPlayer/images/vol1.png"
-import vol2 from "../MusicPlayer/images/vol2.png"
+import play from "../MusicPlayer/images/play.png";
+import pause from "../MusicPlayer/images/pause.png";
+import vol1 from "../MusicPlayer/images/vol1.png";
+import vol2 from "../MusicPlayer/images/vol2.png";
+
 
 // Music goes in PUBLIC folder
 var fileResource = 'relaxed.mp3';
@@ -59,12 +60,13 @@ class MusicP2 extends Component {
             time: bgMusic.currentTime,
             bgMusic: new Audio("relaxed.mp3"),
             n: "PLAY",
-            file: this.props.file
+            file: this.props.file,
+            volume: 1
         }  
     //}
 
     componentDidUpdate(prevProps, prevState) {
-        // might be useful
+       
 
        /* if(prevProps !== props) {
 // then => reassign file to correct string
@@ -83,6 +85,22 @@ class MusicP2 extends Component {
         }
     }
 
+    volu = ()=> {
+        if ((this.state.volume < .95) ) {
+            this.setState({volume: this.state.volume + .05})
+            this.state.bgMusic.volume=this.state.volume 
+            console.log(this.state.volume)
+        }
+    }
+    vold = ()=> {
+        if ((this.state.volume > .05)){
+            this.setState({volume: this.state.volume - .05})
+            this.state.bgMusic.volume=this.state.volume
+            console.log(this.state.volume)
+        }
+    }
+
+
     changeSong = (song) => {
         //this.bgMusic.src= 'happy.mp3'
         let bgMusic= new Audio('happy.mp3')
@@ -98,18 +116,18 @@ class MusicP2 extends Component {
 
     toggleButton = () => {
         this.play_pause();
-        //let {buttonImg, buttonType} = this.state;
-        //buttonImg === play ? buttonImg = pause : buttonImg = play;
-        //buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
+        let {buttonImg, buttonType} = this.state;
+        buttonImg === play ? buttonImg = pause : buttonImg = play;
+        buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
 
-        //this.setState({buttonImg, buttonType});
+        this.setState({buttonImg, buttonType});
     }
     render() {
          return (
             <section>
-            <img onClick={()=>vol('0')} src={vol2} alt='vol-down' />
+            <img onClick={this.vold} src={vol2} alt='vol-down' />
             <img onClick={this.toggleButton} src={this.state.buttonImg} alt={this.state.buttonType}/>
-            <img onClick={()=>vol('1')} src={vol1} alt='vol-up' />
+            <img onClick={this.volu} src={vol1} alt='vol-up' />
             <button onClick={this.changeSong}>change song</button>
             </section> 
         )
