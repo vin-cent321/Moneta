@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import play from "../MusicPlayer/images/play.png"
-import pause from "../MusicPlayer/images/pause.png"
-import vol1 from "../MusicPlayer/images/vol1.png"
-import vol2 from "../MusicPlayer/images/vol2.png"
+import play from "../MusicPlayer/images/play.png";
+import pause from "../MusicPlayer/images/pause.png";
+import vol1 from "../MusicPlayer/images/vol1.png";
+import vol2 from "../MusicPlayer/images/vol2.png";
+
 
 // Music goes in PUBLIC folder
 var fileResource = 'relaxed.mp3';
@@ -64,7 +65,7 @@ class MusicP2 extends Component {
     //}
 
     componentDidUpdate(prevProps, prevState) {
-        // might be useful
+       
 
        /* if(prevProps !== props) {
 // then => reassign file to correct string
@@ -98,11 +99,11 @@ class MusicP2 extends Component {
 
     toggleButton = () => {
         this.play_pause();
-        //let {buttonImg, buttonType} = this.state;
-        //buttonImg === play ? buttonImg = pause : buttonImg = play;
-        //buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
+        let {buttonImg, buttonType} = this.state;
+        buttonImg === play ? buttonImg = pause : buttonImg = play;
+        buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
 
-        //this.setState({buttonImg, buttonType});
+        this.setState({buttonImg, buttonType});
     }
     render() {
          return (

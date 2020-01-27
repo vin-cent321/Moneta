@@ -31,6 +31,7 @@
 
 .player {
   text-align: left;
+    
 }
 
 .footer {
@@ -38,7 +39,7 @@
   left: 0;
   bottom: 0;
   width: 100%;
-  background-color: rgba(32, 145, 232, 0.449);
+  background-color: rgba(32, 145, 232, 0);
   color: black;
   text-align: center;
   height: 10%;
