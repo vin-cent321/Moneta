@@ -1,8 +1,9 @@
 import React, { Component } from "react";
-import play from "../MusicPlayer/images/play.png"
-import pause from "../MusicPlayer/images/pause.png"
-import vol1 from "../MusicPlayer/images/vol1.png"
-import vol2 from "../MusicPlayer/images/vol2.png"
+import play from "../MusicPlayer/images/play.png";
+import pause from "../MusicPlayer/images/pause.png";
+import vol1 from "../MusicPlayer/images/vol1.png";
+import vol2 from "../MusicPlayer/images/vol2.png";
+
 
 // Music goes in PUBLIC folder
 var fileResource = 'relaxed.mp3';
@@ -33,7 +34,20 @@ var bgMusic = new Audio(fileResource);
 bgMusic.volume = 1;
 bgMusic.loop = true;
 
+var n = 'PLAY';
 
+
+
+function vol(chg) {
+    if ( (chg ==='1') & (bgMusic.volume < .95) ) {
+        bgMusic.volume = bgMusic.volume + .05
+        console.log(bgMusic.volume)
+    }
+    if ((chg === '0') & (bgMusic.volume > .05)){
+        bgMusic.volume = bgMusic.volume - .05
+        console.log(bgMusic.volume)
+    }
+}
 //EVERYTHING IN STATE W/FUNCTION SHOULD BE IN APP.JS READ 
 //REDUX FOR GLOBAL VARIABLESMOVE 
 //EVERYTHING IN STATE AND FUNCTIONS TO APP.JS
@@ -52,7 +66,7 @@ class MusicP2 extends Component {
     //}
 
     componentDidUpdate(prevProps, prevState) {
-        // might be useful
+       
 
        /* if(prevProps !== props) {
 // then => reassign file to correct string
@@ -86,6 +100,7 @@ class MusicP2 extends Component {
         }
     }
 
+
     changeSong = (song) => {
         //this.bgMusic.src= 'happy.mp3'
         let bgMusic= new Audio('happy.mp3')
@@ -104,6 +119,7 @@ class MusicP2 extends Component {
         let {buttonImg, buttonType} = this.state;
         buttonImg === play ? buttonImg = pause : buttonImg = play;
         buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
+
         this.setState({buttonImg, buttonType});
     }
     render() {
@@ -115,7 +131,7 @@ class MusicP2 extends Component {
             <button onClick={this.changeSong}>change song</button>
             </section> 
         )
-    }   
+    }
    
 }
 export default MusicP2;
