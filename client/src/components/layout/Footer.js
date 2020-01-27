@@ -1,6 +1,9 @@
 import React from "react";
 import "./layout.css"
 import MusicPlayer from "../MusicPlayer/MusicPlayer"
+import home from './home.png';
+import { Link } from "react-router-dom";
+
 
 const Footer = ({file}) => (
 
@@ -10,7 +13,12 @@ const Footer = ({file}) => (
         <div className="player">
         <MusicPlayer file={file} />
         </div>
-        <span className="text-muted">@ Copyright.</span>
+        <Link
+            to="/"
+            > 
+            <img className="home" content="width=device-width, initial-scale=1.0" src={home} alt="Home" />
+
+            </Link>
     </div>
 </footer>
 </>

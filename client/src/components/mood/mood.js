@@ -37,8 +37,6 @@ class Mood extends Component {
   render() {
     const { user } = this.props.auth;
 
-
-
     return (
   
       <div style={{ height: "75vh" }} id="background" className="container">

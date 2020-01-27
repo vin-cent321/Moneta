@@ -45,6 +45,7 @@
     "react-animated-css": "^1.2.1",
     "react-bootstrap": "^1.0.0-beta.16",
     "react-moment": "^0.9.7",
+    "schema-utils": "^2.6.4",
     "validator": "^10.9.0"
   }
 }
