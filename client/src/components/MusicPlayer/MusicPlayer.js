@@ -60,7 +60,8 @@ class MusicP2 extends Component {
             time: bgMusic.currentTime,
             bgMusic: new Audio("relaxed.mp3"),
             n: "PLAY",
-            file: this.props.file
+            file: this.props.file,
+            volume: 1
         }  
     //}
 
@@ -83,6 +84,22 @@ class MusicP2 extends Component {
             this.setState({n: "PAUSE"})
         }
     }
+
+    volu = ()=> {
+        if ((this.state.volume < .95) ) {
+            this.setState({volume: this.state.volume + .05})
+            this.state.bgMusic.volume=this.state.volume 
+            console.log(this.state.volume)
+        }
+    }
+    vold = ()=> {
+        if ((this.state.volume > .05)){
+            this.setState({volume: this.state.volume - .05})
+            this.state.bgMusic.volume=this.state.volume
+            console.log(this.state.volume)
+        }
+    }
+
 
     changeSong = (song) => {
         //this.bgMusic.src= 'happy.mp3'
@@ -108,9 +125,9 @@ class MusicP2 extends Component {
     render() {
          return (
             <section>
-            <img onClick={()=>vol('0')} src={vol2} alt='vol-down' />
+            <img onClick={this.vold} src={vol2} alt='vol-down' />
             <img onClick={this.toggleButton} src={this.state.buttonImg} alt={this.state.buttonType}/>
-            <img onClick={()=>vol('1')} src={vol1} alt='vol-up' />
+            <img onClick={this.volu} src={vol1} alt='vol-up' />
             <button onClick={this.changeSong}>change song</button>
             </section> 
         )
