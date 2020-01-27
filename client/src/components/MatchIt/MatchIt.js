@@ -65,11 +65,7 @@ class MatchIt extends Component {
             ...images
         ];
         mergedImages = mergedImages.map((img, i) => ({ ...img, id: i+1 }));
-<<<<<<< HEAD
         mergedImages.length = 12;
-=======
-        mergedImages.length = 12
->>>>>>> 8f26d349c63fac6cb58bda816f437c42d25b5c44
         this.setState({ data: mergedImages }, () => {
             this.shuffleData(this.state.data);
             this.selectHiddenAnswer();

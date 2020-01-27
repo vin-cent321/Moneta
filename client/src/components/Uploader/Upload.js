@@ -44,7 +44,7 @@ class Upload extends Component {
                 .catch(err => console.log(err));
             })
             .catch((err) => {
-
+                console.log(err);
             });
         });
     }
@@ -53,7 +53,6 @@ class Upload extends Component {
         return (
         <div className="image-container">
             <div className ="process">
-                <h4 className="process-heading" >Mummies say beep beep</h4>
                 <p className="process-details" >Upload images here</p>
                 <input
                     className="form-control"
@@ -61,9 +60,10 @@ class Upload extends Component {
                     onChange={this.selectImages}
                     multiple
                 />
-                <p className="process-details">Name?</p>
+                <p className="process-details">Give this Photo a Name</p>
                 <input
                     className="form-control"
+                    placeholder="Enter name here"
                     type="text" 
                     name="imageName"
                     value={this.state.imageName}
@@ -78,27 +78,24 @@ class Upload extends Component {
                     onClick={this.uploadImages}
                 >Submit</button>
             </div>
-            <PhotoAlbum>
-           { this.state.images.map(item => (
+            
+           {this.state.imageUrl ? (
                 <div className="row col-lg-12">
                     <div className="col-lg-2">
                         <img
-                            src={item}
-                            name={item.imageName}
+                            src={this.state.imageUrl}
                             alt="not available"
-                            style={this.props.image}
-                            opacity={this.props.opactiy}
-                            id={this.props.id}
                         />
                         <br/>
                     </div>
                 </div>
-                ))}
-            </PhotoAlbum> 
-        </div>
+                ) : (<div>
+                    <h4>Thats not right</h4>
+                    </div>)}
+             </div>
         )
+    
     }
-
 }
 
 export default Upload;

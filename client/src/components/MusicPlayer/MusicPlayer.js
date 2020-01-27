@@ -109,7 +109,7 @@ class MusicP2 extends Component {
     render() {
          return (
             <section>
-            <img onClick={this.vold} src={vol2} alt='vol-down' />
+            <img onClick={this.vold} style={{ padding: "0 0 0 5px"}} src={vol2} alt='vol-down' />
             <img onClick={this.toggleButton} src={this.state.buttonImg} alt={this.state.buttonType}/>
             <img onClick={this.volu} src={vol1} alt='vol-up' />
             <button onClick={this.changeSong}>change song</button>
