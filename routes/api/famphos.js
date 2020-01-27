@@ -45,6 +45,7 @@ router.post("/", upload.single('image'), (req, res, next) => {
     res.json({
       imageUrl: `/images/uploads/${req.file.filename}`
     });
+   
   }
   else res.status("409").json("No files to upload");
 });
