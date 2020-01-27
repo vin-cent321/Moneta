@@ -112,6 +112,7 @@ class MusicP2 extends Component {
     updateTime = () => {
         let x = bgMusic.currentTime
         this.setState.time({x})
+        return x
     }
 
     toggleButton = () => {
