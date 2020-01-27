@@ -85,7 +85,7 @@ class MusicP2 extends Component {
             console.log(this.state.volume)
         }
     }
-
+    
     changeSong = (song) => {
         //this.bgMusic.src= 'happy.mp3'
         let bgMusic= new Audio('happy.mp3')
