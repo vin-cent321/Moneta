@@ -36,6 +36,7 @@ class MatchIt extends Component {
             ...images
         ];
         mergedImages = mergedImages.map((img, i) => ({ ...img, id: i+1 }));
+        mergedImages.length = 12;
         this.setState({ data: mergedImages }, () => {
             this.shuffleData(this.state.data);
             this.selectHiddenAnswer();
@@ -98,6 +99,7 @@ class MatchIt extends Component {
 
     render() {
         return (
+            
             <div><br></br>
                 <Container>
                     <div className="black-text">Click The Picture of {this.state.hiddenAnswer.name}! {this.state.message}</div>
