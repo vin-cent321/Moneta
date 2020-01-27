@@ -1,12 +1,6 @@
 import React, { Component } from "react";
 import axios from "axios";
-// const DefaultImg = "bird.jpg";
-// const BASE_URL = `${process.env.MONGODB_URI||"mongodb://localhost/beef"}`;
-
-
-
-// import '.App.css';
-
+import PhotoAlbum from "../../components/PhotoAlbum/PhotoAlbum";
 
 class Upload extends Component {
     state = {
@@ -30,15 +24,6 @@ class Upload extends Component {
         this.setState({ images, message })
     }
 
-    // setDefaultImage(uploadType) {
-    //     if (uploadType === "multer") {
-    //         this.setState({
-    //             multerImage: DefaultImg,
-    //             multerdata: null
-    //         })
-    //     }
-    // }
-    // USING THIS ONE
     uploadImages = () => {
         console.log("imgname",this.state.imageName)
         const uploaders = this.state.images.map(image => {
@@ -59,7 +44,7 @@ class Upload extends Component {
                 .catch(err => console.log(err));
             })
             .catch((err) => {
-                console.log("fuck", err);
+
             });
         });
     }
@@ -86,7 +71,6 @@ class Upload extends Component {
                 />
             </div>
             <p className="text-info">{this.state.message}</p>
-            <br/><br/><br/>
             <div className="col-sm-4">
                 <button
                     className="btn btn-primary"
@@ -94,58 +78,26 @@ class Upload extends Component {
                     onClick={this.uploadImages}
                 >Submit</button>
             </div>
-            {/* <input type="file" className="process_upload-btn" onChange={(e) => this.uploadImages(e, "multer")} /> */}
-            {/* <img className="process-name" src={this.state.multerImage} alt="uploaded" /> */}
-            
-            {this.state.imageUrl ? (
+            <PhotoAlbum>
+           { this.state.images.map(item => (
                 <div className="row col-lg-12">
                     <div className="col-lg-2">
                         <img
-                            src={this.state.imageUrl}
-                            className="process-name"
+                            src={item}
+                            name={item.imageName}
                             alt="not available"
+                            style={this.props.image}
+                            opacity={this.props.opactiy}
+                            id={this.props.id}
                         />
                         <br/>
                     </div>
                 </div>
-            ) : null}
-
+                ))}
+            </PhotoAlbum> 
         </div>
         )
     }
-
-
-    // render() {
-    //     return (
-    //     <div>
-    //         <br/>
-    //         <div className="col-sm-12">
-    //         <h1>Image Uploader</h1><hr/>
-    //         <div className="col-sm-4">
-    //         <input className="form-control " type="file" 
-    //         onChange={this.selectImages} multiple/>
-    //         </div>
-    //         <p className="text-info">{this.state.message}</p>
-    //         <br/><br/><br/>
-    //         <div className="col-sm-4">
-    //         <button className="btn btn-primary" value="Submit" 
-    //         onClick={this.uploadImages}>Submit</button>
-    //         </div>
-    //         </div>
-    //         <br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><br/><hr/><br/>
-    //         <div className="row col-lg-12">
-    //         { 
-    //         this.state.imageUrls.map((url, i) => (
-    //         <div className="col-lg-2" key={i}>
-    //         <img src={url} className="img-rounded img-responsive"
-    //         alt="not available"/><br/>
-    //         </div>
-    //         ))
-    //         }
-    //         </div>
-    //     </div>
-    //     );
-    //     }
 
 }
 

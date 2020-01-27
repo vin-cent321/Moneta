@@ -32,7 +32,6 @@ class Dashboard extends Component {
     return (
       <div style={{ height: "75vh" }} className="container">
         <div className="row">
-        <Upload userId={user.id} />
         <div style={{ maxWidth: '100%', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between' }}>
           {this.state.images.map(img => (
             <div>
@@ -49,6 +48,7 @@ class Dashboard extends Component {
                 <div class="card-body">
               <p className="flow-text grey-text text-darken-2">Today is</p> <Moment format="LLLL" local></Moment>
               <p className="flow-text grey-text text-darken-2">Here's details about the weather</p><Weather />
+              <Upload userId={user.id} />
               </div>
              </div>
             
