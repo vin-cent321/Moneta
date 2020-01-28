@@ -47,7 +47,25 @@
 
 .home {
 position: absolute;
-bottom: 5px;
-width: 50px;
+bottom: 10px;
+width: 100px;
 margin-left: 40%;
+}
+
+@media screen and (min-width: 768px) and (max-width: 1366px){
+  .home {
+    position: absolute;
+    bottom: 18px;
+    width: 100px;
+    margin-left: 35%;
+    }
+}
+
+@media screen and (min-width: 1090px) and (max-width: 1196px){
+  .home {
+    position: absolute;
+    bottom: 18px;
+    width: 100px;
+    margin-left: 40%;
+    }
 }
