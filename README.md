@@ -2,6 +2,7 @@
 ![](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/logofinal_2.jpg)
  <img src='https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Moneta-qr.png' height='200px' width='200px' />
 * [Moneta Wireframe](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Wireframe.png)
+* [Moneta Live Demo](https://mc-moneta.herokuapp.com/)
 # Authors:
 
 <table> <tr> <td>
