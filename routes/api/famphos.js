@@ -15,7 +15,8 @@ const fs = require("file-system");
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
     // console.log(req.body)
-    cb(null, 'client/public/images/uploads');
+    cb(null, 'client/build/images/uploads');
+    //client/build/public
   },
   filename: function(req, file, cb) {
     // console.log(req.file, file.originalname)
