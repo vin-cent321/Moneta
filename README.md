@@ -1,7 +1,7 @@
 # Moneta 
 ![](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/logofinal_2.jpg)
  <img src='https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Moneta-qr.png' height='200px' width='200px' />
-* [MonetaPDF](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Montea_pdf.pdf)
+* [Moneta Wireframe](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Wireframe.png)
 # Authors:
 
 <table> <tr> <td>
