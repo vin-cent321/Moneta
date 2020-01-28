@@ -3,6 +3,7 @@ import play from "../MusicPlayer/images/play.png";
 import pause from "../MusicPlayer/images/pause.png";
 import vol1 from "../MusicPlayer/images/vol1.png";
 import vol2 from "../MusicPlayer/images/vol2.png";
+import "./MusicPlayer.css"
 
 
 // Music goes in PUBLIC folder
@@ -75,6 +76,7 @@ class MusicP2 extends Component {
     }*/
 }
     play_pause = () => {
+        this.state.bgMusic.loop = true;
         if (this.state.n ==='PAUSE'){
             this.state.bgMusic.pause()
             this.setState({n: "PLAY"})
@@ -126,9 +128,10 @@ class MusicP2 extends Component {
     render() {
          return (
             <section>
-            <img onClick={this.vold} style={{ padding: "0 0 0 5px"}} src={vol2} alt='vol-down' />
-            <img onClick={this.toggleButton} src={this.state.buttonImg} alt={this.state.buttonType}/>
-            <img onClick={this.volu} src={vol1} alt='vol-up' />
+            
+            <img className="playerButtons" id="playMaster" onClick={this.toggleButton} src={this.state.buttonImg} alt={this.state.buttonType}/>
+            <img className="playerButtons" onClick={this.vold} src={vol2} alt='vol-down' />
+            <img className="playerButtons" onClick={this.volu} src={vol1} alt='vol-up' />
             <button onClick={this.changeSong}>change song</button>
             </section> 
         )
