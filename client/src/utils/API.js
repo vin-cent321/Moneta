@@ -6,5 +6,6 @@ export default {
     },
     deleteImage: function(userId, url) {
         return axios.delete(`/api/images/${userId}/${url}`)
+        
     }
 }
