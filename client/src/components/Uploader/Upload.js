@@ -4,6 +4,8 @@ import Click from "../Click/Click"
 import data from "../../data.json"
 import API from '../../utils/API';
 import { connect } from "react-redux";
+import "./Upload.css";
+
 
 class Upload extends Component {
     state = {
@@ -11,7 +13,7 @@ class Upload extends Component {
         imageUrl: [],
         message: '',
         data: data,
-        imageName:"Name of image"
+        imageName:"Add friends and family to the game!"
     }
     
     loadImages = () => {
@@ -77,6 +79,7 @@ class Upload extends Component {
                 <br></br>
                 <input
                     className="form-control"
+                    id="imageSelect"
                     type="file" 
                     onChange={this.selectImages}
                     multiple
@@ -84,6 +87,7 @@ class Upload extends Component {
                 {/* <p className="process-details">Name?</p> */}
                 <input
                     className="form-control"
+                    id="nameInput"
                     placeholder="Enter name here"
                     type="text" 
                     name="imageName"
