@@ -20,4 +20,11 @@ h4 {
     margin-top: -30px;
 }
 
+@media screen and (min-width: 320px) and (max-width: 414px){
+    
+    .logout[style] {
+        margin-left: 0px !important; 
+    }
+  
+  }
 

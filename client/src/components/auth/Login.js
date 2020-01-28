@@ -142,7 +142,7 @@ class Login extends Component {
                     marginTop: "1rem"
                   }}
                   type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable accent-3"
+                  className="login btn btn-large waves-effect waves-light hoverable accent-3"
                 >
                   Login
                 </button>
@@ -158,7 +158,7 @@ class Login extends Component {
                     marginTop: "1rem"
                   }}
                   type="submit"
-                  className="btn btn-large waves-effect waves-light hoverable accent-3"
+                  className="signUp btn btn-large waves-effect waves-light hoverable accent-3"
                 >
                   Sign Up
                 </button>
