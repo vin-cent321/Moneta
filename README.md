@@ -1,7 +1,8 @@
 # Moneta 
 ![](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/logofinal_2.jpg)
  <img src='https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Moneta-qr.png' height='200px' width='200px' />
-* [MonetaPDF](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Montea_pdf.pdf)
+* [Moneta Wireframe](https://github.com/vin-cent321/Moneta/blob/master/client/src/components/layout/Wireframe.png)
+* [Moneta Live Demo](https://mc-moneta.herokuapp.com/)
 # Authors:
 
 <table> <tr> <td>
@@ -64,7 +65,7 @@
     * moment-timezone: ^0.5.27,
     * multer: ^1.4.2,
 
-</td> <td>
+</td> </tr> <tr> <td>
 
     * react: ^16.6.3,
     * react-bootstrap: ^1.0.0-beta.16,
@@ -72,7 +73,7 @@
     * react-moment: ^0.9.7,
     * react-redux: ^5.1.1,
 
-</td> <td> </tr> <tr>
+</td> <td> 
 
     * react-router-dom: ^4.3.1,
     * react-scripts: ^3.3.0,
