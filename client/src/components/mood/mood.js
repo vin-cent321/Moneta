@@ -17,13 +17,31 @@ class Mood extends Component {
     console.log('What button', e.target.id)
     switch(e.target.id) {
       case 'relaxedSwitch': body.className = 'hoveredOne';
-       // this.props.hanldeMusicChange('relaxed.mp3')
         break;
       case 'excitedSwitch': body.className = 'hoveredTwo';
       break;
       case 'happySwitch': body.className = 'hoveredThree';
       break;
       case 'focusedSwitch': body.className = 'hoveredFour';
+      break;
+      default: body.className = '';
+    }
+  }
+
+  activateButtonMusic = (e) => {
+    console.log('What button', e.target.id)
+    switch(e.target.id) {
+      case 'relaxedSwitch': 
+        this.props.handleMusicChange('relaxed.mp3')
+        break;
+      case 'excitedSwitch':
+        this.props.handleMusicChange('excited.mp3')
+      break;
+      case 'happySwitch':
+        this.props.handleMusicChange('happy.mp3')
+      break;
+      case 'focusedSwitch':
+        this.props.handleMusicChange('focused.mp3')
       break;
       default: body.className = '';
     }
@@ -61,6 +79,7 @@ class Mood extends Component {
                   }}
                   onMouseOver={(e) => this.activateButtonMood(e)}
                   onMouseOut={(e) => this.deactivateButtonMood(e)}
+                  onClick={(e) => this.activateButtonMusic(e)}
                   id="relaxedSwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >
@@ -76,6 +95,7 @@ class Mood extends Component {
                   }}
                   onMouseOver={(e) => this.activateButtonMood(e)}
                   onMouseOut={(e) => this.deactivateButtonMood(e)}
+                  onClick={(e) => this.activateButtonMusic(e)}
                   id="excitedSwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >
@@ -91,6 +111,7 @@ class Mood extends Component {
                   }}
                   onMouseOver={(e) => this.activateButtonMood(e)}
                   onMouseOut={(e) => this.deactivateButtonMood(e)}
+                  onClick={(e) => this.activateButtonMusic(e)}
                   id="happySwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >
@@ -108,6 +129,7 @@ class Mood extends Component {
                  //last link just in case it has a purpose later onClick={"/mood"}
                   onMouseOver={(e) => this.activateButtonMood(e)}
                   onMouseOut={(e) => this.deactivateButtonMood(e)}
+                  onClick={(e) => this.activateButtonMusic(e)}
                   id="focusedSwitch"
                   className="gameswitch btn btn-large waves-effect waves-light hoverable accent-3"
                 >

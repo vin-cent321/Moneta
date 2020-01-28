@@ -17,7 +17,10 @@ import Dashboard from "./components/dashboard/Dashboard";
 import Mood from "./components/mood/mood";
 import Gamepage from "./components/gamepage/gamepage";
 import Footer from "./components/layout/Footer";
+import play from "./components/MusicPlayer/images/play.png";
+import pause from "./components/MusicPlayer/images/pause.png";
 import "./App.css";
+
 
 
 // Check for token to keep user logged in
@@ -42,15 +45,89 @@ if (localStorage.jwtToken) {
 
 class App extends Component {
   state = {
-    file: 'relaxed.mp3'
-  }
+    buttonType: 'play',
+    buttonImg: play,
+    // time: bgMusic.currentTime,
+    bgMusic: new Audio("relaxed.mp3"),
+    n: "PLAY",
+    file: this.props.file,
+    volume: 1
+}  
+//}
+
+componentDidUpdate(prevProps, prevState) {
+
+
+/* if(prevProps !== props) {
+// then => reassign file to correct string
+    fileResource = this.file;
+}
+}*/
+}
+play_pause = () => {
+this.state.bgMusic.loop = true;
+if (this.state.n ==='PAUSE'){
+    this.state.bgMusic.pause()
+    this.setState({n: "PLAY"})
+}
+else if (this.state.n ==='PLAY'){
+    this.state.bgMusic.play()
+    this.setState({n: "PAUSE"})
+}
+}
+
+volu = ()=> {
+if ((this.state.volume < .95) ) {
+    this.setState({volume: this.state.volume + .05})
+    this.state.bgMusic.volume=this.state.volume 
+    console.log(this.state.volume)
+}
+}
+vold = ()=> {
+if ((this.state.volume > .05)){
+    this.setState({volume: this.state.volume - .05})
+    this.state.bgMusic.volume=this.state.volume
+    console.log(this.state.volume)
+}
+}
+
+
+changeSong = (song) => {
+//this.bgMusic.src= 'happy.mp3'
+let bgMusic= new Audio(song)
+this.state.bgMusic.pause()
+this.setState({bgMusic, n:'PAUSE'}, () => {
+  this.state.bgMusic.play()
+})
+}
+//call change song with an actual song instead of using string happy.mp3 use song variable
+//use state in app.js
+updateTime = () => {
+let x = this.state.bgMusic.currentTime
+this.setState.time({x})
+return x
+}
+
+toggleButton = () => {
+console.log("toggleButton");
+  this.play_pause();
+let {buttonImg, buttonType} = this.state;
+buttonImg === play ? buttonImg = pause : buttonImg = play;
+buttonType === 'play' ?  buttonType = 'pause' : buttonType = 'play';
+
+this.setState({buttonImg, buttonType});
+}
+  // state = {
+  //   file: 'relaxed.mp3'
+  // }
 
   handleMusicChange = (type) => {
-    switch(type) {
-      case 'relaxed': //setState => correct type to be read in footer;
-        break;
-      default: this.setState({file: 'relaxed.mp3'});
-    }
+    this.changeSong(type)
+    // switch(type) {
+    //   case 'relaxed': //setState => correct type to be read in footer;
+    //     break;
+    //   default: this.setState({file: 'relaxed.mp3'});
+    // }
   }
   //explore redux
   //need to execute change song, cant do with current build only available on musicplayer
@@ -73,7 +150,7 @@ class App extends Component {
                 />
               <PrivateRoute exact path="/gamepage" component={Gamepage} />
             </Switch>
-            <Footer file={this.state.file} />
+            <Footer  changeSong={this.changeSong} volu={this.volu} vold={this.vold} toggleButton={this.toggleButton} buttonImg={this.state.buttonImg} buttonType={this.state.buttonType}/>
           </div>
         </Router>
       </Provider>
