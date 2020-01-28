@@ -8,7 +8,7 @@ import { connect } from "react-redux";
 
 class Upload extends Component {
     state = {
-        images: [{url: "images/uploads/cat.png"}],
+        images: [{url: ""}],
         imageUrl: "",
         message: '',
         data: data,
@@ -97,7 +97,7 @@ class Upload extends Component {
                             key='7'
                             id={item.id}
                             name={item.name}
-                            image={item.url}
+                            image={this.state.imageUrl}
                         />
                     ))}
             {/*<PhotoAlbum>
