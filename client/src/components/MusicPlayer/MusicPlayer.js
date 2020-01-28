@@ -60,6 +60,7 @@ class MusicP2 extends Component {
 //     componentDidUpdate(prevProps, prevState) {
        
 
+
 //        /* if(prevProps !== props) {
 // // then => reassign file to correct string
 //             fileResource = this.file;
@@ -116,6 +117,7 @@ class MusicP2 extends Component {
 
 //         this.setState({buttonImg, buttonType});
 //     }
+
     render() {
          return (
             <section>

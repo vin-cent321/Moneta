@@ -14,11 +14,11 @@ const fs = require("file-system");
 
 const storage = multer.diskStorage({
   destination: function(req, file, cb) {
-    console.log('destination', req.body)
+    // console.log(req.body)
     cb(null, 'client/public/images/uploads');
   },
   filename: function(req, file, cb) {
-    console.log('filename', req.file, file.originalname)
+    // console.log(req.file, file.originalname)
     cb(null, file.originalname);
   }
 });
@@ -40,12 +40,11 @@ const upload = multer({
 });
 
 router.post("/", upload.single('image'), (req, res, next) => {
-  console.log("this is file ", req.file);
+  // console.log("this is file " + req.file + "BOTTOM");
   if (req.file) {
     res.json({
       imageUrl: `/images/uploads/${req.file.filename}`
     });
-   
   }
   else res.status("409").json("No files to upload");
 });

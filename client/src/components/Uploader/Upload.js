@@ -1,6 +1,5 @@
 import React, { Component } from "react";
 import axios from "axios";
-import PhotoAlbum from "../../components/PhotoAlbum/PhotoAlbum";
 import Click from "../Click/Click"
 import data from "../../data.json"
 import API from '../../utils/API';
@@ -8,21 +7,23 @@ import { connect } from "react-redux";
 
 class Upload extends Component {
     state = {
-        images: [{url: ""}],
-        imageUrl: "",
+        images: [],
+        imageUrl: [],
         message: '',
         data: data,
         imageName:"Name of image"
     }
+    
     loadImages = () => {
         const { user } = this.props.auth;
-        alert('hello')
+        // alert('hello')
         API.getImages(user.id)
         .then(res => {
            this.mergeImages(res.data)
         })
         .catch(err => console.log("oops"));
     }
+
     handleInputChange = (event) => {
         const { name, value } = event.target;
         this.setState({ [name]: value});        
@@ -39,13 +40,14 @@ class Upload extends Component {
     }
 
     uploadImages = () => {
-        console.log("imgname",this.state.imageName)
+        console.log("imgname" + this.state.imageName + "***************")
         const uploaders = this.state.images.map(image => {
             const data = new FormData();
             data.append("image", image, image.name);
             // Make an AJAX upload request using Axios
             return axios.post("/api/uploads", data)
             .then(response => {
+                console.log("these are yours " + response.data.imageUrl);
                 this.setState({
                     imageUrl: response.data.imageUrl
                 });
@@ -57,10 +59,14 @@ class Upload extends Component {
                 .catch(err => console.log(err));
             })
             .catch((err) => {
-
+                console.log(err);
             });
-        });this.loadImages()
-    }
+        });
+        this.loadImages()
+        
+}
+
+
 
     render() {
         return (
@@ -78,6 +84,7 @@ class Upload extends Component {
                 {/* <p className="process-details">Name?</p> */}
                 <input
                     className="form-control"
+                    placeholder="Enter name here"
                     type="text" 
                     name="imageName"
                     placeholder={this.state.imageName}
@@ -92,14 +99,16 @@ class Upload extends Component {
                     onClick={this.uploadImages}
                 >Submit</button>
             </div>
-            {this.state.images.map(item => (
-                        <Click
-                            key='7'
+            {this.state.images.map((item, i) => {
+                return (
+                            <Click
+                            key={i}
                             id={item.id}
                             name={item.name}
                             image={this.state.imageUrl}
-                        />
-                    ))}
+                            />)
+                        })}
+
             {/*<PhotoAlbum>
             { this.state.images.map(item => (
                 <div className="row col-lg-12">
@@ -108,9 +117,6 @@ class Upload extends Component {
                             src={item.name}
                             name={item.imageName}
                             alt="not available"
-                            style={this.props.image}
-                            opacity={this.props.opactiy}
-                            id={this.props.id}
                         />
                         <br/>
                     </div>
@@ -119,8 +125,8 @@ class Upload extends Component {
             </PhotoAlbum> */}
         </div>
         )
+    
     }
-
 }
 const mapStateToProps = state => ({
     auth: state.auth
