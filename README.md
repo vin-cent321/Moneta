@@ -64,7 +64,7 @@
     * moment-timezone: ^0.5.27,
     * multer: ^1.4.2,
 
-</td> <td>
+</td> <td> </tr> <tr>
 
     * react: ^16.6.3,
     * react-bootstrap: ^1.0.0-beta.16,
@@ -72,7 +72,7 @@
     * react-moment: ^0.9.7,
     * react-redux: ^5.1.1,
 
-</td> <td> </tr> <tr>
+</td> <td> 
 
     * react-router-dom: ^4.3.1,
     * react-scripts: ^3.3.0,
