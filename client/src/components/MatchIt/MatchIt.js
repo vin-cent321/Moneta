@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import data from "../../data.json"
+import data from "../../data2.json"
 import Container from "../Container/Container"
 import Click from "../Click/Click";
 import API from '../../utils/API';
