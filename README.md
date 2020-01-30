@@ -28,7 +28,7 @@
 </td> </tr> <tr> <td>
 
 ## Matthew Clary
-<img src='https://avatars2.githubusercontent.com/u/52682135?s=100&v=4' height='100px' width='100px' />
+![MC](https://avatars2.githubusercontent.com/u/52682135?s=100&v=4)
 
 * [GitHub](https://github.com/clarymt)
 * [Portfolio](https://clarymt.github.io/portfolioUpdate1/)
