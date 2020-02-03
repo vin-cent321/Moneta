@@ -13,7 +13,7 @@
 * [GitHub](https://github.com/fkarticuno)
 * [Portfolio](https://fkarticuno.github.io/CodingPortfolio/)
 * [LinkedIn](https://www.linkedin.com/in/frederick-articuno/)
-* [Resume](https://fkarticuno.github.io/CodingPortfolio/Resume_2020.pdf)
+* [Resume](https://fkarticuno.github.io/CodingPortfolio/Assets/Credentials/Resume_2020.pdf)
 
 </td> <td>
 
