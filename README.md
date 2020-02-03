@@ -13,7 +13,7 @@
 * [GitHub](https://github.com/fkarticuno)
 * [Portfolio](https://fkarticuno.github.io/CodingPortfolio/)
 * [LinkedIn](https://www.linkedin.com/in/frederick-articuno/)
-* [Resume](https://fkarticuno.github.io/CodingPortfolio/Resume_DEC2019_std.pdf)
+* [Resume](https://fkarticuno.github.io/CodingPortfolio/Resume_2020.pdf)
 
 </td> <td>
 
@@ -80,4 +80,4 @@
     * redux: ^4.0.1,
     * redux-thunk: ^2.3.0
 
-<td> </tr> </table>
+</td> </tr> </table>
