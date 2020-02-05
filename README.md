@@ -71,7 +71,7 @@ $ node server
 See the list of [contributors](https://github.com/fkarticuno/moneta/graphs/contributors) who participated in this project along with individual commit history.
 <table> <tr> <td>
 
-## Frederick Articuno
+### Frederick Articuno
 ![FA](https://avatars1.githubusercontent.com/u/44718784?s=30&v=4)
 
 * [GitHub](https://github.com/fkarticuno)
@@ -81,7 +81,7 @@ See the list of [contributors](https://github.com/fkarticuno/moneta/graphs/contr
 
 </td> <td>
 
-## Vincent Caraciollo
+### Vincent Caraciollo
 ![VC](https://avatars3.githubusercontent.com/u/52013834?s=30&v=4)
 
 * [GitHub](https://github.com/vin-cent321)
@@ -89,9 +89,9 @@ See the list of [contributors](https://github.com/fkarticuno/moneta/graphs/contr
 * [LinkedIn](https://github.com/vin-cent321)
 * [Resume](https://github.com/vin-cent321)
 
-</td> </tr> <tr> <td>
+</td> <td>
 
-## Matthew Clary
+### Matthew Clary
 ![MC](https://avatars2.githubusercontent.com/u/52682135?s=30&v=4)
 
 * [GitHub](https://github.com/clarymt)
@@ -101,7 +101,7 @@ See the list of [contributors](https://github.com/fkarticuno/moneta/graphs/contr
 
 </td> <td>
 
-## Jonathan Roth
+### Jonathan Roth
 <img src='https://avatars0.githubusercontent.com/u/32680255?s=100&v=4' height='30px' width='30px' />
 
 * [GitHub](https://github.com/brucegenerator)
