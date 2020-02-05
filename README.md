@@ -1,6 +1,6 @@
 # Moneta
 
-Moneta is a platform for patients at any stage of Alzheimer's/Dementia to keep their mind and brain stimulated. Brain teasers/memory/image and word association games have been scientifically proven to be useful throughout the lives of people afflicted with the disease. While additionally, music can play an important role.
+Moneta is a full stack MERN platform for patients at any stage of Alzheimer's/Dementia to keep their mind and brain stimulated. Brain teasers/memory/image and word association games have been scientifically proven to be useful throughout the lives of people afflicted with the disease. While additionally, music can play an important role.
 
 
 ## [Try it yourself!](https://mc-moneta.herokuapp.com/) 
