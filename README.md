@@ -103,7 +103,8 @@ See the list of [contributors](https://github.com/fkarticuno/moneta/graphs/contr
 
 ### Jonathan Roth
 <img src='https://avatars0.githubusercontent.com/u/32680255?s=30&v=4' height='30px' width='30px' />
-![JR](https://avatars2.githubusercontent.com/u/32680255?s=30&v=4)
+
+![JR](https://avatars0.githubusercontent.com/u/32680255?s=30&v=4)
 
 * [GitHub](https://github.com/brucegenerator)
 * [Portfolio](https://brucegenerator.github.io/Responsive-Portfolio/)
