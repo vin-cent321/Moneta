@@ -48,7 +48,7 @@ $ npm install
 
 You will then be able to start the app locally by runnning:
 ````
-$ node server
+$ npm run dev
 ````
 
 ## Built With
