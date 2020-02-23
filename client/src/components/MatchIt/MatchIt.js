@@ -17,7 +17,7 @@ class MatchIt extends Component {
         name: '',
     }
     // Expected behavior is to trigger border change on correct guess or incorrect guess
-    // as green or red but only triggers the first borderUpdateXX() called in component did mount.
+    // as green or red but only triggers the first borderUpdateXX() called in component did mount
     // So I decided to only use purple which is named .greenBorder in Click.css 
     borderUpdateRed() {
         const bordersR = document.querySelectorAll('.click-item')       
